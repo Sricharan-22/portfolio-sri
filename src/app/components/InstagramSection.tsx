@@ -74,18 +74,18 @@ export function InstagramSection() {
   return (
     <section className="bg-[#0a0a0a] border-t border-white/10">
       {/* ── TOP BAND: Role declaration ── */}
-      <div className="border-b border-white/10 px-12 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-6">
+      <div className="border-b border-white/10 px-6 md:px-12 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-0">
+        <div className="flex items-center gap-4 md:gap-6 flex-wrap">
           <span
-            className="text-white/40 uppercase tracking-[4px]"
-            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
+            className="text-white/40 uppercase tracking-[2px] md:tracking-[4px]"
+            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "clamp(9px, 2vw, 11px)" }}
           >
             Professional Editor & Script Writer
           </span>
-          <div className="w-px h-4 bg-white/20" />
+          <div className="hidden md:block w-px h-4 bg-white/20" />
           <span
-            className="text-white/40 uppercase tracking-[4px]"
-            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
+            className="text-white/40 uppercase tracking-[2px] md:tracking-[4px]"
+            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "clamp(9px, 2vw, 11px)" }}
           >
             Instagram Page
           </span>
@@ -110,10 +110,10 @@ export function InstagramSection() {
         </a>
       </div>
 
-      <div className="px-12 pt-16 pb-20">
+      <div className="px-6 md:px-12 pt-12 md:pt-16 pb-16 md:pb-20">
         {/* ── SECTION TITLE ── */}
-        <div className="grid grid-cols-12 gap-8 mb-16">
-          <div className="col-span-7">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 md:mb-16">
+          <div className="col-span-1 md:col-span-7">
             <h2
               className="text-white uppercase tracking-tight"
               style={{
@@ -137,7 +137,7 @@ export function InstagramSection() {
               </span>
             </h2>
           </div>
-          <div className="col-span-5 flex flex-col justify-end gap-5">
+          <div className="col-span-1 md:col-span-5 flex flex-col justify-end gap-5">
             <p
               className="text-white/60"
               style={{
@@ -151,7 +151,7 @@ export function InstagramSection() {
               Through my work on Instagram, I focus on creating high-performing reels — combining storytelling, pacing, and visual rhythm to deliver impactful content that connects with modern viewers.
             </p>
             {/* Instagram stats */}
-            <div className="flex items-center gap-8 pt-2">
+            <div className="flex flex-wrap items-center gap-6 md:gap-8 pt-2">
               {[
                 { value: "48.2k", label: "Followers" },
                 { value: "312", label: "Posts" },
@@ -182,7 +182,7 @@ export function InstagramSection() {
         </div>
 
         {/* ── HIGHLIGHTS / STORY CIRCLES ── */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-4 mb-10 overflow-x-auto pb-4 custom-scrollbar">
           {highlights.map((h) => (
             <div key={h} className="flex flex-col items-center gap-2 cursor-pointer group">
               <div className="w-14 h-14 rounded-full border border-white/20 group-hover:border-white/50 transition-colors flex items-center justify-center">
@@ -208,9 +208,9 @@ export function InstagramSection() {
         </div>
 
         {/* ── MAIN SPLIT: Featured image + Post grid ── */}
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Left: large featured "pinned post" */}
-          <div className="col-span-5 relative overflow-hidden group cursor-pointer" style={{ height: "560px" }}>
+          <div className="col-span-1 md:col-span-5 relative overflow-hidden group cursor-pointer" style={{ height: "400px", minHeight: "400px" }}>
             <img
               src={IMG_IG_CONTENT}
               alt="Featured post"
@@ -254,7 +254,7 @@ export function InstagramSection() {
           </div>
 
           {/* Right: 3×2 post grid */}
-          <div className="col-span-7 grid grid-cols-3 gap-1">
+          <div className="col-span-1 md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-1">
             {igPosts.map((post) => (
               <div
                 key={post.id}
@@ -295,8 +295,8 @@ export function InstagramSection() {
         </div>
 
         {/* ── CTA ── */}
-        <div className="border-t border-white/10 mt-12 pt-10 flex items-center justify-between">
-          <div className="flex items-center gap-6">
+        <div className="border-t border-white/10 mt-12 pt-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 md:gap-0">
+          <div className="flex items-center gap-6 hidden md:flex">
             <span
               className="text-white/40 uppercase tracking-widest"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
@@ -309,7 +309,7 @@ export function InstagramSection() {
             href="https://instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-4 border border-white/20 hover:border-white/50 transition-all px-6 py-3 group"
+            className="flex items-center justify-center gap-4 border border-white/20 hover:border-white/50 transition-all px-6 py-4 md:py-3 group"
           >
             {/* Instagram icon */}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-60 group-hover:opacity-100 transition-opacity">

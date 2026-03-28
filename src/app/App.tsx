@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { Link, Routes, Route } from "react-router";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { InstagramSection } from "./components/InstagramSection";
 import { LinkedInSection } from "./components/LinkedInSection";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
+import BlogPage from "./pages/BlogPage";
+import BackupPage from "./pages/BackupPage";
 // ── Placeholder images (replace with real assets when ready) ──────────────────
 const imgScreen2 =
   "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80";
@@ -11,16 +15,6 @@ const imgProject01 =
   "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
 const imgProject02 =
   "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=1200&q=80";
-const imgFilm1 =
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80";
-const imgFilm2 =
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80";
-const imgFilm3 =
-  "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=800&q=80";
-const imgFilm4 =
-  "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80";
-const imgFilm6 =
-  "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800&q=80";
 const imgArticle1 =
   "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
 const imgArticle2 =
@@ -57,21 +51,22 @@ function NavBar() {
     <>
       {/* ── Main bar ── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black"
-        style={{ height: "72px", display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", padding: "0 32px" }}
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black md:px-8 px-5"
+        style={{ height: "72px", display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center" }}
       >
         {/* Logo – far left */}
-        <span
+        <Link
+          to="/"
           className="text-black uppercase tracking-tight"
-          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "22px" }}
+          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(18px, 4vw, 22px)" }}
         >
           SRICHARAN
-        </span>
+        </Link>
 
         {/* Centre group: LEFT links | Toggle | RIGHT links */}
         <div className="flex items-center" style={{ gap: 0 }}>
           {/* Left links */}
-          <div className="flex items-center gap-8 pr-6">
+          <div className="hidden md:flex items-center gap-8 pr-6">
             {["WORK", "EXPERIENCE"].map((label) => (
               <a
                 key={label}
@@ -119,22 +114,22 @@ function NavBar() {
           </button>
 
           {/* Right links */}
-          <div className="flex items-center gap-8 pl-6">
+          <div className="hidden md:flex items-center gap-8 pl-6">
             {["BLOG", "CONTACT"].map((label) => (
-              <a
+              <Link
                 key={label}
-                href="#"
+                to={label === "BLOG" ? "/blog" : "#"}
                 className="text-black uppercase hover:opacity-60 transition-opacity"
                 style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
 
         {/* Empty right column to keep logo/center balanced */}
-        <div />
+        <div className="hidden md:block" />
       </nav>
 
       {/* ── Fullscreen overlay menu ── */}
@@ -218,34 +213,34 @@ function NavBar() {
 ────────────────────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="bg-[#f9f9f9] pt-24 pb-0 px-12 min-h-screen grid grid-cols-2 gap-16 items-center">
+    <section className="bg-[#f9f9f9] pt-32 pb-16 md:pb-0 px-6 md:px-12 min-h-screen grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
       {/* Left column */}
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-10 md:gap-12 md:order-first order-last text-center md:text-left">
         <div className="flex flex-col gap-6">
           <div
             className="text-black uppercase tracking-tighter"
-            style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(60px, 7vw, 90px)", lineHeight: "0.85" }}
+            style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(50px, 7vw, 90px)", lineHeight: "0.85" }}
           >
             <p>CODE</p>
             <p>CRAFT</p>
           </div>
-          <p className="text-[#5d5f5f] max-w-md" style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", fontStyle: "italic", lineHeight: "1.7" }}>
+          <p className="text-[#5d5f5f] max-w-md mx-auto md:mx-0" style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", fontStyle: "italic", lineHeight: "1.7" }}>
             I build scalable web applications and interactive interfaces with clean code, performance in mind, and a focus on real-world impact.
           </p>
         </div>
         {/* Social icons */}
-        <div className="flex items-center gap-0">
+        <div className="flex items-center justify-center md:justify-start gap-0">
           {["YT", "IG", "FB", "X"].map((s) => (
             <div key={s} className="border border-black w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-black hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "10px" }}>
               {s}
             </div>
           ))}
-          <div className="ml-4 h-px w-24 bg-[#c6c6c6]" />
+          <div className="ml-4 h-px w-16 md:w-24 bg-[#c6c6c6]" />
         </div>
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-12 pt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 pt-4">
           <div>
-            <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "48px" }}>
+            <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(32px, 4vw, 48px)" }}>
              End-to-End
             </p>
             <p className="text-[#5d5f5f] uppercase mt-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "1.5" }}>
@@ -253,7 +248,7 @@ function HeroSection() {
             </p>
           </div>
           <div>
-            <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "48px" }}>
+            <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(32px, 4vw, 48px)" }}>
               Problem Solver
             </p>
             <p className="text-[#5d5f5f] uppercase mt-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "1.5" }}>
@@ -263,7 +258,7 @@ function HeroSection() {
         </div>
       </div>
       {/* Right column – hero image */}
-      <div className="h-[620px] overflow-hidden">
+      <div className="h-[400px] md:h-[620px] overflow-hidden order-first md:order-last border border-black/10">
         <img src={imgScreen2} alt="Hero" className="w-full h-full object-cover grayscale" />
       </div>
     </section>
@@ -276,45 +271,35 @@ function HeroSection() {
 ────────────────────────────────────────────────────────── */
 function TheCraftSection() {
   return (
-    <section className="bg-black" style={{ padding: "100px 0 0" }}>
-      {/* Top label */}
-      {/* <div className="px-12 mb-10">
-        <span
-          className="text-white/40 uppercase tracking-[4px]"
-          style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
-        >
-          Projects
-        </span>
-      </div> */}
-
+    <section className="bg-black py-16 md:py-[100px] md:pb-0">
       {/* Main staggered grid */}
-      <div className="grid grid-cols-12 gap-px border border-white/10">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-px border border-white/10">
         {/* Left text panel */}
-        <div className="col-span-5 border-r border-white/10 flex flex-col justify-between p-12 py-16 min-h-[560px]">
+        <div className="col-span-1 md:col-span-5 border-b md:border-b-0 md:border-r border-white/10 flex flex-col justify-between p-6 md:p-12 py-12 md:py-16 min-h-auto md:min-h-[560px]">
           <div>
             <p className="text-white/40 uppercase tracking-widest mb-6" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}>
               Projects
             </p>
             <div
               className="text-white uppercase tracking-tight"
-              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(28px, 3vw, 40px)", lineHeight: "1.1" }}
+              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(28px, 6vw, 40px)", lineHeight: "1.1" }}
             >
               <p>BUILD WITH</p>
               <p>INTENT.</p>
             </div>
           </div>
-          <div>
+          <div className="mt-10 md:mt-0">
             <p
               className="text-white/70 mb-10"
               style={{ fontFamily: "'Playfair Display', serif", fontSize: "17px", fontStyle: "italic", lineHeight: "1.75" }}
             >
               Every project is a balance of logic and emotion. I don’t just build interfaces. I shape experiences where motion, design, and narrative work as one seamless system.
             </p>
-            <div className="border-t border-white/20 pt-6 flex items-center gap-4">
+            <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row md:items-center gap-4">
               <span className="text-white/40 uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}>
                 Status
               </span>
-              <div className="w-px h-4 bg-white/20" />
+              <div className="hidden md:block w-px h-4 bg-white/20" />
               <p
                 className="text-white"
                 style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", fontStyle: "italic" }}
@@ -325,9 +310,9 @@ function TheCraftSection() {
           </div>
         </div>
 
-        {/* Right image: 3 staggered tiles */}
-        <div className="col-span-7 grid grid-rows-2 min-h-[560px]">
-          <div className="grid grid-cols-2 gap-px">
+        {/* Right image: staggered tiles */}
+        <div className="col-span-1 md:col-span-7 grid grid-rows-none md:grid-rows-2 min-h-auto md:min-h-[560px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px">
             <div className="overflow-hidden h-[280px]">
               <img
                 src={imgWorkEnvironment}
@@ -335,30 +320,31 @@ function TheCraftSection() {
                 className="w-full h-full object-cover grayscale hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="bg-[#111] flex flex-col justify-end p-8">
+            <div className="bg-[#111] flex flex-col justify-end p-8 h-[280px] sm:h-auto border-t sm:border-t-0 sm:border-l border-white/10">
               <span className="text-white/30 uppercase tracking-widest block mb-3" style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}>
                 Journey Starts
               </span>
               <p
                 className="text-white uppercase tracking-tight"
-                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "28px" }}
+                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(24px, 4vw, 28px)" }}
               >
                BARAKAT
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-px">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px">
             {["FINANCE TALE", "DESISLE", "HOSAKSHAM"].map((label, i) => (
               <div
                 key={label}
-                className="bg-[#0a0a0a] flex flex-col justify-end p-6 h-[280px] border-t border-white/10 hover:bg-[#151515] transition-colors"
+                className="bg-[#0a0a0a] flex flex-col justify-end p-6 h-[200px] sm:h-[280px] border-t sm:border-t-0 border-white/10 hover:bg-[#151515] transition-colors"
+                style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.1)" : "none" }}
               >
                 <span className="text-white/30 text-xs uppercase tracking-widest block mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   {String((i+1) + 1).padStart(2, "0")}
                 </span>
                 <p
                   className="text-white uppercase"
-                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "18px" }}
+                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(16px, 2.5vw, 18px)" }}
                 >
                   {label}
                 </p>
@@ -376,10 +362,10 @@ function TheCraftSection() {
 ────────────────────────────────────────────────────────── */
 function AboutSection() {
   return (
-    <section className="bg-[#f9f9f9] px-12 py-[100px]">
-      <div className="grid grid-cols-12 gap-x-20">
+    <section className="bg-[#f9f9f9] px-6 md:px-12 py-[60px] md:py-[100px]">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-20">
         {/* Left: heading + description */}
-        <div className="col-span-4 flex flex-col gap-8">
+        <div className="col-span-1 md:col-span-4 flex flex-col gap-6 md:gap-8">
           <div>
             <span
               className="text-[#5d5f5f] uppercase tracking-widest block mb-4"
@@ -389,7 +375,7 @@ function AboutSection() {
             </span>
             <h2
               className="text-[#1a1c1c] uppercase tracking-tight"
-              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "60px", lineHeight: "1" }}
+              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(48px, 6vw, 60px)", lineHeight: "1" }}
             >
               EXPERIENCE
             </h2>
@@ -404,7 +390,7 @@ function AboutSection() {
         </div>
 
         {/* Right: timeline */}
-        <div className="col-span-8 flex flex-col gap-12 pt-4">
+        <div className="col-span-1 md:col-span-8 flex flex-col gap-8 md:gap-12 pt-4">
           {[
             {
               period: "2022 — PRESENT",
@@ -424,15 +410,15 @@ function AboutSection() {
           ].map((item) => (
             <div key={item.role} className="border-b border-[#c6c6c6] pb-6">
               <span
-                className="text-[#5d5f5f] block mb-3"
+                className="text-[#5d5f5f] block mb-2 md:mb-3"
                 style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px" }}
               >
                 {item.period}
               </span>
-              <div className="flex items-baseline justify-between">
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 md:gap-0">
                 <span
                   className="text-[#1a1c1c] uppercase"
-                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "24px" }}
+                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(20px, 3vw, 24px)" }}
                 >
                   {item.role}
                 </span>
@@ -495,11 +481,11 @@ const visionaryPeople = [
 
 function MeetTheVisionarySection() {
   return (
-    <section className="bg-black px-12 pt-[80px] pb-[120px]">
+    <section className="bg-black px-6 md:px-12 pt-[60px] md:pt-[80px] pb-[80px] md:pb-[120px]">
       {/* Title */}
       <h2
-        className="text-white mb-[80px]"
-        style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 400, fontSize: "clamp(40px, 5vw, 64px)", lineHeight: "1.1" }}
+        className="text-white mb-[50px] md:mb-[80px]"
+        style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 400, fontSize: "clamp(36px, 5vw, 64px)", lineHeight: "1.1" }}
       >
         Meet{" "}
         <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontWeight: 400 }}>
@@ -508,18 +494,24 @@ function MeetTheVisionarySection() {
         Visionary
       </h2>
 
-      {/* Staggered 4-column grid */}
-      <div className="grid grid-cols-4 gap-6" style={{ minHeight: "620px", alignItems: "start" }}>
+      {/* Staggered grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 sm:gap-6 md:min-h-[620px] items-start">
         {visionaryPeople.map((person) => (
           <div
             key={person.id}
-            style={{ marginTop: `${person.offsetTop}px` }}
-            className="flex flex-col gap-4"
+            className={`flex flex-col gap-4 ${person.id === "01" ? "md:mt-[180px]" : person.id === "02" ? "md:mt-[60px]" : person.id === "03" ? "md:mt-[100px]" : person.id === "04" ? "md:mt-[200px]" : "mt-0"}`}
           >
             {/* Number + label above image for 03 & 04, below for 01 & 02 */}
             {parseInt(person.id) <= 2 ? (
-              <>
-                <div>
+              <div className="flex flex-col gap-4">
+                <div className="w-full overflow-hidden order-first md:order-last" style={{ height: "auto", minHeight: "280px", maxHeight: "420px", aspectRatio: "4/5" }}>
+                  <ImageWithFallback
+                    src={person.img}
+                    alt={person.name}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+                <div className="order-last md:order-first">
                   <span
                     className="text-white/60 block mb-1"
                     style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px" }}
@@ -539,19 +531,9 @@ function MeetTheVisionarySection() {
                     {person.name}
                   </span>
                 </div>
-                <div
-                  className="w-full overflow-hidden"
-                  style={{ height: `${person.imgHeight}px` }}
-                >
-                  <ImageWithFallback
-                    src={person.img}
-                    alt={person.name}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-              </>
+              </div>
             ) : (
-              <>
+              <div className="flex flex-col gap-4">
                 <div>
                   <span
                     className="text-white/60 block mb-1"
@@ -572,24 +554,21 @@ function MeetTheVisionarySection() {
                     {person.name}
                   </span>
                 </div>
-                <div
-                  className="w-full overflow-hidden"
-                  style={{ height: `${person.imgHeight}px` }}
-                >
+                <div className="w-full overflow-hidden" style={{ height: "auto", minHeight: "280px", maxHeight: "420px", aspectRatio: "4/5" }}>
                   <ImageWithFallback
                     src={person.img}
                     alt={person.name}
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
-              </>
+              </div>
             )}
           </div>
         ))}
       </div>
 
       {/* + icon at bottom center */}
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-12 md:mt-20">
         <div className="w-8 h-8 border border-white/30 flex items-center justify-center rotate-45 hover:border-white/60 transition-colors cursor-pointer">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M6 0V12M0 6H12" stroke="white" strokeWidth="1" />
@@ -606,67 +585,29 @@ function MeetTheVisionarySection() {
 function VisionaryParagraph() {
   return (
     <section className="bg-black border-t border-white/10 px-12 py-[80px]">
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center px-6 md:px-0">
         <p
           className="text-white/70 mb-8"
-          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: "1.8" }}
+          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(18px, 4vw, 26px)", lineHeight: "1.8" }}
         >
           "Creativity begins where logic finds its limits."
         </p>
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-12 bg-white/30" />
+        <div className="flex items-center justify-center gap-2 md:gap-4">
+          <div className="h-px w-8 md:w-12 bg-white/30" />
           <span
-            className="text-white/40 uppercase tracking-widest"
-            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
+            className="text-white/40 uppercase tracking-widest text-[9px] md:text-[11px]"
+            style={{ fontFamily: "Inter, sans-serif", fontWeight: 400 }}
           >
-            The Visionary Collection · 2024
+            The Visionary Collection · 2026
           </span>
-          <div className="h-px w-12 bg-white/30" />
+          <div className="h-px w-8 md:w-12 bg-white/30" />
         </div>
       </div>
     </section>
   );
 }
 
-/* ──────────────────────────────────────────────────────────
-   CLIENT GRID
-────────────────────────────────────────────────────────── */
-function ClientGrid() {
-  const clients = ["VOGUE", "LEICA", "BMW", "SQUARE"];
-  return (
-    <section className="bg-[#e8e8e8] px-12 py-20">
-      <div className="flex items-end justify-between mb-12">
-        <span
-          className="text-[#1a1c1c] uppercase tracking-widest"
-          style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px" }}
-        >
-          Collaborators
-        </span>
-        <span
-          className="text-[#1a1c1c]"
-          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "12px" }}
-        >
-          SELECTED CLIENTS 2018-2024
-        </span>
-      </div>
-      <div className="grid grid-cols-4 border border-black">
-        {clients.map((client, i) => (
-          <div
-            key={client}
-            className={`flex items-center justify-center py-12 ${i < 3 ? "border-r border-black" : ""}`}
-          >
-            <span
-              className="text-[#1a1c1c]"
-              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "20px" }}
-            >
-              {client}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+
 
 /* ──────────────────────────────────────────────────────────
    CASE STUDIES
@@ -679,20 +620,24 @@ function CaseStudies() {
     { tag: "Website", title: "Hokshaksam", img: imgProject02 },
   ];
   return (
-    <section className="py-[100px]">
-      <div className="px-12 mb-16">
+    <section className="py-16 md:py-[100px]">
+      <div className="px-6 md:px-12 mb-10 md:mb-16">
         <h2
           className="text-[#1a1c1c] uppercase tracking-tight"
-          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "60px" }}
+          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(48px, 6vw, 60px)" }}
         >
           CASE STUDIES
         </h2>
       </div>
       <div className="flex flex-col">
         {cases.map((c) => (
-          <div key={c.title} className="relative h-[500px] overflow-hidden border-b border-black group cursor-pointer">
-            <img src={c.img} alt={c.title} className="absolute inset-0 w-full h-full object-cover grayscale" />
-            <div className="absolute inset-0 bg-black/40 flex items-end justify-between px-12 pb-12">
+          <Link
+            to={`/case-study/${c.title.toLowerCase().replace(/\s+/g, '-')}`}
+            key={c.title}
+            className="relative h-[350px] md:h-[500px] overflow-hidden border-b border-black group cursor-pointer block"
+          >
+            <img src={c.img} alt={c.title} className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            <div className="absolute inset-0 bg-black/40 flex items-end justify-between px-6 pb-6 md:px-12 md:pb-12">
               <div>
                 <p className="text-white uppercase text-xs tracking-widest mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   {c.tag}
@@ -710,69 +655,22 @@ function CaseStudies() {
                 </svg>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
   );
 }
 
-/* ──────────────────────────────────────────────────────────
-   FRAME BY FRAME (Hobbies & Editing)
-────────────────────────────────────────────────────────── */
-function FrameByFrame() {
-  const films = [imgFilm1, imgFilm2, imgFilm3, imgFilm4, imgFilm6];
-  return (
-    <section className="bg-black px-12 py-[100px]">
-      <div className="grid grid-cols-12 gap-12">
-        <div className="col-span-5 flex flex-col gap-8">
-          <div
-            className="text-white uppercase tracking-tight"
-            style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(36px, 4vw, 60px)", lineHeight: "1.05" }}
-          >
-            <p>FRAME BY</p>
-            <p>FRAME</p>
-          </div>
-          <p
-            className="text-white/60"
-            style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "18px", lineHeight: "1.7" }}
-          >
-            Outside of code, I explore the world through 24 frames per second.
-            Video editing is my rhythmic meditation.
-          </p>
-        </div>
-        <div className="col-span-7 grid grid-cols-3 gap-1">
-          {films.slice(0, 3).map((src, i) => (
-            <div key={i} className="h-[220px] overflow-hidden">
-              <img src={src} alt="" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-            </div>
-          ))}
-          <div className="h-[220px] overflow-hidden">
-            <img src={films[3]} alt="" className="w-full h-full object-cover grayscale" />
-          </div>
-          <div className="h-[220px] border border-white/20 flex items-center justify-center">
-            <div className="w-8 h-8 border border-white/40 flex items-center justify-center rotate-45">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M6 0V12M0 6H12" stroke="white" strokeWidth="1" />
-              </svg>
-            </div>
-          </div>
-          <div className="h-[220px] overflow-hidden">
-            <img src={films[4]} alt="" className="w-full h-full object-cover grayscale" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 /* ──────────────────────────────────────────────────────────
    TESTIMONIALS
 ────────────────────────────────────────────────────────── */
 function Testimonials() {
   return (
-    <section className="border-b border-black py-[100px] px-48">
-      <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
+    <section className="border-b border-black py-16 md:py-[100px] px-6 md:px-48">
+      <div className="max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
         {/* Quote mark */}
         <svg width="40" height="28" viewBox="0 0 40 28" fill="none">
           <path d="M0 28V16.8C0 12.2667 1.06667 8.46667 3.2 5.4C5.42667 2.33333 8.98667 0.533333 13.88 0L15.44 3.72C12.8267 4.34667 10.88 5.53333 9.6 7.28C8.41333 8.93333 7.77333 10.8267 7.68 12.96H14.64V28H0ZM24.16 28V16.8C24.16 12.2667 25.2267 8.46667 27.36 5.4C29.5867 2.33333 33.1467 0.533333 38.04 0L39.6 3.72C36.9867 4.34667 35.04 5.53333 33.76 7.28C32.5733 8.93333 31.9333 10.8267 31.84 12.96H38.8V28H24.16Z" fill="#1a1c1c" />
@@ -802,50 +700,34 @@ function Testimonials() {
 }
 
 /* ──────────────────────────────────────────────────────────
-   JOURNAL
+   MAIN CONTENT
 ────────────────────────────────────────────────────────── */
-const journalPosts = [
-  { date: "OCT 24, 2023", title: "The Silent Space: Minimalism in 2024", img: imgArticle1 },
-  { date: "SEP 12, 2023", title: "Code as Architecture", img: imgArticle2 },
-  { date: "AUG 05, 2023", title: "Digital Noir: A New Aesthetic", img: imgArticle3 },
-];
-
-function Journal() {
+function Home() {
   return (
-    <section className="bg-[#f9f9f9] px-12 py-[100px]">
-      <div className="flex items-end justify-between mb-16">
-        <h2
-          className="text-[#1a1c1c] uppercase tracking-tight"
-          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "60px" }}
-        >
-          JOURNAL
-        </h2>
-        <span
-          className="border-b border-black pb-1 text-[#1a1c1c] uppercase cursor-pointer"
-          style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px" }}
-        >
-          View All Posts
-        </span>
-      </div>
-      <div className="grid grid-cols-3 gap-12">
-        {journalPosts.map((post) => (
-          <article key={post.title} className="flex flex-col gap-4">
-            <div className="h-[256px] overflow-hidden bg-[#e2e2e2]">
-              <img src={post.img} alt={post.title} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-            </div>
-            <span className="text-[#5d5f5f] uppercase" style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}>
-              {post.date}
-            </span>
-            <h3
-              className="text-[#1a1c1c] uppercase"
-              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "20px", lineHeight: "1.4" }}
-            >
-              {post.title}
-            </h3>
-          </article>
-        ))}
-      </div>
-    </section>
+    <main>
+      {/* 1. Hero section - Code Craft */}
+      <HeroSection />
+      
+      {/* 2. Meet the visionary */}
+      <MeetTheVisionarySection />
+      <VisionaryParagraph />
+      
+      {/* 3. Experience */}
+      <AboutSection />
+      
+      {/* 4. Projects */}
+      <TheCraftSection />
+      
+      {/* 5. Case studies */}
+      <CaseStudies />
+      
+      {/* 6. Editor */}
+      <InstagramSection />
+      
+      {/* 7. My post and presence */}
+      <LinkedInSection />
+      <Testimonials />
+    </main>
   );
 }
 
@@ -854,14 +736,14 @@ function Journal() {
 ────────────────────────────────────────────────────────── */
 function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 px-12 py-20 flex items-center justify-between">
+    <footer className="bg-black border-t border-white/10 px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
       <p
-        className="text-white/60 tracking-widest"
+        className="text-white/60 tracking-widest text-center md:text-left"
         style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "12px" }}
       >
-        © 2024 DIGITAL NOIR. ALL RIGHTS RESERVED.
+        © 2026 SRICHARAN. ALL RIGHTS RESERVED.
       </p>
-      <div className="flex items-center gap-12">
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
         {["Instagram", "LinkedIn", "Email"].map((link) => (
           <a
             key={link}
@@ -878,34 +760,19 @@ function Footer() {
 }
 
 /* ──────────────────────────────────────────────────────────
-   APP ROOT
+   APP ROOT & ROUTING
 ────────────────────────────────────────────────────────── */
 export default function App() {
   return (
     <div className="min-h-screen bg-[#f9f9f9]">
       <NavBar />
-      <main>
-        <HeroSection />
-        {/* THE CRAFT — changed structure */}
-        <TheCraftSection />
-        {/* ABOUT — new section */}
-        <AboutSection />
-        {/* MEET THE VISIONARY — from attached image */}
-        <MeetTheVisionarySection />
-        {/* PARAGRAPH under Meet the Visionary */}
-        <VisionaryParagraph />
-        {/* rest of original sections */}
-        <ClientGrid />
-        <CaseStudies />
-        <FrameByFrame />
-        {/* INSTAGRAM — Editor & Script Writer */}
-        <InstagramSection />
-        {/* LINKEDIN — Professional posts & profile */}
-        <LinkedInSection />
-        <Testimonials />
-        <Journal />
-        <Footer />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case-study/:slug" element={<CaseStudyDetail />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/backup" element={<BackupPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

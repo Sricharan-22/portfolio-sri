@@ -15,36 +15,18 @@ const IMG_WRITING_DESK =
 const linkedInPosts = [
   {
     id: "lp1",
-    date: "Mar 14, 2024",
-    reactions: "1.2k",
-    comments: "84",
-    tag: "Script Writing",
-    img: imgArticle1,
-    title: "Why Every Video Editor Should Write Scripts",
-    excerpt:
-      "The edit begins before you open Premiere. It begins the moment the script locks. Here's how I changed my workflow by writing before cutting — and why it changed everything about how I tell stories on screen.",
+    iframeSrc: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7442980321819537410?collapsed=1",
+    postUrl: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7442980321819537410"
   },
   {
     id: "lp2",
-    date: "Feb 28, 2024",
-    reactions: "2.4k",
-    comments: "136",
-    tag: "Industry Insight",
-    img: imgArticle2,
-    title: "The Invisible Grammar of the Instagram Reel",
-    excerpt:
-      "60 seconds. No room for anything accidental. Every cut, every sound design choice, every caption — it's not social media, it's micro-cinema. Here's the framework I use to build reels that retain.",
+    iframeSrc: "https://www.linkedin.com/embed/feed/update/urn:li:share:7307842580837191683?collapsed=1",
+    postUrl: "https://www.linkedin.com/feed/update/urn:li:share:7307842580837191683"
   },
   {
     id: "lp3",
-    date: "Jan 19, 2024",
-    reactions: "876",
-    comments: "61",
-    tag: "Process",
-    img: imgArticle3,
-    title: "From Blank Page to Final Cut: My End-to-End Process",
-    excerpt:
-      "Script. Storyboard. Shoot. Selects. Rough cut. Fine cut. Colour. Sound. Done? Never. I'm sharing the full pipeline I've refined over six years of editorial and branded content work.",
+    iframeSrc: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7360900541482233858?collapsed=1",
+    postUrl: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7360900541482233858"
   },
 ];
 
@@ -137,9 +119,8 @@ export function LinkedInSection() {
                 lineHeight: "1.75",
               }}
             >
-              Writing about the intersection of editing, storytelling and
-              digital craft — for editors, directors and creators who believe
-              that words and images are the same language.
+              I share my journey as a developer through LinkedIn posts and dev-focused videos , documenting real problems, solutions, and lessons learned while building applications.
+              My content is centered around coding, debugging, system thinking, and helping others understand how real-world development works.
             </p>
           </div>
 
@@ -166,13 +147,13 @@ export function LinkedInSection() {
                     className="text-[#5d5f5f]"
                     style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "14px" }}
                   >
-                    Editor · Script Writer · Digital Storyteller
+                    Developer · Editor · Script Writer ·
                   </span>
                   <span
                     className="text-[#5d5f5f] uppercase tracking-wide mt-1"
                     style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
                   >
-                    Global Design House · Chennai, India
+                    Desisle · Bangalore, India
                   </span>
                 </div>
               </div>
@@ -260,7 +241,7 @@ export function LinkedInSection() {
             className="text-[#5d5f5f]"
             style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "12px" }}
           >
-            2024 · Content & Craft
+            2026 · Content & Craft
           </span>
         </div>
 
@@ -269,75 +250,109 @@ export function LinkedInSection() {
           {linkedInPosts.map((post, i) => (
             <article
               key={post.id}
-              className={`bg-white flex flex-col group cursor-pointer hover:bg-[#f9f9f9] transition-colors ${
-                i < linkedInPosts.length - 1 ? "border-r border-black/10" : ""
-              }`}
+              className={`bg-white flex flex-col group transition-colors ${!post.iframeSrc ? "cursor-pointer hover:bg-[#f9f9f9]" : ""
+                } ${i < linkedInPosts.length - 1 ? "border-r border-black/10" : ""}`}
             >
-              {/* Post image */}
-              <div className="h-[180px] overflow-hidden">
-                <img
-                  src={post.img}
-                  alt={post.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-600"
-                />
-              </div>
+              {post.iframeSrc ? (
+                <div className="relative w-full h-[560px] overflow-hidden group/iframe bg-white">
+                  <iframe
+                    src={post.iframeSrc}
+                    height="100%"
+                    width="100%"
+                    frameBorder="0"
+                    allowFullScreen
+                    scrolling="no"
+                    title="Embedded post"
+                    style={{ border: "none", minHeight: "560px", background: "#fff" }}
+                  />
 
-              {/* Post content */}
-              <div className="flex flex-col gap-4 p-7 flex-1">
-                {/* Meta row */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className="text-[#5d5f5f] uppercase tracking-widest"
-                    style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
-                  >
-                    {post.tag}
-                  </span>
-                  <span
-                    className="text-[#5d5f5f]"
-                    style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
-                  >
-                    {post.date}
-                  </span>
+                  {/* Bottom fade out gradient */}
+                  <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+                  {/* View full post button overlay */}
+                  {post.postUrl && (
+                    <div className="absolute bottom-[10px] left-0 right-0 flex justify-center opacity-0 group-hover/iframe:opacity-100 transition-opacity duration-300">
+                      <a
+                        href={post.postUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="bg-[#1a1c1c] text-white px-16 py-3 text-center min-w-[160px] hover:bg-black transition-colors"
+                        style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "14px", whiteSpace: "nowrap" }}
+                      >
+                        View
+                      </a>
+                    </div>
+                  )}
                 </div>
-
-                {/* Title */}
-                <h3
-                  className="text-[#1a1c1c] uppercase"
-                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "18px", lineHeight: "1.3" }}
-                >
-                  {post.title}
-                </h3>
-
-                {/* Excerpt */}
-                <p
-                  className="text-[#5d5f5f] flex-1"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontStyle: "italic",
-                    fontSize: "14px",
-                    lineHeight: "1.7",
-                  }}
-                >
-                  {post.excerpt}
-                </p>
-
-                {/* Bottom: reactions */}
-                <div className="border-t border-black/10 pt-4 flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <span className="text-[#5d5f5f] text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                      <span>👍</span> {post.reactions}
-                    </span>
-                    <span className="text-[#5d5f5f] text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                      <span>💬</span> {post.comments}
-                    </span>
+              ) : (
+                <>
+                  {/* Post image */}
+                  <div className="h-[180px] overflow-hidden">
+                    <img
+                      src={post.img}
+                      alt={post.title}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-600"
+                    />
                   </div>
-                  <div className="w-3 h-3 border border-black/30 flex items-center justify-center rotate-45 group-hover:border-black/60 transition-colors">
-                    <svg width="5" height="5" viewBox="0 0 8 8" fill="none">
-                      <path d="M1 7L7 1M7 1H2M7 1V6" stroke="#1a1c1c" strokeWidth="1.5" />
-                    </svg>
+
+                  {/* Post content */}
+                  <div className="flex flex-col gap-4 p-7 flex-1">
+                    {/* Meta row */}
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="text-[#5d5f5f] uppercase tracking-widest"
+                        style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
+                      >
+                        {post.tag}
+                      </span>
+                      <span
+                        className="text-[#5d5f5f]"
+                        style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
+                      >
+                        {post.date}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3
+                      className="text-[#1a1c1c] uppercase"
+                      style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "18px", lineHeight: "1.3" }}
+                    >
+                      {post.title}
+                    </h3>
+
+                    {/* Excerpt */}
+                    <p
+                      className="text-[#5d5f5f] flex-1"
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontStyle: "italic",
+                        fontSize: "14px",
+                        lineHeight: "1.7",
+                      }}
+                    >
+                      {post.excerpt}
+                    </p>
+
+                    {/* Bottom: reactions */}
+                    <div className="border-t border-black/10 pt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <span className="text-[#5d5f5f] text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                          <span>👍</span> {post.reactions}
+                        </span>
+                        <span className="text-[#5d5f5f] text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                          <span>💬</span> {post.comments}
+                        </span>
+                      </div>
+                      <div className="w-3 h-3 border border-black/30 flex items-center justify-center rotate-45 group-hover:border-black/60 transition-colors">
+                        <svg width="5" height="5" viewBox="0 0 8 8" fill="none">
+                          <path d="M1 7L7 1M7 1H2M7 1V6" stroke="#1a1c1c" strokeWidth="1.5" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </>
+              )}
             </article>
           ))}
         </div>
