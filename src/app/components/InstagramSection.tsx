@@ -1,9 +1,16 @@
-import imgFilm1 from "figma:asset/b888fc9179b397bedabb0f9c64e555cb1320a4fc.png";
-import imgFilm2 from "figma:asset/68ab126be1a847da8c5c4b71e67afd0f5070a635.png";
-import imgFilm3 from "figma:asset/ef1164c0bee74ff6af16acd5e3bd4ab6ea18231d.png";
-import imgFilm4 from "figma:asset/3fba52fa361b0bf09c8b9525c836b3373f228fd2.png";
-import imgProject01 from "figma:asset/4414c28aa77abf9008fa1c9c93973d28bea54256.png";
-import imgProject02 from "figma:asset/3d233458dc5e7c402836788b2c7301e3e3c6a3cc.png";
+// ── Placeholder images (replace with real assets when ready) ──────────────────
+const imgFilm1 =
+  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80";
+const imgFilm2 =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80";
+const imgFilm3 =
+  "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=800&q=80";
+const imgFilm4 =
+  "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80";
+const imgProject01 =
+  "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
+const imgProject02 =
+  "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=1200&q=80";
 
 const IMG_BEHIND_SCENES =
   "https://images.unsplash.com/photo-1616527546362-bf6b7f80a751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
@@ -93,7 +100,7 @@ export function InstagramSection() {
             className="text-white/60 group-hover:text-white transition-colors"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", letterSpacing: "1.5px" }}
           >
-            @sricharan_edits
+            @buildw.rahul
           </span>
           <div className="w-4 h-4 border border-white/30 flex items-center justify-center group-hover:border-white/60 transition-colors rotate-45">
             <svg width="6" height="6" viewBox="0 0 8 8" fill="none">
@@ -140,9 +147,8 @@ export function InstagramSection() {
                 lineHeight: "1.75",
               }}
             >
-              Curating a visual diary on Instagram — where every reel is a
-              deliberate act, and every caption is a line of a script. The feed
-              is the edit; the profile is the reel.
+              I craft visual stories for digital audiences, specializing in short-form content that captures attention within seconds. From scripting to final cut, every piece is designed to engage, retain, and resonate.
+              Through my work on Instagram, I focus on creating high-performing reels — combining storytelling, pacing, and visual rhythm to deliver impactful content that connects with modern viewers.
             </p>
             {/* Instagram stats */}
             <div className="flex items-center gap-8 pt-2">

@@ -1,18 +1,34 @@
-import imgScreen2 from "figma:asset/0a1809ed7d458bcaac683eb0f3fa9bbe78c2203c.png";
-import imgWorkEnvironment from "figma:asset/e317e51f2b3673ec21234f517c00abd2c4eeefbc.png";
-import imgProject01 from "figma:asset/4414c28aa77abf9008fa1c9c93973d28bea54256.png";
-import imgProject02 from "figma:asset/3d233458dc5e7c402836788b2c7301e3e3c6a3cc.png";
-import imgFilm1 from "figma:asset/b888fc9179b397bedabb0f9c64e555cb1320a4fc.png";
-import imgFilm2 from "figma:asset/68ab126be1a847da8c5c4b71e67afd0f5070a635.png";
-import imgFilm3 from "figma:asset/ef1164c0bee74ff6af16acd5e3bd4ab6ea18231d.png";
-import imgFilm4 from "figma:asset/3fba52fa361b0bf09c8b9525c836b3373f228fd2.png";
-import imgFilm6 from "figma:asset/04a6c1a51fd087d37c6c0295ecf2709e94be5335.png";
-import imgArticle1 from "figma:asset/d2af2e75ee1d1a1a939b848621952bf4dec6e136.png";
-import imgArticle2 from "figma:asset/0ab7b27c61b0b3b677ab6a8d76eadb0b4e9f3aa3.png";
-import imgArticle3 from "figma:asset/5c0f310abde82f06f938c054254fa25e1c03aa6b.png";
+import { useState } from "react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { InstagramSection } from "./components/InstagramSection";
 import { LinkedInSection } from "./components/LinkedInSection";
+// ── Placeholder images (replace with real assets when ready) ──────────────────
+const imgScreen2 =
+  "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80";
+const imgWorkEnvironment =
+  "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80";
+const imgProject01 =
+  "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
+const imgProject02 =
+  "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=1200&q=80";
+const imgFilm1 =
+  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80";
+const imgFilm2 =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80";
+const imgFilm3 =
+  "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=800&q=80";
+const imgFilm4 =
+  "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80";
+const imgFilm6 =
+  "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800&q=80";
+const imgArticle1 =
+  "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
+const imgArticle2 =
+  "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800&q=80";
+const imgArticle3 =
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80";
+
+
 
 // Unsplash portrait images for Meet the Visionary
 const IMG_AYAKA =
@@ -27,33 +43,173 @@ const IMG_MATEO =
 /* ──────────────────────────────────────────────────────────
    NAV BAR
 ────────────────────────────────────────────────────────── */
+const navLinks = [
+  { label: "WORK",       side: "left"  },
+  { label: "EXPERIENCE", side: "left"  },
+  { label: "BLOG",       side: "right" },
+  { label: "CONTACT",    side: "right" },
+];
+
 function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black flex items-center justify-between px-8 py-5">
-      <span
-        className="text-black uppercase tracking-tight"
-        style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "22px" }}
+    <>
+      {/* ── Main bar ── */}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black"
+        style={{ height: "72px", display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", padding: "0 32px" }}
       >
-        SRICHARAN
-      </span>
-      <div className="flex items-center gap-10">
-        <a href="#" className="text-black border-b-2 border-black pb-1 uppercase text-sm tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700 }}>
-          WORK
-        </a>
-        <a href="#" className="text-gray-500 uppercase text-sm tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700 }}>
-          EXPERIENCE
-        </a>
-        <div className="w-14 h-14 border border-black flex items-center justify-center cursor-pointer hover:bg-black hover:text-white transition-colors">
-          <span className="text-xs tracking-wider">☰</span>
+        {/* Logo – far left */}
+        <span
+          className="text-black uppercase tracking-tight"
+          style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "22px" }}
+        >
+          SRICHARAN
+        </span>
+
+        {/* Centre group: LEFT links | Toggle | RIGHT links */}
+        <div className="flex items-center" style={{ gap: 0 }}>
+          {/* Left links */}
+          <div className="flex items-center gap-8 pr-6">
+            {["WORK", "EXPERIENCE"].map((label) => (
+              <a
+                key={label}
+                href="#"
+                className="text-black uppercase hover:opacity-60 transition-opacity"
+                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+
+          {/* Toggle button */}
+          <button
+            id="nav-toggle"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            className="w-14 h-14 border border-black flex flex-col items-center justify-center gap-[5px] cursor-pointer transition-colors"
+            style={{ background: open ? "#000" : "#fff", flexShrink: 0 }}
+          >
+            <span
+              style={{
+                display: "block", width: "18px", height: "1.5px",
+                background: open ? "#fff" : "#000",
+                transform: open ? "translateY(6.5px) rotate(45deg)" : "none",
+                transition: "transform 0.3s, background 0.3s",
+              }}
+            />
+            <span
+              style={{
+                display: "block", width: "18px", height: "1.5px",
+                background: open ? "#fff" : "#000",
+                opacity: open ? 0 : 1,
+                transition: "opacity 0.2s",
+              }}
+            />
+            <span
+              style={{
+                display: "block", width: "18px", height: "1.5px",
+                background: open ? "#fff" : "#000",
+                transform: open ? "translateY(-6.5px) rotate(-45deg)" : "none",
+                transition: "transform 0.3s, background 0.3s",
+              }}
+            />
+          </button>
+
+          {/* Right links */}
+          <div className="flex items-center gap-8 pl-6">
+            {["BLOG", "CONTACT"].map((label) => (
+              <a
+                key={label}
+                href="#"
+                className="text-black uppercase hover:opacity-60 transition-opacity"
+                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
-        <a href="#" className="text-gray-500 uppercase text-sm tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700 }}>
-          BLOG
-        </a>
-        <a href="#" className="text-gray-500 uppercase text-sm tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700 }}>
-          CONTACT
-        </a>
+
+        {/* Empty right column to keep logo/center balanced */}
+        <div />
+      </nav>
+
+      {/* ── Fullscreen overlay menu ── */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 49,
+          background: "#000",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "48px",
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? "all" : "none",
+          transform: open ? "translateY(0)" : "translateY(-16px)",
+          transition: "opacity 0.4s ease, transform 0.4s ease",
+        }}
+      >
+        {/* Thin divider */}
+        <div style={{ width: "1px", height: "60px", background: "rgba(255,255,255,0.15)" }} />
+
+        {navLinks.map((link, i) => (
+          <a
+            key={link.label}
+            href="#"
+            onClick={() => setOpen(false)}
+            style={{
+              fontFamily: "Epilogue, sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(36px, 6vw, 72px)",
+              color: "#fff",
+              textTransform: "uppercase",
+              letterSpacing: "-0.03em",
+              lineHeight: 1,
+              opacity: 0.9,
+              textDecoration: "none",
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.4")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.9")}
+          >
+            <span
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "0.55em",
+                color: "rgba(255,255,255,0.3)",
+                marginRight: "16px",
+                verticalAlign: "middle",
+              }}
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            {link.label}
+          </a>
+        ))}
+
+        <div style={{ width: "1px", height: "60px", background: "rgba(255,255,255,0.15)" }} />
+
+        <p
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontStyle: "italic",
+            color: "rgba(255,255,255,0.25)",
+            fontSize: "13px",
+            letterSpacing: "2px",
+          }}
+        >
+          SRICHARAN · PORTFOLIO 2024
+        </p>
       </div>
-    </nav>
+    </>
   );
 }
 
@@ -70,11 +226,11 @@ function HeroSection() {
             className="text-black uppercase tracking-tighter"
             style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(60px, 7vw, 90px)", lineHeight: "0.85" }}
           >
-            <p>VISUAL</p>
-            <p>POETRY</p>
+            <p>CODE</p>
+            <p>CRAFT</p>
           </div>
           <p className="text-[#5d5f5f] max-w-md" style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", fontStyle: "italic", lineHeight: "1.7" }}>
-            Welcome to a visual journey that transcends time and space. Discover the artistry of moments captured in motion.
+            I build scalable web applications and interactive interfaces with clean code, performance in mind, and a focus on real-world impact.
           </p>
         </div>
         {/* Social icons */}
@@ -90,18 +246,18 @@ function HeroSection() {
         <div className="grid grid-cols-2 gap-12 pt-4">
           <div>
             <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "48px" }}>
-              +250k
+             End-to-End
             </p>
             <p className="text-[#5d5f5f] uppercase mt-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "1.5" }}>
-              Videos reaching a wide audience and give lasting impression
+              From idea → code → deployment — handling the complete development lifecycle.
             </p>
           </div>
           <div>
             <p className="text-[#1a1c1c] tracking-tight" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "48px" }}>
-              +800k
+              Problem Solver
             </p>
             <p className="text-[#5d5f5f] uppercase mt-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", lineHeight: "1.5" }}>
-              Hours watched, engaging storytelling that captivates viewers
+              Focused on breaking down complex problems into clean, scalable solutions.
             </p>
           </div>
         </div>
@@ -122,14 +278,14 @@ function TheCraftSection() {
   return (
     <section className="bg-black" style={{ padding: "100px 0 0" }}>
       {/* Top label */}
-      <div className="px-12 mb-10">
+      {/* <div className="px-12 mb-10">
         <span
           className="text-white/40 uppercase tracking-[4px]"
           style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
         >
-          The Craft
+          Projects
         </span>
-      </div>
+      </div> */}
 
       {/* Main staggered grid */}
       <div className="grid grid-cols-12 gap-px border border-white/10">
@@ -137,14 +293,14 @@ function TheCraftSection() {
         <div className="col-span-5 border-r border-white/10 flex flex-col justify-between p-12 py-16 min-h-[560px]">
           <div>
             <p className="text-white/40 uppercase tracking-widest mb-6" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}>
-              Philosophy
+              Projects
             </p>
             <div
               className="text-white uppercase tracking-tight"
               style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(28px, 3vw, 40px)", lineHeight: "1.1" }}
             >
-              <p>LESS IS</p>
-              <p>ABSOLUTE.</p>
+              <p>BUILD WITH</p>
+              <p>INTENT.</p>
             </div>
           </div>
           <div>
@@ -152,9 +308,7 @@ function TheCraftSection() {
               className="text-white/70 mb-10"
               style={{ fontFamily: "'Playfair Display', serif", fontSize: "17px", fontStyle: "italic", lineHeight: "1.75" }}
             >
-              Precision over decoration. Every frame, every line, every
-              pixel — deliberate. The craft is not what you see; it is
-              what you feel between the cuts.
+              Every project is a balance of logic and emotion. I don’t just build interfaces. I shape experiences where motion, design, and narrative work as one seamless system.
             </p>
             <div className="border-t border-white/20 pt-6 flex items-center gap-4">
               <span className="text-white/40 uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}>
@@ -165,7 +319,7 @@ function TheCraftSection() {
                 className="text-white"
                 style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", fontStyle: "italic" }}
               >
-                Available for select editorial collaborations in 2024.
+                Open to high-impact projects and creative collaborations in 2026.
               </p>
             </div>
           </div>
@@ -183,24 +337,24 @@ function TheCraftSection() {
             </div>
             <div className="bg-[#111] flex flex-col justify-end p-8">
               <span className="text-white/30 uppercase tracking-widest block mb-3" style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}>
-                discipline
+                Journey Starts
               </span>
               <p
                 className="text-white uppercase tracking-tight"
                 style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "28px" }}
               >
-                Visual Storytelling
+               BARAKAT
               </p>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-px">
-            {["Motion", "Editorial", "Identity"].map((label, i) => (
+            {["FINANCE TALE", "DESISLE", "HOSAKSHAM"].map((label, i) => (
               <div
                 key={label}
                 className="bg-[#0a0a0a] flex flex-col justify-end p-6 h-[280px] border-t border-white/10 hover:bg-[#151515] transition-colors"
               >
                 <span className="text-white/30 text-xs uppercase tracking-widest block mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
-                  {String(i + 1).padStart(2, "0")}
+                  {String((i+1) + 1).padStart(2, "0")}
                 </span>
                 <p
                   className="text-white uppercase"
@@ -237,15 +391,15 @@ function AboutSection() {
               className="text-[#1a1c1c] uppercase tracking-tight"
               style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "60px", lineHeight: "1" }}
             >
-              ABOUT
+              EXPERIENCE
             </h2>
           </div>
           <p
             className="text-[#5d5f5f]"
             style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", lineHeight: "1.75" }}
           >
-            My journey is a synthesis of technical rigor and visual storytelling.
-            I build interfaces that don't just function — they resonate.
+            My experience is shaped at the intersection of development, design, and storytelling. Over the years, I’ve worked on crafting interfaces, editing visual narratives, and building systems that are both functional and expressive.
+            From developing responsive web experiences to editing high-impact video content, my journey reflects a constant pursuit of precision, creativity, and evolution in digital craft.
           </p>
         </div>
 
@@ -457,10 +611,7 @@ function VisionaryParagraph() {
           className="text-white/70 mb-8"
           style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: "1.8" }}
         >
-          "These are the makers who refuse the ordinary — each one a world
-          unto themselves. Stone, clay, form and feeling: they are the architects
-          of a new visual language, where material meets meaning and tradition
-          becomes transformation."
+          "Creativity begins where logic finds its limits."
         </p>
         <div className="flex items-center justify-center gap-4">
           <div className="h-px w-12 bg-white/30" />
@@ -522,8 +673,10 @@ function ClientGrid() {
 ────────────────────────────────────────────────────────── */
 function CaseStudies() {
   const cases = [
-    { tag: "Visual Identity / Web", title: "NOIR ARCHIVE", img: imgProject01 },
-    { tag: "Motion Design / Interaction", title: "KINETIC FORM", img: imgProject02 },
+    { tag: "Website", title: "Barakat", img: imgProject01 },
+    { tag: "Application", title: "Finance tale", img: imgProject02},
+    { tag: "Website", title: "Desisle", img: imgProject01 },
+    { tag: "Website", title: "Hokshaksam", img: imgProject02 },
   ];
   return (
     <section className="py-[100px]">

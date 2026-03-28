@@ -1,6 +1,10 @@
-import imgArticle1 from "figma:asset/d2af2e75ee1d1a1a939b848621952bf4dec6e136.png";
-import imgArticle2 from "figma:asset/0ab7b27c61b0b3b677ab6a8d76eadb0b4e9f3aa3.png";
-import imgArticle3 from "figma:asset/5c0f310abde82f06f938c054254fa25e1c03aa6b.png";
+// ── Placeholder images (replace with real assets when ready) ──────────────────
+const imgArticle1 =
+  "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
+const imgArticle2 =
+  "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800&q=80";
+const imgArticle3 =
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80";
 
 const IMG_PROFESSIONAL =
   "https://images.unsplash.com/photo-1704382002666-5dc4fbb522c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";

@@ -1,16 +1,29 @@
 import svgPaths from "./svg-10gc8g962a";
-import imgScreen2 from "figma:asset/0a1809ed7d458bcaac683eb0f3fa9bbe78c2203c.png";
-import imgWorkEnvironment from "figma:asset/e317e51f2b3673ec21234f517c00abd2c4eeefbc.png";
-import imgProject01 from "figma:asset/4414c28aa77abf9008fa1c9c93973d28bea54256.png";
-import imgProject02 from "figma:asset/3d233458dc5e7c402836788b2c7301e3e3c6a3cc.png";
-import imgFilm1 from "figma:asset/b888fc9179b397bedabb0f9c64e555cb1320a4fc.png";
-import imgFilm2 from "figma:asset/68ab126be1a847da8c5c4b71e67afd0f5070a635.png";
-import imgFilm3 from "figma:asset/ef1164c0bee74ff6af16acd5e3bd4ab6ea18231d.png";
-import imgFilm4 from "figma:asset/3fba52fa361b0bf09c8b9525c836b3373f228fd2.png";
-import imgFilm6 from "figma:asset/04a6c1a51fd087d37c6c0295ecf2709e94be5335.png";
-import imgArticle1 from "figma:asset/d2af2e75ee1d1a1a939b848621952bf4dec6e136.png";
-import imgArticle2 from "figma:asset/0ab7b27c61b0b3b677ab6a8d76eadb0b4e9f3aa3.png";
-import imgArticle3 from "figma:asset/5c0f310abde82f06f938c054254fa25e1c03aa6b.png";
+// ── Placeholder images (replace with real assets when ready) ──────────────────
+const imgScreen2 =
+  "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80";
+const imgWorkEnvironment =
+  "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80";
+const imgProject01 =
+  "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
+const imgProject02 =
+  "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=1200&q=80";
+const imgFilm1 =
+  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80";
+const imgFilm2 =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80";
+const imgFilm3 =
+  "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=800&q=80";
+const imgFilm4 =
+  "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80";
+const imgFilm6 =
+  "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800&q=80";
+const imgArticle1 =
+  "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
+const imgArticle2 =
+  "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800&q=80";
+const imgArticle3 =
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80";
 
 function Heading() {
   return (
