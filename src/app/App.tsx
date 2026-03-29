@@ -6,9 +6,12 @@ import { LinkedInSection } from "./components/LinkedInSection";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import BlogPage from "./pages/BlogPage";
 import BackupPage from "./pages/BackupPage";
+import imgScreen2 from "../assets/IMG_0913.JPG.jpeg";
+import IMG_AYAKA from "../assets/IMG_1579.JPG.jpeg";
+import IMG_MATEO from "../assets/1742325442796.jpg";
+
+
 // ── Placeholder images (replace with real assets when ready) ──────────────────
-const imgScreen2 =
-  "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80";
 const imgWorkEnvironment =
   "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80";
 const imgProject01 =
@@ -25,14 +28,11 @@ const imgArticle3 =
 
 
 // Unsplash portrait images for Meet the Visionary
-const IMG_AYAKA =
-  "https://images.unsplash.com/photo-1701163802894-99fa45f1c83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
+
 const IMG_ELIAS =
   "https://images.unsplash.com/photo-1638474368314-59198edde028?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
 const IMG_LAILA =
   "https://images.unsplash.com/photo-1737554757008-b259fad19c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
-const IMG_MATEO =
-  "https://images.unsplash.com/photo-1674002352912-9bb3fbf3f870?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
 
 /* ──────────────────────────────────────────────────────────
    NAV BAR
@@ -51,8 +51,7 @@ function NavBar() {
     <>
       {/* ── Main bar ── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black md:px-8 px-5"
-        style={{ height: "72px", display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center" }}
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black md:px-8 px-5 flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center h-[72px]"
       >
         {/* Logo – far left */}
         <Link
@@ -63,20 +62,28 @@ function NavBar() {
           SRICHARAN
         </Link>
 
-        {/* Centre group: LEFT links | Toggle | RIGHT links */}
+        {/* Right group: LEFT links | Toggle | RIGHT links */}
         <div className="flex items-center" style={{ gap: 0 }}>
           {/* Left links */}
-          <div className="hidden md:flex items-center gap-8 pr-6">
-            {["WORK", "EXPERIENCE"].map((label) => (
-              <a
-                key={label}
-                href="#"
-                className="text-black uppercase hover:opacity-60 transition-opacity"
-                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
-              >
-                {label}
-              </a>
-            ))}
+          <div 
+            className="hidden md:flex items-center overflow-hidden transition-all duration-[600ms] ease-in-out"
+            style={{ maxWidth: open ? "0px" : "250px", opacity: open ? 0 : 1 }}
+          >
+            <div 
+              className="flex items-center gap-8 pr-6 whitespace-nowrap transition-transform duration-[600ms] ease-in-out"
+              style={{ transform: open ? "translateX(40px)" : "translateX(0)" }}
+            >
+              {["WORK", "EXPERIENCE"].map((label) => (
+                <a
+                  key={label}
+                  href="#"
+                  className="text-black uppercase hover:opacity-60 transition-opacity"
+                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Toggle button */}
@@ -84,47 +91,51 @@ function NavBar() {
             id="nav-toggle"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="w-14 h-14 border border-black flex flex-col items-center justify-center gap-[5px] cursor-pointer transition-colors"
-            style={{ background: open ? "#000" : "#fff", flexShrink: 0 }}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border flex flex-col items-center justify-center gap-[6px] cursor-pointer transition-colors relative z-10"
+            style={{ 
+              background: open ? "#000" : "#fff",
+              borderColor: open ? "#000" : "rgba(0,0,0,0.1)",
+              flexShrink: 0 
+            }}
           >
             <span
               style={{
                 display: "block", width: "18px", height: "1.5px",
-                background: open ? "#fff" : "#000",
-                transform: open ? "translateY(6.5px) rotate(45deg)" : "none",
+                background: open ? "#fff" : "#5d5f5f",
+                transform: open ? "translateY(3.75px) rotate(45deg)" : "none",
                 transition: "transform 0.3s, background 0.3s",
               }}
             />
             <span
               style={{
                 display: "block", width: "18px", height: "1.5px",
-                background: open ? "#fff" : "#000",
-                opacity: open ? 0 : 1,
-                transition: "opacity 0.2s",
-              }}
-            />
-            <span
-              style={{
-                display: "block", width: "18px", height: "1.5px",
-                background: open ? "#fff" : "#000",
-                transform: open ? "translateY(-6.5px) rotate(-45deg)" : "none",
+                background: open ? "#fff" : "#5d5f5f",
+                transform: open ? "translateY(-3.75px) rotate(-45deg)" : "none",
                 transition: "transform 0.3s, background 0.3s",
               }}
             />
           </button>
 
           {/* Right links */}
-          <div className="hidden md:flex items-center gap-8 pl-6">
-            {["BLOG", "CONTACT"].map((label) => (
-              <Link
-                key={label}
-                to={label === "BLOG" ? "/blog" : "#"}
-                className="text-black uppercase hover:opacity-60 transition-opacity"
-                style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
-              >
-                {label}
-              </Link>
-            ))}
+          <div 
+            className="hidden md:flex items-center overflow-hidden transition-all duration-[600ms] ease-in-out"
+            style={{ maxWidth: open ? "0px" : "250px", opacity: open ? 0 : 1 }}
+          >
+            <div 
+              className="flex items-center gap-8 pl-6 whitespace-nowrap transition-transform duration-[600ms] ease-in-out"
+              style={{ transform: open ? "translateX(-40px)" : "translateX(0)" }}
+            >
+              {["BLOG", "CONTACT"].map((label) => (
+                <Link
+                  key={label}
+                  to={label === "BLOG" ? "/blog" : "#"}
+                  className="text-black uppercase hover:opacity-60 transition-opacity"
+                  style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "13px", letterSpacing: "0.06em" }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -133,8 +144,9 @@ function NavBar() {
       </nav>
 
       {/* ── Fullscreen overlay menu ── */}
-      <div
-        style={{
+      <div className="md:hidden">
+        <div
+          style={{
           position: "fixed",
           inset: 0,
           zIndex: 49,
@@ -203,6 +215,7 @@ function NavBar() {
         >
           SRICHARAN · PORTFOLIO 2024
         </p>
+      </div>
       </div>
     </>
   );

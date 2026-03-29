@@ -39,10 +39,10 @@ const profileStats = [
 
 export function LinkedInSection() {
   return (
-    <section className="bg-[#f3f3f4] border-t border-black/10">
+    <section className="bg-[#f3f3f4] border-t border-black/10 w-full overflow-hidden">
       {/* ── TOP LABEL BAND ── */}
-      <div className="border-b border-black/10 px-12 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-6">
+      <div className="border-b border-black/10 px-4 md:px-12 py-4 md:py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 w-full">
+        <div className="flex items-center gap-4 sm:gap-6">
           <span
             className="text-[#5d5f5f] uppercase tracking-[4px]"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
@@ -77,11 +77,11 @@ export function LinkedInSection() {
         </a>
       </div>
 
-      <div className="px-12 pt-16 pb-20">
+      <div className="px-4 md:px-12 pt-10 md:pt-16 pb-12 md:pb-20 w-full">
         {/* ── HEADER GRID: Title left, Profile card right ── */}
-        <div className="grid grid-cols-12 gap-12 mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-10 md:mb-16 items-start w-full">
           {/* Title */}
-          <div className="col-span-6">
+          <div className="col-span-1 lg:col-span-6 w-full max-w-full">
             <p
               className="text-[#5d5f5f] uppercase tracking-widest mb-4"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
@@ -125,8 +125,8 @@ export function LinkedInSection() {
           </div>
 
           {/* LinkedIn Profile card */}
-          <div className="col-span-6">
-            <div className="border border-black/15 bg-white p-8 flex flex-col gap-6">
+          <div className="col-span-1 lg:col-span-6 w-full max-w-full">
+            <div className="border border-black/15 bg-white p-6 sm:p-8 flex flex-col gap-6 w-full">
               {/* Profile header */}
               <div className="flex items-start gap-5">
                 <div className="w-16 h-16 overflow-hidden flex-shrink-0" style={{ border: "1px solid rgba(0,0,0,0.1)" }}>
@@ -162,15 +162,15 @@ export function LinkedInSection() {
               <div className="border-t border-black/10" />
 
               {/* Stats row */}
-              <div className="flex items-center gap-0">
+              <div className="flex items-center justify-between gap-4 sm:gap-0">
                 {profileStats.map((stat, i) => (
                   <div
                     key={stat.label}
-                    className={`flex-1 flex flex-col gap-1 ${i < profileStats.length - 1 ? "border-r border-black/10 pr-6 mr-6" : ""}`}
+                    className={`flex-1 flex flex-col gap-1 ${i < profileStats.length - 1 ? "sm:border-r border-black/10 sm:pr-6 sm:mr-6" : ""}`}
                   >
                     <span
                       className="text-[#1a1c1c]"
-                      style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "26px", lineHeight: "1" }}
+                      style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(20px, 4vw, 26px)", lineHeight: "1" }}
                     >
                       {stat.value}
                     </span>
@@ -229,7 +229,7 @@ export function LinkedInSection() {
         </div>
 
         {/* ── DIVIDER LABEL ── */}
-        <div className="flex items-center gap-6 mb-10">
+        <div className="flex items-center gap-4 sm:gap-6 mb-8 md:mb-10 w-full overflow-hidden">
           <span
             className="text-[#5d5f5f] uppercase tracking-widest"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
@@ -246,12 +246,11 @@ export function LinkedInSection() {
         </div>
 
         {/* ── POSTS GRID ── */}
-        <div className="grid grid-cols-3 gap-px border border-black/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full">
           {linkedInPosts.map((post, i) => (
             <article
               key={post.id}
-              className={`bg-white flex flex-col group transition-colors ${!post.iframeSrc ? "cursor-pointer hover:bg-[#f9f9f9]" : ""
-                } ${i < linkedInPosts.length - 1 ? "border-r border-black/10" : ""}`}
+              className={`bg-white border border-black/10 rounded-[8px] flex flex-col group transition-colors overflow-hidden shadow-sm ${!post.iframeSrc ? "cursor-pointer hover:bg-[#f9f9f9]" : ""}`}
             >
               {post.iframeSrc ? (
                 <div className="relative w-full h-[560px] overflow-hidden group/iframe bg-white">
@@ -358,17 +357,17 @@ export function LinkedInSection() {
         </div>
 
         {/* ── BOTTOM CTA BAR ── */}
-        <div className="border-t border-black/10 mt-12 pt-10 flex items-center justify-between">
-          <div className="flex items-center gap-6">
+        <div className="border-t border-black/10 mt-8 md:mt-12 pt-8 md:pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 w-full">
+          <div className="flex items-center gap-4 sm:gap-6 max-w-full">
             <span
-              className="text-[#5d5f5f] uppercase tracking-widest"
+              className="text-[#5d5f5f] uppercase tracking-widest whitespace-nowrap"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
             >
               Read more on LinkedIn
             </span>
-            <div className="h-px w-20 bg-black/20" />
+            <div className="h-px w-12 sm:w-20 bg-black/20" />
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-full">
             {/* Writing desk image — decorative strip */}
             <div className="h-10 w-24 overflow-hidden">
               <img
