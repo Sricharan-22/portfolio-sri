@@ -74,7 +74,7 @@ export function NavBar() {
       <span
         style={{
           fontFamily: "'Playfair Display', serif",
-          fontStyle: "italic",
+          fontStyle: "normal",
           fontWeight: 400,
           fontSize: "0.55em",
           color: "rgba(255,255,255,0.3)",
@@ -324,7 +324,7 @@ export function NavBar() {
             style={{
               position: "relative",
               fontFamily: "'Playfair Display', serif",
-              fontStyle: "italic",
+              fontStyle: "normal",
               color: "rgba(255,255,255,0.32)",
               fontSize: "13px",
               letterSpacing: "2px",

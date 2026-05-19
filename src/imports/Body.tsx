@@ -39,7 +39,7 @@ function Heading() {
 function Container1() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[512px] relative shrink-0 w-[512px]" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[96px] justify-center leading-[0] not-italic relative shrink-0 text-[#5d5f5f] text-[24px] w-[495.53px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[96px] justify-center leading-[0] not-italic relative shrink-0 text-[#5d5f5f] text-[24px] w-[495.53px]">
         <p className="leading-[32px] mb-0">Welcome to a visual journey that transcends</p>
         <p className="leading-[32px] mb-0">time and space. Discover the artistry of</p>
         <p className="leading-[32px]">moments captured in motion.</p>
@@ -267,7 +267,7 @@ function BackgroundHorizontalBorder() {
 function Container11() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-white w-full">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-white w-full">
         <p className="leading-[28px] mb-0">Available for select editorial</p>
         <p className="leading-[28px]">collaborations in 2024.</p>
       </div>
@@ -391,7 +391,7 @@ function ParagraphHorizontalBorder() {
       <div className="flex flex-col font-['Epilogue:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] relative shrink-0 text-[#1a1c1c] text-[24px] uppercase w-[378.27px]">
         <p className="leading-[32px]">Senior Interactive Developer</p>
       </div>
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[153.94px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[153.94px]">
         <p className="leading-[24px]">Global Design House</p>
       </div>
     </div>
@@ -416,7 +416,7 @@ function ParagraphHorizontalBorder1() {
       <div className="flex flex-col font-['Epilogue:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] relative shrink-0 text-[#1a1c1c] text-[24px] uppercase w-[293.52px]">
         <p className="leading-[32px]">Creative Technologist</p>
       </div>
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[161.44px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[161.44px]">
         <p className="leading-[24px]">Studio Noir Collective</p>
       </div>
     </div>
@@ -441,7 +441,7 @@ function ParagraphHorizontalBorder2() {
       <div className="flex flex-col font-['Epilogue:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] relative shrink-0 text-[#1a1c1c] text-[24px] uppercase w-[259.92px]">
         <p className="leading-[32px]">Frontend Architect</p>
       </div>
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[119.64px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[24px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[16px] w-[119.64px]">
         <p className="leading-[24px]">Avenue Creative</p>
       </div>
     </div>
@@ -491,7 +491,7 @@ function Container21() {
 function Container22() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[12px] w-[173.56px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[12px] w-[173.56px]">
         <p className="leading-[16px]">SELECTED CLIENTS 2018-2024</p>
       </div>
     </div>
@@ -788,7 +788,7 @@ function Heading6() {
 function Container34() {
   return (
     <div className="content-stretch flex flex-col items-start opacity-60 relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-white w-full">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-white w-full">
         <p className="leading-[28px] mb-0">Outside of code, I explore the world through 24 frames</p>
         <p className="leading-[28px]">per second. Video editing is my rhythmic meditation.</p>
       </div>
@@ -978,7 +978,7 @@ function Container38() {
 function Container39() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[198px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[36px] text-center w-[839.34px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[198px] justify-center leading-[0] not-italic relative shrink-0 text-[#1a1c1c] text-[36px] text-center w-[839.34px]">
         <p className="leading-[49.5px] mb-0">{`"Sricharan doesn't just build websites; he builds`}</p>
         <p className="leading-[49.5px] mb-0">digital monuments. His attention to typographic</p>
         <p className="leading-[49.5px] mb-0">detail and structural rhythm is unparalleled in the</p>
@@ -1451,7 +1451,7 @@ function MainContent() {
 function Container60() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[318.83px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[318.83px]">
         <p className="leading-[16px]">© 2024 DIGITAL NOIR. ALL RIGHTS RESERVED.</p>
       </div>
     </div>
@@ -1461,7 +1461,7 @@ function Container60() {
 function Link1() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Link">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[69.08px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[69.08px]">
         <p className="leading-[16px]">Instagram</p>
       </div>
     </div>
@@ -1471,7 +1471,7 @@ function Link1() {
 function Link2() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Link">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[58.97px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[58.97px]">
         <p className="leading-[16px]">LinkedIn</p>
       </div>
     </div>
@@ -1481,7 +1481,7 @@ function Link2() {
 function Link3() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Link">
-      <div className="flex flex-col font-['Noto_Serif:Regular_Italic',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[38.48px]">
+      <div className="flex flex-col font-['Noto_Serif:Regular',sans-serif] h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] tracking-[1.2px] w-[38.48px]">
         <p className="leading-[16px]">Email</p>
       </div>
     </div>

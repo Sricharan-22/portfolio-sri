@@ -32,18 +32,18 @@ const profileStats = [
 
 export function LinkedInSection() {
   return (
-    <section className="bg-[#f3f3f4] border-t border-black/10 w-full overflow-hidden">
-      <div className="border-b border-black/10 px-4 md:px-12 py-4 md:py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 w-full">
+    <section className="relative w-full overflow-hidden border-t border-white/10 bg-black">
+      <div className="relative z-10 border-b border-white/10 px-4 md:px-12 py-4 md:py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 w-full">
         <div className="flex items-center gap-4 sm:gap-6">
           <span
-            className="text-[#5d5f5f] uppercase tracking-[4px]"
+            className="text-white/42 uppercase tracking-[4px]"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
           >
             Developer Presence
           </span>
-          <div className="w-px h-4 bg-black/20" />
+          <div className="w-px h-4 bg-white/18" />
           <span
-            className="text-[#5d5f5f] uppercase tracking-[4px]"
+            className="text-white/42 uppercase tracking-[4px]"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
           >
             LinkedIn
@@ -51,30 +51,30 @@ export function LinkedInSection() {
         </div>
         <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 group">
           <span
-            className="text-[#1a1c1c]/60 group-hover:text-[#1a1c1c] transition-colors"
+            className="text-white/58 transition-colors group-hover:text-white"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", letterSpacing: "1.5px" }}
           >
             @sricharan-dev
           </span>
-          <div className="w-4 h-4 border border-black/30 flex items-center justify-center group-hover:border-black/60 transition-colors rotate-45">
+          <div className="w-4 h-4 border border-white/25 flex items-center justify-center group-hover:border-white/60 transition-colors rotate-45">
             <svg width="6" height="6" viewBox="0 0 8 8" fill="none">
-              <path d="M1 7L7 1M7 1H2M7 1V6" stroke="#1a1c1c" strokeWidth="1.2" />
+              <path d="M1 7L7 1M7 1H2M7 1V6" stroke="white" strokeWidth="1.2" />
             </svg>
           </div>
         </a>
       </div>
 
-      <div className="px-4 md:px-12 pt-10 md:pt-16 pb-12 md:pb-20 w-full">
+      <div className="relative z-10 px-4 md:px-12 pt-10 md:pt-16 pb-12 md:pb-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-10 md:mb-16 items-start w-full">
           <div className="col-span-1 lg:col-span-6 w-full max-w-full">
             <p
-              className="text-[#5d5f5f] uppercase tracking-widest mb-4"
+              className="text-white/42 uppercase tracking-widest mb-4"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
             >
               Engineering Notes & Industry
             </p>
             <h2
-              className="text-[#1a1c1c] uppercase tracking-tight"
+              className="text-white uppercase tracking-tight"
               style={{
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 900,
@@ -82,42 +82,42 @@ export function LinkedInSection() {
                 lineHeight: "0.95",
               }}
             >
-              MY{" "}
+              THINKING{" "}
               <span
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 400,
-                  fontStyle: "italic",
+                  fontStyle: "normal",
                 }}
-              >
-                posts &
-              </span>
-              <br />
-              PRESENCE
+                >
+                 OUT
+                </span>
+                <br />
+              LOUD.
             </h2>
             <p
-              className="text-[#5d5f5f] mt-8 max-w-md"
+              className="text-white/62 mt-8 max-w-md"
               style={{
                 fontFamily: "'Playfair Display', serif",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontSize: "17px",
                 lineHeight: "1.75",
               }}
             >
-              I share my journey as a developer through LinkedIn posts and dev-focused
-              videos, documenting real problems, solutions, and lessons learned while
-              building applications. My content is centered around coding, debugging,
-              system thinking, and helping others understand how real-world
-              development works.
+              I write about the decisions behind the work, not the work itself. Why a
+              particular architecture held up under load. What the brief said versus
+              what the build required. Where planning saved time and where it did
+              not. Practical observations from someone currently in production, not
+              reflecting on it from a distance.
             </p>
           </div>
 
           <div className="col-span-1 lg:col-span-6 w-full max-w-full">
-            <div className="border border-black/15 bg-white p-6 sm:p-8 flex flex-col gap-6 w-full">
+            <div className="border border-white/12 bg-white/[0.055] p-6 sm:p-8 flex flex-col gap-6 w-full rounded-[28px] backdrop-blur">
               <div className="flex items-start gap-5">
                 <div
-                  className="w-16 h-16 overflow-hidden flex-shrink-0"
-                  style={{ border: "1px solid rgba(0,0,0,0.1)" }}
+                  className="w-16 h-16 overflow-hidden flex-shrink-0 rounded-2xl"
+                  style={{ border: "1px solid rgba(255,255,255,0.12)" }}
                 >
                   <img
                     src={IMG_PROFESSIONAL}
@@ -127,36 +127,36 @@ export function LinkedInSection() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <span
-                    className="text-[#1a1c1c]"
+                    className="text-white"
                     style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "18px" }}
                   >
                     Sricharan
                   </span>
                   <span
-                    className="text-[#5d5f5f]"
-                    style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "14px" }}
+                    className="text-white/58"
+                    style={{ fontFamily: "'Playfair Display', serif", fontStyle: "normal", fontSize: "14px" }}
                   >
-                    Frontend Developer | Web Engineer
+                    Frontend Developer - React & Next.js
                   </span>
                   <span
-                    className="text-[#5d5f5f] uppercase tracking-wide mt-1"
+                    className="text-white/42 uppercase tracking-wide mt-1"
                     style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
                   >
-                    Desisle - Bangalore, India
+                    I plan the architecture before I open an editor - Building at Desisle LLP
                   </span>
                 </div>
               </div>
 
-              <div className="border-t border-black/10" />
+              <div className="border-t border-white/10" />
 
               <div className="flex items-center justify-between gap-4 sm:gap-0">
                 {profileStats.map((stat, index) => (
                   <div
                     key={stat.label}
-                    className={`flex-1 flex flex-col gap-1 ${index < profileStats.length - 1 ? "sm:border-r border-black/10 sm:pr-6 sm:mr-6" : ""}`}
+                    className={`flex-1 flex flex-col gap-1 ${index < profileStats.length - 1 ? "sm:border-r border-white/10 sm:pr-6 sm:mr-6" : ""}`}
                   >
                     <span
-                      className="text-[#1a1c1c]"
+                      className="text-white"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 900,
@@ -167,7 +167,7 @@ export function LinkedInSection() {
                       {stat.value}
                     </span>
                     <span
-                      className="text-[#5d5f5f] uppercase tracking-widest"
+                      className="text-white/42 uppercase tracking-widest"
                       style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
                     >
                       {stat.label}
@@ -176,7 +176,7 @@ export function LinkedInSection() {
                 ))}
               </div>
 
-              <div className="border-t border-black/10" />
+              <div className="border-t border-white/10" />
 
               <a
                 href="https://linkedin.com"
@@ -185,25 +185,25 @@ export function LinkedInSection() {
                 className="flex items-center justify-between group"
               >
                 <div className="flex items-center gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-[#1a1c1c]">
-                    <rect x="2" y="2" width="20" height="20" rx="4" fill="#1a1c1c" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white">
+                    <rect x="2" y="2" width="20" height="20" rx="4" fill="white" />
                     <path
                       d="M7 10v7M7 7v.5M12 17v-3.5c0-1.5.5-2.5 2-2.5s2 1 2 2.5V17M12 10v7"
-                      stroke="white"
+                      stroke="#1a1c1c"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                     />
                   </svg>
                   <span
-                    className="text-[#1a1c1c] uppercase tracking-widest"
+                    className="text-white uppercase tracking-widest"
                     style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
                   >
-                    Connect on LinkedIn
+                    Follow - LinkedIn
                   </span>
                 </div>
-                <div className="w-4 h-4 border border-black/30 flex items-center justify-center group-hover:border-black/60 transition-colors rotate-45">
+                <div className="w-4 h-4 border border-white/25 flex items-center justify-center group-hover:border-white/60 transition-colors rotate-45">
                   <svg width="6" height="6" viewBox="0 0 8 8" fill="none">
-                    <path d="M1 7L7 1M7 1H2M7 1V6" stroke="#1a1c1c" strokeWidth="1.2" />
+                    <path d="M1 7L7 1M7 1H2M7 1V6" stroke="white" strokeWidth="1.2" />
                   </svg>
                 </div>
               </a>
@@ -213,15 +213,15 @@ export function LinkedInSection() {
 
         <div className="flex items-center gap-4 sm:gap-6 mb-8 md:mb-10 w-full overflow-hidden">
           <span
-            className="text-[#5d5f5f] uppercase tracking-widest"
+            className="text-white/42 uppercase tracking-widest"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
           >
             Featured Posts
           </span>
-          <div className="flex-1 h-px bg-black/15" />
+          <div className="flex-1 h-px bg-white/12" />
           <span
-            className="text-[#5d5f5f]"
-            style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "12px" }}
+            className="text-white/48"
+            style={{ fontFamily: "'Playfair Display', serif", fontStyle: "normal", fontSize: "12px" }}
           >
             2026 - Engineering & Delivery
           </span>
@@ -231,9 +231,9 @@ export function LinkedInSection() {
           {linkedInPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white border border-black/10 rounded-[8px] flex flex-col group transition-colors overflow-hidden shadow-sm"
+              className="bg-white/[0.055] border border-white/12 rounded-[22px] flex flex-col group transition-colors overflow-hidden shadow-[0_18px_54px_rgba(0,0,0,0.22)]"
             >
-              <div className="relative w-full h-[560px] overflow-hidden group/iframe bg-white">
+              <div className="relative w-full h-[560px] overflow-hidden group/iframe bg-white rounded-[20px]">
                 <iframe
                   src={post.iframeSrc}
                   height="100%"
@@ -263,25 +263,25 @@ export function LinkedInSection() {
           ))}
         </div>
 
-        <div className="border-t border-black/10 mt-8 md:mt-12 pt-8 md:pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 w-full">
+        <div className="border-t border-white/10 mt-8 md:mt-12 pt-8 md:pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 w-full">
           <div className="flex items-center gap-4 sm:gap-6 max-w-full">
             <span
-              className="text-[#5d5f5f] uppercase tracking-widest whitespace-nowrap"
+              className="text-white/42 uppercase tracking-widest whitespace-nowrap"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
             >
               Read more on LinkedIn
             </span>
-            <div className="h-px w-12 sm:w-20 bg-black/20" />
+            <div className="h-px w-12 sm:w-20 bg-white/16" />
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-full">
             <div className="h-10 w-24 overflow-hidden">
               <img src={IMG_WRITING_DESK} alt="" className="w-full h-full object-cover grayscale opacity-40" />
             </div>
             <a
-              href="https://linkedin.com"
+                href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 border border-black/20 hover:border-black/50 transition-all px-6 py-3 group"
+              className="flex items-center gap-4 border border-white/16 bg-white/[0.055] hover:border-white/42 transition-all px-6 py-3 group"
             >
               <svg
                 width="16"
@@ -290,19 +290,19 @@ export function LinkedInSection() {
                 fill="none"
                 className="opacity-60 group-hover:opacity-100 transition-opacity"
               >
-                <rect x="2" y="2" width="20" height="20" rx="4" fill="#1a1c1c" />
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="white" />
                 <path
                   d="M7 10v7M7 7v.5M12 17v-3.5c0-1.5.5-2.5 2-2.5s2 1 2 2.5V17M12 10v7"
-                  stroke="white"
+                  stroke="#1a1c1c"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                 />
               </svg>
               <span
-                className="text-[#1a1c1c]/60 group-hover:text-[#1a1c1c] transition-colors uppercase tracking-widest"
+                className="text-white/58 group-hover:text-white transition-colors uppercase tracking-widest"
                 style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px" }}
               >
-                View LinkedIn Profile
+                Follow - LinkedIn
               </span>
             </a>
           </div>

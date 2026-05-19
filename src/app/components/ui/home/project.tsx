@@ -18,7 +18,7 @@ export function TheCraftSection() {
               className="text-white/40 uppercase tracking-widest mb-6"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px" }}
             >
-              Projects
+              Selected Work
             </p>
             <div
               className="text-white uppercase tracking-tight"
@@ -29,8 +29,8 @@ export function TheCraftSection() {
                 lineHeight: "1.1",
               }}
             >
-              <p>BUILD WITH</p>
-              <p>INTENT.</p>
+              <p>PRODUCTS</p>
+              <p>WORTH SHIPPING.</p>
             </div>
           </div>
           <div className="mt-10 md:mt-0">
@@ -39,13 +39,15 @@ export function TheCraftSection() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: "17px",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 lineHeight: "1.75",
               }}
             >
-              Every project here is grounded in implementation. I focus on component
-              structure, responsive behavior, performance, and shipping interfaces
-              that solve real product problems in production.
+              These are not mockups. They are not concept pieces. Every project in
+              this archive is live, used by real people, and built with a specific
+              outcome in mind beyond "make it look good". The category changes -
+              SaaS, corporate, content - but the process does not: understand the
+              product first, plan the architecture second, write the code third.
             </p>
             <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row md:items-center gap-4">
               <span
@@ -60,10 +62,11 @@ export function TheCraftSection() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "15px",
-                  fontStyle: "italic",
+                  fontStyle: "normal",
                 }}
               >
-                Open to frontend, product engineering, and web application work in 2026.
+                Currently engaged. Selectively available for new work starting soon.
+                If the project is worth planning properly, reach out.
               </p>
             </div>
           </div>

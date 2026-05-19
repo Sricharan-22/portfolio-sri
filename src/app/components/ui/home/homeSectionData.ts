@@ -1,4 +1,4 @@
-import imgScreen2 from "../../../../assets/IMG_0913.JPG.jpeg";
+import imgScreen2 from "../../../../assets/hero-banner.webp";
 import IMG_AYAKA from "../../../../assets/IMG_1579.JPG.jpeg";
 import IMG_MATEO from "../../../../assets/1742325442796.jpg";
 
@@ -17,10 +17,9 @@ export const HOME_SECTION_IDS = {
 } as const;
 
 export const NAV_ITEMS = [
-  { label: "WORK", side: "left", sectionId: HOME_SECTION_IDS.work },
+  { label: "TOOL", side: "left", sectionId: HOME_SECTION_IDS.work },
   { label: "EXPERIENCE", side: "left", sectionId: HOME_SECTION_IDS.experience },
-  { label: "BLOG", side: "right", to: "/blog" },
-  { label: "CONTACT", side: "right", sectionId: HOME_SECTION_IDS.contact },
+  { label: "WORK", side: "right", sectionId: HOME_SECTION_IDS.work },
 ] as const;
 
 export const HERO_IMAGE = imgScreen2;
@@ -28,54 +27,86 @@ export const HERO_SOCIALS = ["YT", "IG", "FB", "X"] as const;
 
 export const HERO_STATS = [
   {
-    title: "End-to-End",
-    description:
-      "From idea to code to deployment - handling the complete development lifecycle.",
+    title: "Websites & SaaS",
+    description: "Two modes, one mindset",
   },
   {
-    title: "Frontend Systems",
-    description:
-      "Turning product requirements into reusable components, stable layouts, and scalable UI structure.",
+    title: "Product-led",
+    description: "Not just feature-complete",
   },
 ] as const;
 
 export const CURRENT_EXPERIENCE = {
   company: "Desisle",
   legalName: "Desisle LLP",
-  location: "HSR Layout, Bangalore",
+  location: "India",
   role: "Frontend Developer",
-  period: "Current Chapter",
+  period: "Role 01 - Current Position",
   timeline: "Feb 2025 - Present",
+  companyType: "Product Studio - SaaS & Web",
   studioUrl: "https://www.desisle.com/",
   summary:
-    "My professional growth is being shaped inside one studio where I work directly on frontend builds, reusable components, responsive layouts, debugging, and production-ready delivery. Staying in one environment has helped me go deeper into implementation instead of only collecting titles.",
+    "Desisle LLP is a lean product studio that designs and builds SaaS products and web platforms for clients. Working here means operating across the entire frontend surface of a product - from the first wireframe conversation to the post-launch performance audit. There is no handoff between design and development because that gap does not exist in a small team. You own the output entirely.",
+  projectSummary:
+    "In a little over a year, four client products built from the ground up: a multi-brand corporate platform, a finance content platform, a SaaS product website, and the studio's own site. Each one is live. Each one taught me something the previous one did not.",
   statement:
-    "One company. Real shipping work. Better instincts for architecture, maintainability, and delivery.",
+    "Started with a client demo in a one-month internship. Currently four live products into a studio role. The trajectory is clear enough.",
 } as const;
+
+export const INTERNSHIP_EXPERIENCE = {
+  company: "Nexus Info",
+  legalName: "Nexus Info",
+  location: "Virtual",
+  role: "Web Development Intern",
+  period: "Role 02 - Internship",
+  timeline: "Jul 15, 2024 - Aug 15, 2024",
+  duration: "1 month",
+  type: "Virtual Internship - Web Development",
+  summary:
+    "A one-month virtual internship that covered more ground than the duration suggests. The first two weeks were spent building and delivering a standalone frontend project - scoped, executed, and shipped independently. The remaining time went into something larger: a full-stack website built end to end, frontend and backend, as part of a client demo project.",
+  outcome:
+    "The internship confirmed what kind of developer I was becoming - one who moves from requirement to working product without needing the path to be fully laid out first. Nexus Info certified the completion with a note on exceptional dedication and a proactive approach to challenges. Those words mean more when you know what the five weeks actually contained.",
+  certificate: "Certified by Nexus Info - Web Development - July 15 - August 15, 2024",
+} as const;
+
+export const INTERNSHIP_BUILDS = [
+  {
+    label: "Weeks 1-2",
+    value: "Standalone frontend project - scoped and delivered independently",
+  },
+  {
+    label: "Weeks 3-4",
+    value: "Full end-to-end website - frontend and backend, client demo project",
+  },
+  {
+    label: "Outcome",
+    value: "Certified completion - recognised for exceptional skills and dedication",
+  },
+] as const;
 
 export const EXPERIENCE_PILLARS = [
   {
-    title: "Frontend Engineering",
+    title: "Planning as a Discipline",
     description:
-      "Building responsive interfaces, reusable components, and polished web flows that hold up in production.",
+      "I do not open a code editor until I understand what I am building and why. That means reading the brief, mapping the component surface, identifying where complexity will concentrate, and deciding how to contain it before writing a single line. It adds an hour at the start. It saves a week in the middle.",
   },
   {
-    title: "System Building",
+    title: "React & Next.js Systems",
     description:
-      "Turning repeated requirements into cleaner structures, scalable sections, and maintainable implementation patterns.",
+      "Not just knowing the API - knowing when to reach for it and when not to. Server Components, App Router architecture, data fetching patterns, bundle strategy. I treat the framework as a set of decisions, not a set of conventions to follow by default.",
   },
   {
-    title: "Problem Solving",
+    title: "Full-Stack Awareness",
     description:
-      "Working through bugs, layout edge cases, and product constraints until the final experience is stable and usable.",
+      "Frontend decisions do not exist in isolation. Having built end-to-end - including backend - means I understand what the API contract needs to look like before it exists, and I write frontend code that does not create avoidable problems for the layer beneath it.",
   },
 ] as const;
 
 export const EXPERIENCE_STUDIO_PROFILE = [
-  { label: "Studio", value: "Desisle" },
-  { label: "Model", value: "SaaS Product Studio" },
-  { label: "Role", value: "Frontend Developer" },
-  { label: "Focus", value: "React, UI Systems & Delivery" },
+  { label: "01", value: "Lean team structure - high individual ownership" },
+  { label: "02", value: "SaaS and corporate web focus" },
+  { label: "03", value: "End-to-end product delivery, not component-level contribution" },
+  { label: "04", value: "Multiple live products shipped per year" },
 ] as const;
 
 export const EXPERIENCE_SOCIALS = [
@@ -93,38 +124,49 @@ export const EXPERIENCE_SOCIALS = [
 
 export const EXPERIENCE_RECOGNITION = [
   {
-    title: "Component-Driven Delivery",
+    title: "Four Production Projects",
     description:
-      "The work relies on reusable sections, cleaner implementation patterns, and frontend consistency instead of one-off page building.",
+      "Four production projects shipped in twelve months, each on schedule and currently live. No project has required a post-launch architectural rework.",
   },
 ] as const;
 
 export const VISIONARY_PEOPLE = [
   {
     id: "01",
-    name: "Visual Stories",
-    discipline: "Photography",
+    name: "Photography",
+    discipline: "Hobby",
+    description:
+      "I photograph the way I write code - searching for the exact composition before pressing anything. Light, geometry, and the half-second before things change.",
+    note: "Still frames. Still thinking.",
     img: IMG_AYAKA,
     offsetClassName: "md:mt-[180px]",
   },
   {
     id: "02",
-    name: "Nature Trails",
-    discipline: "Exploring Nature",
+    name: "Script writer",
+    discipline: "Hobby",
+    description:
+      "The best architectural decisions I have made happened nowhere near a keyboard. Removing yourself from the problem is often the most productive thing you can do with a hard question.",
+    note: "Words before wireframes.",
     img: IMG_ELIAS,
     offsetClassName: "md:mt-[60px]",
   },
   {
     id: "03",
-    name: "Story Drafts",
-    discipline: "Script Writing",
+    name: "Video editor",
+    discipline: "Hobby",
+    description:
+      "A script and a codebase solve the same problem: how do you move someone step by step without losing them. Editing taught me pacing, and pacing makes everything better.",
+    note: "Cut to the point.",
     img: IMG_LAILA,
     offsetClassName: "md:mt-[100px]",
   },
   {
     id: "04",
-    name: "Digital Builds",
-    discipline: "Development",
+    name: "Developer",
+    discipline: "Craft",
+    description:
+      "Client projects sharpen execution. Personal projects sharpen taste - experiments in tooling, interface patterns, and product ideas that do not fit anywhere else.",
     img: IMG_MATEO,
     offsetClassName: "md:mt-[200px]",
   },
@@ -133,13 +175,14 @@ export const VISIONARY_PEOPLE = [
 export const FOOTER_LINKS = [
   { label: "Instagram", href: "https://instagram.com" },
   { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Email", href: "mailto:hello@sricharan.dev" },
+  { label: "Email", href: "mailto:sricharananbalagan6@gmail.com" },
 ] as const;
 
 export const FOOTER_INTRO = {
-  name: "Sricharan",
-  role: "Frontend Developer at Desisle",
-  availability: "Open for frontend builds, product websites, and engineering collaborations.",
+  name: "sri charan.dev",
+  role: "Frontend Developer - React & Next.js - Product-minded engineer",
+  availability:
+    "Currently heads-down at Desisle LLP. Open to conversations about the right next thing.",
 } as const;
 
 export const FOOTER_NAV_LINKS = [
@@ -150,14 +193,14 @@ export const FOOTER_NAV_LINKS = [
 ] as const;
 
 export const FOOTER_WORDMARK = {
-  base: "builditsri",
+  base: "buildwithsri",
   prefix: "build",
-  middle: "it",
+  middle: "with",
   suffix: "sri",
   comma: ",",
   spacer: " ",
   exclamations: "!!",
-  hover: "build,it sri!!",
+  hover: "buildwith, sri!!",
 } as const;
 
 export const HOME_MEDIA = {

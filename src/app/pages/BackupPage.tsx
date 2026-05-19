@@ -23,7 +23,7 @@ function ClientGrid() {
         </span>
         <span
           className="text-[#1a1c1c]"
-          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "12px" }}
+          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "normal", fontSize: "12px" }}
         >
           SELECTED CLIENTS 2018-2024
         </span>
@@ -65,7 +65,7 @@ function FrameByFrame() {
           </div>
           <p
             className="text-white/60"
-            style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "18px", lineHeight: "1.7" }}
+            style={{ fontFamily: "'Playfair Display', serif", fontStyle: "normal", fontSize: "18px", lineHeight: "1.7" }}
           >
             Outside of code, I explore the world through 24 frames per second.
             Video editing is my rhythmic meditation.

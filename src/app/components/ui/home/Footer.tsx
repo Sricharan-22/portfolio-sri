@@ -1,16 +1,42 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import {
-  FOOTER_INTRO,
-  FOOTER_LINKS,
-  FOOTER_NAV_LINKS,
-  FOOTER_WORDMARK,
-  HOME_SECTION_IDS,
-} from "./homeSectionData";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUp } from "lucide-react";
+import { FOOTER_WORDMARK, HOME_SECTION_IDS } from "./homeSectionData";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const [wordmarkHovered, setWordmarkHovered] = useState(false);
+  const [mobileWordmarkHover, setMobileWordmarkHover] = useState<"build" | "with" | "sri" | null>(null);
+  const scrollCheckRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      document.documentElement.classList.remove("is-returning-to-hero");
+
+      if (scrollCheckRef.current) {
+        window.clearTimeout(scrollCheckRef.current);
+      }
+    };
+  }, []);
+
+  const clearReturnBlurWhenReady = () => {
+    if (window.scrollY <= 8) {
+      document.documentElement.classList.remove("is-returning-to-hero");
+      scrollCheckRef.current = null;
+      return;
+    }
+
+    scrollCheckRef.current = window.setTimeout(clearReturnBlurWhenReady, 80);
+  };
+
+  const scrollToTop = () => {
+    if (scrollCheckRef.current) {
+      window.clearTimeout(scrollCheckRef.current);
+    }
+
+    document.documentElement.classList.add("is-returning-to-hero");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollCheckRef.current = window.setTimeout(clearReturnBlurWhenReady, 120);
+  };
 
   return (
     <footer
@@ -18,108 +44,54 @@ export function Footer() {
       className="relative overflow-hidden border-t border-white/10 bg-[#070b14] text-white"
       style={{ scrollMarginTop: "96px" }}
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-70"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 36%), linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
-          backgroundSize: "auto, 80px 80px, 80px 80px",
-          backgroundPosition: "top left, center, center",
-        }}
-      />
+      <style>
+        {`
+          @keyframes footerArrowLift {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            45% { transform: translate3d(0, -8px, 0); }
+          }
 
-      <div className="relative z-10 px-6 md:px-12 pt-14 md:pt-20 pb-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_0.45fr_0.45fr] lg:gap-10">
-          <div className="max-w-xl">
-            <p
-              className="text-[#f8f1e8]"
-              style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 700, fontSize: "clamp(22px, 2vw, 28px)" }}
-            >
-              {FOOTER_INTRO.name}
-            </p>
-            <p
-              className="mt-2 text-white/72"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontStyle: "italic",
-                fontSize: "clamp(16px, 1.6vw, 19px)",
-                lineHeight: "1.65",
-              }}
-            >
-              {FOOTER_INTRO.role}
-            </p>
-            <p
-              className="mt-2 text-white/62"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(15px, 1.4vw, 17px)",
-                lineHeight: "1.75",
-              }}
-            >
-              {FOOTER_INTRO.availability}
-            </p>
-          </div>
+          @keyframes footerArrowSweep {
+            0% { transform: translateY(18px); opacity: 0; }
+            35% { opacity: 0.55; }
+            100% { transform: translateY(-18px); opacity: 0; }
+          }
 
-          <div className="flex flex-col gap-4">
-            <span
-              className="text-[#f8f1e8] uppercase tracking-[0.18em]"
-              style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "11px" }}
-            >
-              Explore
-            </span>
-            <div className="flex flex-col gap-3">
-              {FOOTER_NAV_LINKS.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  className="w-fit text-white/64 transition-all duration-300 hover:translate-x-1 hover:text-white"
-                  style={{
-                    fontFamily: "Epilogue, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(18px, 1.5vw, 24px)",
-                    lineHeight: "1.15",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+          @keyframes footerArrowRing {
+            0%, 100% { transform: scale(1); opacity: 0.35; }
+            50% { transform: scale(1.18); opacity: 0.08; }
+          }
 
-          <div className="flex flex-col gap-4">
-            <span
-              className="text-[#f8f1e8] uppercase tracking-[0.18em]"
-              style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "11px" }}
-            >
-              Connect
-            </span>
-            <div className="flex flex-col gap-3">
-              {FOOTER_LINKS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="w-fit text-white/64 transition-all duration-300 hover:translate-x-1 hover:text-white"
-                  style={{
-                    fontFamily: "Epilogue, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(18px, 1.5vw, 24px)",
-                    lineHeight: "1.15",
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+          .is-returning-to-hero main > *:not(:first-child) {
+            filter: blur(5px);
+            opacity: 0.84;
+            transform: scale(0.996);
+            transition:
+              filter 420ms ease,
+              opacity 420ms ease,
+              transform 420ms ease;
+          }
 
-        <div className="mt-16 border-t border-white/10 pt-10 md:mt-24 md:pt-14">
-          <div className="flex justify-center">
-            <Link
-              to="/"
+          .is-returning-to-hero main > :first-child {
+            filter: blur(0);
+            opacity: 1;
+          }
+
+          main > * {
+            transition:
+              filter 420ms ease,
+              opacity 420ms ease,
+              transform 420ms ease;
+          }
+        `}
+      </style>
+
+      <div className="relative z-10 px-6 pb-8 pt-16 md:px-12 md:pt-24">
+        <div>
+          <div className="relative flex justify-center pb-8 md:pb-10">
+            <button
+              type="button"
+              onClick={scrollToTop}
               className="relative inline-flex max-w-full items-end justify-center overflow-visible text-center leading-none tracking-[-0.055em]"
               aria-label={FOOTER_WORDMARK.hover}
               onMouseEnter={() => setWordmarkHovered(true)}
@@ -129,7 +101,7 @@ export function Footer() {
             >
               <span
                 aria-hidden="true"
-                className="pointer-events-none select-none opacity-0"
+                className="pointer-events-none hidden select-none opacity-0 md:inline"
                 style={{
                   fontFamily: "Epilogue, sans-serif",
                   fontWeight: 900,
@@ -139,7 +111,69 @@ export function Footer() {
                 {FOOTER_WORDMARK.hover}
               </span>
 
-              <span className="absolute inset-0 flex items-end justify-center">
+              <span
+                className="pointer-events-none select-none text-[#f7efe4] md:hidden"
+                style={{
+                  fontFamily: "Epilogue, sans-serif",
+                  fontWeight: 900,
+                  fontSize: "clamp(74px, 22vw, 104px)",
+                  lineHeight: "0.82",
+                }}
+              >
+                <span
+                  className="pointer-events-auto block"
+                  onMouseEnter={() => setMobileWordmarkHover("build")}
+                  onMouseLeave={() => setMobileWordmarkHover(null)}
+                  onFocus={() => setMobileWordmarkHover("build")}
+                >
+                  build
+                  <span
+                    className="inline-block overflow-hidden align-baseline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{
+                      width: mobileWordmarkHover === "build" ? "0.56ch" : "0px",
+                      opacity: mobileWordmarkHover === "build" ? 1 : 0,
+                    }}
+                  >
+                    ',
+                  </span>
+                </span>
+                <span
+                  className="pointer-events-auto block"
+                  onMouseEnter={() => setMobileWordmarkHover("with")}
+                  onMouseLeave={() => setMobileWordmarkHover(null)}
+                  onFocus={() => setMobileWordmarkHover("with")}
+                >
+                  with
+                  <span
+                    className="inline-block overflow-hidden align-baseline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{
+                      width: mobileWordmarkHover === "with" ? "0.34ch" : "0px",
+                      opacity: mobileWordmarkHover === "with" ? 1 : 0,
+                    }}
+                  >
+                    ,
+                  </span>
+                </span>
+                <span
+                  className="pointer-events-auto block"
+                  onMouseEnter={() => setMobileWordmarkHover("sri")}
+                  onMouseLeave={() => setMobileWordmarkHover(null)}
+                  onFocus={() => setMobileWordmarkHover("sri")}
+                >
+                  sri
+                  <span
+                    className="inline-block overflow-hidden align-baseline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{
+                      width: mobileWordmarkHover === "sri" ? "0.92ch" : "0px",
+                      opacity: mobileWordmarkHover === "sri" ? 1 : 0,
+                    }}
+                  >
+                    !!
+                  </span>
+                </span>
+              </span>
+
+              <span className="absolute inset-0 hidden items-end justify-center md:flex">
                 <span
                   className="relative inline-flex items-end whitespace-nowrap text-[#f7efe4]"
                   style={{
@@ -149,6 +183,7 @@ export function Footer() {
                   }}
                 >
                   <span>{FOOTER_WORDMARK.prefix}</span>
+                  <span>{FOOTER_WORDMARK.middle}</span>
                   <span
                     className="inline-block overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     style={{
@@ -166,7 +201,6 @@ export function Footer() {
                       {FOOTER_WORDMARK.comma}
                     </span>
                   </span>
-                  <span>{FOOTER_WORDMARK.middle}</span>
                   <span
                     aria-hidden="true"
                     className="inline-block overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -205,16 +239,67 @@ export function Footer() {
                   </span>
                 </span>
               </span>
-            </Link>
+            </button>
+
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              title="Back to top"
+              className="group absolute bottom-0 right-0 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/16 bg-white/8 text-white backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#f7efe4]/70 hover:bg-[#f7efe4] hover:text-[#070b14] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/70 md:h-20 md:w-20"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-1 rounded-full border border-white/20 transition-colors duration-500 group-hover:border-[#070b14]/15"
+                style={{ animation: "footerArrowRing 2.4s ease-in-out infinite" }}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute h-8 w-px bg-gradient-to-b from-transparent via-current to-transparent opacity-50"
+                style={{ animation: "footerArrowSweep 1.6s ease-in-out infinite" }}
+              />
+              <ArrowUp
+                aria-hidden="true"
+                size={24}
+                strokeWidth={2.6}
+                className="relative z-10"
+                style={{ animation: "footerArrowLift 1.35s ease-in-out infinite" }}
+              />
+            </button>
+          </div>
+
+          <div className="mx-auto max-w-3xl px-2 pb-14 text-center md:px-0 md:pb-20">
+            <div className="mx-auto mb-7 h-px w-full max-w-[420px] bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+            <p
+              className="text-[#f7efe4]"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: "normal",
+                fontSize: "clamp(20px, 3vw, 30px)",
+                lineHeight: "1.55",
+              }}
+            >
+              "Pressure is a privilege."
+            </p>
+            <div className="mt-7 flex items-center justify-center gap-3 md:gap-4">
+              <div className="h-px w-8 bg-white/24 md:w-12" />
+              <span
+                className="text-white/48 uppercase tracking-[0.22em] text-[9px] md:text-[11px]"
+                style={{ fontFamily: "Inter, sans-serif", fontWeight: 700 }}
+              >
+                Billie Jean King
+              </span>
+              <div className="h-px w-8 bg-white/24 md:w-12" />
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-6 md:mt-16 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p
             className="text-white/52"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", letterSpacing: "0.08em" }}
           >
-            {`© ${currentYear} SRICHARAN`}
+            {`(c) ${currentYear} Sri Charan. Crafted with intent.`}
           </p>
 
           <div className="flex items-center gap-4 self-start md:self-auto">
@@ -230,10 +315,7 @@ export function Footer() {
           <div
             aria-hidden="true"
             className="h-[6px] w-28 rounded-full md:w-40"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(78,103,255,0.75) 42%, rgba(247,239,228,0.95) 76%, rgba(248,127,42,0.9) 100%)",
-            }}
+              style={{ background: "rgba(255,255,255,0.42)" }}
           />
         </div>
       </div>

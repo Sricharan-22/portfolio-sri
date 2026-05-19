@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { HeroSection } from "./HeroSection";
-import { MeetTheVisionarySection } from "./MeetTheVisionarySection";
-import { VisionaryParagraph } from "./VisionaryParagraph";
+// import { MeetTheVisionarySection } from "./MeetTheVisionarySection";
 import { AboutSection } from "./AboutSection";
-import { TheCraftSection } from "./project";
+import { HelpSection } from "./HelpSection";
+import { ProcessExpertiseSection } from "./ProcessExpertiseSection";
 import { CaseStudiesSection } from "./CaseStudiesSection";
-import { InstagramSection } from "./InstagramSection";
-import { LinkedInSection } from "./LinkedInSection";
-import { TestimonialsSection } from "./TestimonialsSection";
+// import { LinkedInSection } from "./LinkedInSection";
 
 const FIXED_HEADER_OFFSET = 96;
 
@@ -38,14 +36,12 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <MeetTheVisionarySection />
-      <VisionaryParagraph />
-      <AboutSection />
-      <TheCraftSection />
       <CaseStudiesSection />
-      <InstagramSection />
-      <LinkedInSection />
-      <TestimonialsSection />
+      <ProcessExpertiseSection />
+      <AboutSection />
+      <HelpSection />
+      {/* <LinkedInSection /> */}
+      {/* <MeetTheVisionarySection /> */}
     </main>
   );
 }

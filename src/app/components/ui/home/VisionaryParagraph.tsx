@@ -6,12 +6,12 @@ export function VisionaryParagraph() {
           className="text-white/70 mb-8"
           style={{
             fontFamily: "'Playfair Display', serif",
-            fontStyle: "italic",
+            fontStyle: "normal",
             fontSize: "clamp(18px, 4vw, 26px)",
             lineHeight: "1.8",
           }}
         >
-          "Good software starts where curiosity meets clean execution."
+          "Pressure is a privilege."
         </p>
         <div className="flex items-center justify-center gap-2 md:gap-4">
           <div className="h-px w-8 md:w-12 bg-white/30" />
@@ -19,7 +19,7 @@ export function VisionaryParagraph() {
             className="text-white/40 uppercase tracking-widest text-[9px] md:text-[11px]"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400 }}
           >
-            Developer Notes - 2026
+            Billie Jean King
           </span>
           <div className="h-px w-8 md:w-12 bg-white/30" />
         </div>

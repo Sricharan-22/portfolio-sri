@@ -1,0 +1,30 @@
+
+> @figma/my-make-file@0.0.1 dev
+> vite --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v6.3.5[39m  [2mready in [0m[1m911[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m12:42:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css[22m
+[2m12:42:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/ui/home/HomePage.tsx, /src/styles/index.css[22m
+[2m12:42:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\ProcessExpertiseSection.tsx, /src/styles/index.css[22m
+[2m12:42:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\HelpSection.tsx, /src/styles/index.css[22m
+[2m12:43:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\AboutSection.tsx, /src/styles/index.css[22m
+[2m12:43:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx, /src/styles/index.css[22m
+[2m12:43:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\MeetTheVisionarySection.tsx, /src/styles/index.css[22m
+[2m12:45:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\TextReveal.tsx, /src/styles/index.css[22m
+[2m12:45:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\ScrollReveal.tsx, /src/styles/index.css[22m
+[2m7:24:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/ui/home/HomePage.tsx, /src/styles/index.css[22m
+[2m7:28:11 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\MeetTheVisionarySection.tsx, /src/styles/index.css[22m
+[2m7:31:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\HeroSection.tsx, /src/styles/index.css[22m
+[2m7:36:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/pages/CaseStudyDetail.tsx, /src/styles/index.css[22m
+[2m7:36:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/pages/CaseStudyDetail.tsx, /src/styles/index.css[22m
+[2m7:36:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/pages/CaseStudyDetail.tsx, /src/styles/index.css[22m
+[2m7:43:53 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m
+[2m11:44:19 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/ui/home/Footer.tsx, /src/styles/index.css[22m
+[2m12:10:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m
+[2m12:10:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m
+[2m12:13:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m
+[2m12:14:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m
+[2m12:17:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/pages/CaseStudyDetail.tsx, /@fs/C:\Users\srich\OneDrive\Documents\portfolio\Main\Revisecraftsection\src\app\components\ui\home\CaseStudiesSection.tsx[22m

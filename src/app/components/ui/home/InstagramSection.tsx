@@ -1,56 +1,55 @@
 import { CASE_STUDIES } from "../../../data/caseStudies";
 
 const focusAreas = [
-  "React",
-  "TypeScript",
-  "Architecture",
-  "Routing",
-  "Animation",
-  "Content Model",
+  "Next.js App Router",
+  "Component Architecture",
+  "SaaS Information Design",
+  "Performance Budgeting",
+  "Frontend Planning Process",
 ] as const;
 
 const buildNotes = [
   {
     id: "01",
-    status: "Shipped",
-    title: "Navbar Interaction System",
+    status: "Note",
+    title: "Plan the data before you plan the UI",
     description:
-      "The desktop nav now starts collapsed, expands from the right, and uses a smoother glassmorphism shell with tighter spacing rules.",
+      "Most frontend problems that appear in the second month were created in the first week by not asking: what shape is this data going to arrive in, and how will that change when the product grows?",
   },
   {
     id: "02",
-    status: "Stable",
-    title: "Case Study Data Model",
+    status: "Note",
+    title: "The App Router changes more than routing",
     description:
-      "Project previews, hover content, and detail pages now pull from one shared source instead of drifting across duplicated section data.",
+      "Server Components force a clarifying question that client-side React lets you avoid: is this component stateful or is it just rendered?",
   },
   {
     id: "03",
-    status: "Shipped",
-    title: "Experience Timeline Refactor",
+    status: "Note",
+    title: "Information hierarchy is the first design decision",
     description:
-      "The experience section was rebuilt around one company story, a real timeline, and developer-first positioning instead of generic career filler.",
+      "Before typeface, before colour, before spacing - what is the order in which a user should receive information? That sequence is the interface.",
   },
   {
     id: "04",
-    status: "Testing",
-    title: "Footer Wordmark Motion",
+    status: "Note",
+    title: "A component boundary is a promise",
     description:
-      "The footer signature is being tuned so the hover animation feels as intentional as the header wordmark rather than a hard text swap.",
+      "When you define a component, you are making a claim about what belongs together and what can vary independently. If that claim is wrong, everyone after you pays for it.",
   },
   {
     id: "05",
-    status: "Ongoing",
-    title: "Responsive Polish Pass",
+    status: "Note",
+    title: "SaaS websites are persuasion problems",
     description:
-      "Spacing, clipping, text balance, and section rhythm are being checked so the homepage reads cleanly across desktop and mobile.",
+      "A SaaS marketing site does one job: get a qualified visitor from first impression to considered action in the fewest possible steps.",
   },
   {
     id: "06",
-    status: "Done",
-    title: "Developer-First Copy Rewrite",
+    status: "Note",
+    title: "Measure before you optimise",
     description:
-      "Core sections now speak more clearly about frontend delivery, reusable systems, debugging, and shipping rather than mixed creative language.",
+      "Performance intuition is unreliable. Lighthouse, bundle analyser, React DevTools profiler - look at the numbers before changing anything.",
   },
 ] as const;
 
@@ -85,13 +84,13 @@ export function InstagramSection() {
             className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-white/60"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "11px", letterSpacing: "0.14em" }}
           >
-            APR 2026
+            MAY 2026
           </span>
           <span
             className="text-white/45 uppercase"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px", letterSpacing: "0.16em" }}
           >
-            Portfolio Refresh
+            Active
           </span>
         </div>
       </div>
@@ -114,7 +113,7 @@ export function InstagramSection() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 400,
-                  fontStyle: "italic",
+                  fontStyle: "normal",
                   fontSize: "clamp(44px, 4.5vw, 68px)",
                 }}
               >
@@ -128,15 +127,15 @@ export function InstagramSection() {
               className="text-white/60"
               style={{
                 fontFamily: "'Playfair Display', serif",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontSize: "17px",
                 lineHeight: "1.75",
               }}
             >
-              A running snapshot of what I am actively improving in this portfolio:
-              modular React sections, cleaner content architecture, stronger case
-              study structure, smoother motion, and better frontend clarity across
-              the entire experience.
+              This is not a highlight reel. It is a record of what is currently
+              being built, what questions are open, and what recently got answered.
+              Decisions that looked right, decisions that did not, and the gap
+              between the two.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 pt-2 md:gap-8">
@@ -218,7 +217,7 @@ export function InstagramSection() {
                     lineHeight: "1",
                   }}
                 >
-                  Portfolio Architecture Refactor
+                  Portfolio v2 - Why it took this long
                 </h3>
 
                 <p
@@ -229,25 +228,28 @@ export function InstagramSection() {
                     lineHeight: "1.8",
                   }}
                 >
-                  Reworking the portfolio from a visually-led layout into a clearer
-                  developer portfolio with separated sections, stronger content
-                  structure, shared case study data, and more deliberate interaction
-                  patterns.
+                  The first version was shipped too quickly. It showed work, but it
+                  did not explain thinking. A portfolio for a developer who plans
+                  before building should not be the thing in their life that was not
+                  planned properly.
                 </p>
               </div>
 
               <div className="border-t border-white/10 pt-6">
                 <div className="grid grid-cols-1 gap-4">
                   {[
-                    "Home sections extracted into reusable TSX files",
-                    "Case studies centralized into one shared data model",
-                    "Experience, footer, and supporting copy rewritten with developer-first framing",
+                    "Written before it was designed",
+                    "Designed before a single component was built",
+                    "Built in that order, deliberately",
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
+                    <div key={item} className="grid grid-cols-[34px_minmax(0,1fr)] gap-3">
                       <span
-                        className="mt-[7px] h-[6px] w-[6px] shrink-0 rounded-full bg-white/55"
+                        className="mt-0.5 inline-flex h-6 w-8 items-center justify-center rounded-md border border-white/16 bg-white/8 text-white/72"
+                        style={{ fontFamily: "Epilogue, sans-serif", fontSize: "10px", fontWeight: 900 }}
                         aria-hidden="true"
-                      />
+                      >
+                        &lt;/&gt;
+                      </span>
                       <p
                         className="text-white/78"
                         style={{
@@ -334,9 +336,8 @@ export function InstagramSection() {
               lineHeight: "1.75",
             }}
           >
-            The goal of this section is simple: show what is actively being built,
-            improved, and shipped, so the portfolio proves process instead of only
-            presenting final screens.
+            The log stays open. Return when there is something worth reading - which
+            tends to be whenever something breaks in an instructive way.
           </p>
         </div>
       </div>

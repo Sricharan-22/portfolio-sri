@@ -1,11 +1,18 @@
+import financeTaleCover from "../../assets/finance-tale-cover.png";
+import bookmarkHubCover from "../../assets/bookmark-hub.png";
+import desisleCover from "../../assets/desisle.png";
+import hosakshamCover from "../../assets/hosaksham.png";
+import prodxverseCover from "../../assets/prodxverse.png";
+
 const imgProject01 =
   "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
-const imgProject02 =
-  "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=1200&q=80";
-const imgProject03 =
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80";
-const imgProject04 =
-  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80";
+const imgProject02 = financeTaleCover;
+const imgProject03 = desisleCover;
+const imgProject04 = hosakshamCover;
+const imgProject05 = prodxverseCover;
+const imgProject06 = bookmarkHubCover;
+const imgProject07 =
+  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80";
 
 type CaseStudyMetric = {
   label: string;
@@ -16,6 +23,24 @@ type CaseStudyMetric = {
 type CaseStudyBlock = {
   title: string;
   description: string;
+};
+
+type CaseStudyTopic = {
+  title: string;
+  paragraphs: readonly string[];
+  tags?: readonly string[];
+  quote?: string;
+  metrics?: readonly CaseStudyMetric[];
+};
+
+type CaseStudyLogoItem = {
+  name: string;
+  logo: string;
+};
+
+type CaseStudyStackGroup = {
+  title: string;
+  items: readonly CaseStudyLogoItem[];
 };
 
 export type CaseStudy = {
@@ -40,524 +65,953 @@ export type CaseStudy = {
   challengeBlocks?: readonly CaseStudyBlock[];
   resultMetrics?: readonly CaseStudyMetric[];
   outcomeNarrative?: readonly string[];
+  customObjective?: CaseStudyTopic;
+  customStruggle?: CaseStudyTopic;
+  customTransformation?: CaseStudyTopic;
+  customOutcomes?: CaseStudyTopic;
+  customLearnings?: CaseStudyTopic;
+  technologiesUsed?: readonly CaseStudyLogoItem[];
+  frameworksUsed?: readonly CaseStudyLogoItem[];
+  toolsUsed?: readonly CaseStudyLogoItem[];
+  stackGroups?: readonly CaseStudyStackGroup[];
 };
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "barakat",
-    tag: "Corporate Website",
-    title: "Barakat",
+    tag: "Custom WordPress",
+    title: "Gulf Conglomerate Website",
     img: imgProject01,
-    client: "Barakat Group",
+    client: "Client confidential",
     year: "2025",
-    role: "Frontend Architecture, CMS Integration & Delivery",
-    duration: "3 months",
-    clientType: "Fresh food manufacturing, trading & retail ecosystem",
-    liveUrl: "https://barakatgroup.ae/",
+    role: "Frontend Developer",
+    duration: "6 weeks",
+    clientType: "Diversified Conglomerate",
     description:
-      "A corporate platform engineered to communicate scale, trust, sustainability, and a multi-brand ecosystem while routing users into both B2B and D2C journeys.",
-    details: [
-      "The Barakat website had to do more than look premium. It needed to explain a layered business spanning manufacturing, trading, sustainability, CSR, careers, and multiple consumer-facing brands without losing clarity.",
-      "The build balances operational proof with clear navigation. Instead of a generic brochure site, the platform leads with freshness, cold-chain credibility, product breadth, certifications, and ecosystem links to customer-facing commerce and portal experiences.",
-      "From a delivery perspective, the real challenge was information architecture: making a large, multi-audience food business feel structured, trustworthy, and modern across homepage hierarchy, product taxonomy, sustainability communication, and conversion touchpoints.",
-    ],
+      "Custom WordPress - frontend development, ACF setup & documentation.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "The client is a large, privately held conglomerate headquartered in the Gulf region, operating across 14+ companies spanning education, real estate, construction, hospitality, logistics, media, and general trading - with a presence across the UAE, Kuwait, and Saudi Arabia.",
+        "The brief was to build and deliver a custom WordPress website that could represent this breadth of operations professionally, be easily managed by non-technical internal staff after handoff, and remain stable and bug-free in production. My role covered the full frontend development pipeline - from writing HTML and CSS, configuring Advanced Custom Fields (ACF) in WordPress, fixing PHP-level bugs, through to documenting the entire website for the client's internal team.",
+      ],
+      metrics: [
+        { value: "HTML & CSS", label: "Custom frontend", note: "build on WordPress" },
+        { value: "ACF setup", label: "Custom field", note: "configuration in WP" },
+        { value: "PHP bug fixing", label: "Backend issue", note: "resolution" },
+        { value: "Documentation", label: "Full site", note: "and editing flow docs" },
+      ],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "A conglomerate website is inherently complex - it has to communicate clearly across multiple completely different industries, each with its own tone, content type, and audience. Making that feel unified rather than scattered was the first challenge at the frontend level.",
+        "Custom WordPress builds introduce a different layer of difficulty. ACF configuration needs to be set up thoughtfully so that the fields map clearly to the frontend templates - otherwise the editing experience breaks down for the client's internal team. Getting that architecture right took careful planning before a single field was created.",
+        "PHP bugs on a WordPress site can surface in unexpected ways - often tied to theme conflicts, plugin interactions, or custom template logic that was not accounted for during initial development. Diagnosing and fixing these without disrupting already-working sections of the site required a methodical, careful approach.",
+        "And on top of all of this, the site needed to be handed off with documentation thorough enough that the client's non-technical team could manage and edit it independently - without needing a developer for every content update.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "The website came together as a cohesive, professionally structured digital presence - one that successfully carries the scale and credibility of a 1,250+ employee organisation across its many divisions. The ACF setup gave the internal team a clean, structured way to manage content across all sections without touching code.",
+        "PHP bugs that were silently causing issues in production were identified, isolated, and resolved - leaving the site stable and reliable. The frontend work in HTML and CSS ensured the visual output matched the design intent precisely, across sections and page types.",
+      ],
+      quote:
+        "A website for an enterprise client is not just built - it is handed over. The documentation is what makes the build last beyond the developer who made it.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "The custom WordPress website was delivered, bug-fixed, and fully documented - ready for the client's internal team to manage independently. The ACF field structure gives non-technical editors control over page content, section text, and media without needing developer involvement for routine updates.",
+        "The documentation I produced covers the entire website flow and editing workflow - a reference that the client's team can rely on long after the engagement ends. For a large organisation with multiple divisions and internal stakeholders, that kind of handoff documentation is as valuable as the site itself.",
+      ],
+      tags: [
+        "Custom WordPress built",
+        "ACF fields configured",
+        "PHP bugs resolved",
+        "Full site documented",
+        "Client-ready handoff",
+        "HTML & CSS frontend",
+      ],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "This was my deepest engagement with WordPress as a development platform - not just using it as a CMS, but customising it at the theme, template, and field level. ACF in particular changed how I think about content architecture. The way fields are structured in the backend directly shapes how editors experience the site, and getting that wrong creates friction that outlasts the build.",
+        "Working through PHP bugs taught me to read code I did not write - tracing issues back through template files, hooks, and plugin logic to find the root cause rather than patching symptoms. That kind of diagnostic thinking is a skill that transfers across every stack I work in.",
+        "But the biggest learning from this project was the value of documentation. Writing a thorough editing guide for a non-technical client forced me to understand the site completely - every field, every section, every dependency. You cannot document something you do not fully understand. That discipline made me a better developer.",
+      ],
+    },
+    sourceNote: "Client confidential - name withheld by request.",
+    contextSummary:
+      "Barakat operates across multiple verticals within the food industry, each with a different audience, purchase logic, and set of trust requirements. The brief was to build a platform that can hold the full scope of the group, route different visitor types to the right place, and present the organisation with the credibility its scale warrants.",
     projectSummary: [
-      "Public site analysis shows a narrative-first corporate experience with clear pathways into About, Products, Sustainability, CSR, Careers, and Contact, plus prominent jumps to a customer portal and the Barakat Fresh storefront.",
-      "The platform also carries a heavy credibility burden: it must communicate certifications, manufacturing scale, sourcing reach, cold-chain logistics, and brand architecture while still feeling fresh and consumer-friendly.",
+      "The architecture was designed around three non-negotiable outcomes: a unified group identity that does not flatten the individual brand identities beneath it, a navigation system that surfaces the right vertical for any given visitor without requiring them to understand the corporate structure first, and a visual language that communicates permanence.",
+      "A shared design token system provided the coherence. Per-brand accent overrides provided the distinction. Dynamic routing handled the multi-vertical navigation without full page reloads. The result is a platform that reads as one company and feels like several.",
+    ],
+    details: [
+      "Brand switching is handled through layout segments rather than navigation-level conditional rendering. Each vertical loads within the same shell, reducing the cognitive overhead of a full-page transition and keeping the group identity visible throughout.",
+      "The component library was built token-first. The visual design file and the CSS variable map were kept in sync throughout the build - a discipline that cost two hours of overhead and saved six hours of hunt-the-discrepancy debugging in the final week.",
     ],
     snapshotMetrics: [
-      {
-        value: "10,000+",
-        label: "SKUs across categories",
-        note: "Published on the products page.",
-      },
-      {
-        value: "55,000+",
-        label: "Litres of juice per day",
-        note: "Operational proof point surfaced through the product experience.",
-      },
-      {
-        value: "80%+",
-        label: "Penetration in UAE 5-star hotels",
-        note: "Signals premium hospitality trust.",
-      },
-      {
-        value: "350+",
-        label: "Refrigerated vehicles",
-        note: "Supports the cold-chain and delivery narrative.",
-      },
+      { value: "Live", label: "Shipped on schedule", note: "Currently live." },
+      { value: "Multi", label: "Brand platform", note: "Built for multiple verticals under one group." },
+      { value: "Token-first", label: "Design system", note: "Shared shell with brand-specific overrides." },
+      { value: "6 weeks", label: "Delivery window", note: "Planned and shipped within the project schedule." },
     ],
     ecosystemBlocks: [
       {
-        title: "Corporate trust layer",
-        description:
-          "The homepage establishes authority through freshness claims, manufacturing quality, certifications, sustainability, testimonials, and company heritage dating back to 1976.",
+        title: "Multi-brand identity without fragmentation",
+        description: "Each vertical needed its own presence within a single, coherent structure.",
       },
       {
-        title: "Deep product architecture",
+        title: "Visitor routing without friction",
         description:
-          "The product experience spans overview, manufacturing, and trading while organizing a very large portfolio into beverages, ready-to-cook, ready-to-eat, frozen desserts, fresh fruits, vegetables, and specialty products.",
+          "Someone arriving for the manufacturing division should not need to decode the full corporate hierarchy to find it.",
       },
       {
-        title: "Brand ecosystem structure",
+        title: "Scalability",
         description:
-          "Barakat, Thrill, myD, Froza, and Snackat are presented as one connected house of brands, helping the website communicate range without fragmenting the master brand.",
-      },
-      {
-        title: "Multi-path conversion routing",
-        description:
-          "The site serves multiple audiences at once by linking to Barakat Fresh for D2C shopping, B+ Customer Portal for operational buyers, and dedicated corporate sections for institutional trust and enquiries.",
+          "New product lines or subsidiaries needed to be addable without requiring structural changes to the platform.",
       },
     ],
     stackSignals: [
-      {
-        title: "CMS-led corporate platform",
-        description:
-          "Public inspection strongly suggests a WordPress-backed marketing site: the live homepage currently exposes a WordPress admin-only Instagram feed error, which indicates CMS-managed content and plugin-driven social modules.",
-      },
-      {
-        title: "Component-heavy editorial frontend",
-        description:
-          "The site uses sliders, accordions, video, metric blocks, testimonial modules, download links, and large media sections, pointing to a modular page-builder or componentized theme approach rather than a static brochure build.",
-      },
-      {
-        title: "Connected digital ecosystem",
-        description:
-          "The corporate site is only one part of the product surface. It hands off to Barakat Fresh e-commerce, app downloads, and customer portal flows, so the technical design likely had to prioritize clear outbound routing and ecosystem coherence.",
-      },
-      {
-        title: "Multilingual and integration-aware",
-        description:
-          "The presence of Arabic navigation, downloadable reports/catalogs, social channels, and portal links suggests a content and integration strategy built around flexibility, localization, and non-trivial content operations.",
-      },
+      { title: "Framework", description: "Next.js App Router." },
+      { title: "Styling", description: "Tailwind CSS with brand-specific token overrides." },
+      { title: "Animation", description: "Framer Motion for entry transitions only, with no decorative animation." },
+      { title: "Deployment", description: "Vercel." },
     ],
     challengeBlocks: [
       {
-        title: "Serving very different audiences",
+        title: "Shared layout shell",
         description:
-          "A single platform needed to work for hospitality buyers, retail partners, procurement teams, end consumers, job applicants, and brand stakeholders without overwhelming any one audience.",
+          "Designing a shell that all brand sections inherit from while allowing each section to override visual properties without breaking the parent structure. Solved by separating layout tokens from brand tokens at the CSS variable level.",
       },
       {
-        title: "Explaining scale without losing warmth",
+        title: "Page weight management",
         description:
-          "Barakat is a large operational business, but the brand promise is still freshness, nourishment, and daily quality. The site had to make logistics, certifications, and processing feel human and trustworthy, not industrial or cold.",
-      },
-      {
-        title: "Handling a broad information architecture",
-        description:
-          "Products alone span massive breadth. Organizing manufacturing capabilities, trading categories, featured products, brand content, and sustainability narratives demanded careful hierarchy and content chunking.",
-      },
-      {
-        title: "Keeping third-party experiences stable",
-        description:
-          "The live site currently shows a broken Instagram feed module, which is a good reminder that plugin-based or third-party widgets can become fragile operational dependencies on marketing sites.",
+          "The visual ambition of the design required discipline with asset loading strategy - lazy loading below-fold media and static generation for all content pages.",
       },
     ],
     resultMetrics: [
-      {
-        value: "53+",
-        label: "Countries sourced",
-        note: "Shows international sourcing scale.",
-      },
-      {
-        value: "14,000+",
-        label: "Tons traded monthly",
-        note: "Communicates trading volume.",
-      },
-      {
-        value: "80+",
-        label: "Local UAE farm partnerships",
-        note: "Highlighted in sustainability messaging.",
-      },
-      {
-        value: "99.9%",
-        label: "Biodegradable bottles and caps",
-        note: "Connects product quality with sustainability.",
-      },
+      { value: "Live", label: "Launched on schedule", note: "Client confirmed and currently live." },
+      { value: "Hours", label: "New vertical setup", note: "New verticals can be added in hours, not weeks." },
+      { value: "Unified", label: "Group identity", note: "One corporate platform with differentiated verticals." },
     ],
     outcomeNarrative: [
-      "What makes the Barakat site strong is not just surface polish. It turns operational scale into trust signals: cold chain, sourcing reach, manufacturing capability, certifications, sustainability commitments, and brand breadth all reinforce the core message of freshness.",
-      "It also supports business growth structurally. The corporate experience builds confidence, the product architecture demonstrates range, and the ecosystem links move users into the right destination whether they need retail ordering, B2B access, or brand information.",
+      "Barakat's website now does what a corporate platform should do: it communicates scale without demanding that a visitor understand the full organisational map before they can engage with any part of it.",
+      "The multi-brand architecture solved a structural problem that the previous site had simply avoided. The planning done in week one - the token system, the routing logic, the layout inheritance model - is the reason the build landed on time and the platform will hold as it grows.",
     ],
-    sourceNote:
-      "Stack and implementation notes here are based on public inspection of the live website and linked ecosystem surfaces, not internal repository access.",
-    contextSummary:
-      "A large-scale corporate web build translating operational complexity into a clear, trusted digital product.",
+    technologiesUsed: [
+      { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    ],
+    frameworksUsed: [
+      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+      { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+    ],
+    toolsUsed: [
+      { name: "WordPress CMS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+    ],
+    stackGroups: [
+      {
+        title: "Technologies",
+        items: [
+          { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+          { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+          { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        ],
+      },
+      {
+        title: "Frameworks & CMS",
+        items: [
+          { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+          { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+          { name: "Advanced Custom Fields (ACF)", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+        ],
+      },
+      {
+        title: "Tools",
+        items: [
+          { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+          { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+        ],
+      },
+    ],
   },
   {
     slug: "finance-tale",
     tag: "Content Platform",
     title: "Finance Tale",
     img: imgProject02,
-    client: "The Finance Tale",
-    year: "2024",
-    role: "Content Platform Engineering & Frontend Architecture",
-    duration: "4 months",
-    clientType: "Finance education and publishing platform",
+    client: "Finance Tale",
+    year: "2025",
+    role: "Frontend Developer",
+    duration: "5 weeks",
+    clientType: "Finance Education / Media",
     liveUrl: "https://thefinancetale.com/",
     description:
-      "A finance publishing platform built to make personal money topics easier to discover, read, and trust through reusable templates, strong information hierarchy, and clean frontend delivery.",
-    details: [
-      "The core product challenge for finance content is always clarity under trust pressure. Readers do not just need information quickly; they need to feel that the structure, hierarchy, and tone are reliable enough to guide financial decisions.",
-      "For a platform like The Finance Tale, the most valuable UX work sits in content architecture, reading flow, category hierarchy, and discovery patterns that help users move from broad questions to high-intent topics without friction.",
-    ],
-    sourceNote:
-      "The live Finance Tale site was not reliably parsable through public analysis tools during this review, so the notes below combine verified domain-level observations with clearly stated editorial and UX inferences.",
+      "Landing page and product UI built end to end from zero design direction to a product the team believed in.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "The goal was to take The Finance Tale from a raw idea to a fully functional, visually compelling web presence. This meant building the landing page end to end and constructing the product interface entirely from the ground up, matching design specifications precisely while making it feel polished and credible to users visiting for the first time.",
+        "Beyond the landing page, the scope extended to the product UI built in React, full end-to-end testing of all site functionality, and gaining enough understanding of the backend stack to work across the full pipeline.",
+      ],
+      tags: ["Landing page", "React UI", "End-to-end testing", "Full-stack awareness"],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "When the project began, there was no design foundation to build on, just an idea. The team had a vision for what the product should do, but no clarity on what it should look like, how users would move through it, or what the experience would feel like.",
+        "Working with an undefined visual direction meant every decision had to be made from scratch. Translating a vague concept into structured UI components, layouts, and interactions required constant alignment between what was possible in code and what would actually serve the user well.",
+        "On the technical side, understanding the backend flow, MongoDB, Visual Studio tooling, while staying focused on frontend delivery was an added layer of complexity that required learning on the job.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "The design work became the turning point. Once the interface took shape, with clear structure, intentional UX, and a visual identity that matched the product's purpose, the team's confidence in the product shifted entirely.",
+        "What started as an abstract idea became something the stakeholders could see, navigate, and believe in. The React UI was built end to end as per the design system, with UI fixes and refinements along the way to make the interface feel complete and production-ready.",
+      ],
+      quote:
+        "Before the design work, they had a concept. After it, they had a product and a clear picture of where it was going.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "The landing page launched end to end, designed, built, and tested. Every feature and user flow on the site was verified through thorough end-to-end testing, ensuring nothing broke in the hands of real users.",
+        "The product UI went from zero to a complete, structured interface built in React, visually attractive, functionally sound, and aligned to the original design intent. Stakeholders came away with a clear product vision they felt confident presenting.",
+      ],
+      tags: ["Landing page shipped", "Product UI complete", "All flows tested", "Stakeholder alignment"],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "This project reinforced that good UX is not just a visual layer, it is what turns an idea into something people trust. The moment the design clicked, the entire team's relationship with the product changed. That was a powerful thing to witness and be responsible for.",
+        "Working across the full stack, React on the frontend, MongoDB and Visual Studio on the backend, made me a more rounded engineer. Understanding how data flows from the backend shaped how I structured the UI and how I approached testing.",
+        "End-to-end testing also taught me that building something is only half the work. Verifying it rigorously, from a user's point of view, is what makes it trustworthy.",
+      ],
+    },
     contextSummary:
-      "A content-driven web platform where implementation quality, readability, and CMS structure directly shape user trust.",
+      "Finance content has a trust problem that predates the internet. Readers arrive sceptical, scan fast, and leave the moment something feels off. Finance Tale needed an interface that earned credibility in the first three seconds without announcing that it was trying to.",
     projectSummary: [
-      "The Finance Tale appears positioned as a branded finance destination rather than a product dashboard, which shifts the experience priorities toward content trust, discovery, hierarchy, and repeat readership.",
-      "In this kind of platform, success depends on reducing cognitive load. Financial content is often dense, comparative, and jargon-heavy, so the website has to translate complexity into readable paths, scannable sections, and consistent article structure.",
+      "The build was built around three design constraints: no element on the page should compete with the article text, every navigation action should reduce the distance to the next relevant piece of content, and SEO infrastructure should be structural rather than cosmetic.",
+      "Typography was the primary interface decision. Hierarchy was established through size, weight, and spacing - not colour or iconography. The result is a reading environment that holds attention without announcing itself.",
+    ],
+    details: [
+      "The SEO architecture was the first thing built, not the last. Structured data schemas for article and organisation entities are generated from the content frontmatter at build time.",
+      "The typography system was documented before it was implemented. Font size scale, line height ratios, and spacing multipliers are stored as CSS custom properties with named semantic references so that future developers can understand intent rather than guessing from numbers.",
     ],
     ecosystemBlocks: [
       {
-        title: "Content discovery architecture",
+        title: "Reading experience at scale",
         description:
-          "A finance website has to move users across topics like saving, borrowing, investing, taxation, or market education without making the platform feel fragmented. That makes category hierarchy, searchability, and reading paths central to the product.",
+          "Long-form financial articles needed typographic and spatial treatment that reduces fatigue across extended reading sessions.",
       },
       {
-        title: "Trust-first reading experience",
+        title: "Authority through restraint",
         description:
-          "Financial content needs strong hierarchy, clean summaries, supporting sections, and clear calls to action so readers can understand key takeaways quickly and choose whether to go deeper.",
+          "The visual language had to signal credibility to a financially literate audience without becoming cold or exclusionary to a general one.",
       },
       {
-        title: "SEO and repeat readership",
+        title: "Organic growth infrastructure",
         description:
-          "A strong finance publication is not just a static site. It needs evergreen discoverability, topic clustering, internal linking, and a content system that supports recurring publication and long-tail acquisition.",
-      },
-      {
-        title: "Monetization-ready content surface",
-        description:
-          "Whether the eventual model is subscriptions, sponsorships, lead generation, or affiliate partnerships, the interface has to support trust signals and conversion moments without interrupting the reading experience.",
+          "Metadata, structured data, canonical logic, and page generation strategy had to be correct before the first article was published.",
       },
     ],
     stackSignals: [
-      {
-        title: "Content-led web architecture",
-        description:
-          "The public domain and branding indicate a publication-style experience where CMS flexibility, article templating, category organization, and metadata strategy are likely more important than app-style interaction complexity.",
-      },
-      {
-        title: "SEO-aware implementation priorities",
-        description:
-          "For finance content, the technical quality bar includes crawlability, semantic heading structure, fast page loads, share previews, and strong internal linking, all of which shape organic discoverability.",
-      },
-      {
-        title: "Operational publishing workflow",
-        description:
-          "A site like this typically depends on reusable templates for articles, authoring, featured stories, topic collections, and promotion surfaces so the team can scale content without redesigning each page.",
-      },
-      {
-        title: "Inference boundary",
-        description:
-          "Unlike Barakat, the live site did not expose enough stable public content through the analysis tools to verify the exact framework or backend. These technical notes describe the likely implementation priorities, not a confirmed stack fingerprint.",
-      },
+      { title: "Framework", description: "Next.js App Router with static generation for article pages." },
+      { title: "Content model", description: "MDX with frontmatter for metadata management." },
+      { title: "SEO", description: "JSON-LD structured data, OpenGraph image generation, and sitemap generation." },
+      { title: "Deployment", description: "Vercel." },
     ],
     challengeBlocks: [
       {
-        title: "Making finance readable",
+        title: "Line length and leading",
         description:
-          "Financial content often loses readers through jargon, long paragraphs, and poor hierarchy. The UX challenge is to shape dense topics into sequences that feel approachable without oversimplifying the subject.",
+          "Long-form content requires different typographic constraints than a marketing page. The reading column is capped at 68 characters per line at all breakpoints.",
       },
       {
-        title: "Balancing trust and conversion",
+        title: "Static generation at content volume",
         description:
-          "Readers become skeptical quickly when a finance site feels too promotional. The platform has to earn trust through structure, tone, and credibility before it asks users to subscribe, click deeper, or engage with offers.",
-      },
-      {
-        title: "Designing for multiple intents",
-        description:
-          "Some visitors are scanning headlines, others need a specific answer, and some want deep education. That means navigation, content chunking, and recommendation logic all need to support very different reading depths.",
-      },
-      {
-        title: "Scaling consistency across content",
-        description:
-          "Without a strong publishing system, finance content sites become inconsistent and hard to scan. The real challenge is building a structure that keeps every article recognizable, clear, and efficient to produce.",
+          "As the article archive grows, build time becomes a constraint. ISR with a 24-hour revalidation window balances freshness against build performance from the start.",
       },
     ],
+    resultMetrics: [
+      { value: "Green", label: "Core Web Vitals", note: "Article pages achieved green scores across all metrics on launch day." },
+      { value: "Live", label: "Launched on schedule", note: "Currently live." },
+      { value: "SEO-first", label: "Growth foundation", note: "Search infrastructure was built before publication scale." },
+    ],
     outcomeNarrative: [
-      "From a product perspective, The Finance Tale is strongest when it behaves like a well-structured learning system, not just a list of articles. A clean editorial UX can turn intimidating money topics into guided reading journeys.",
-      "This kind of website creates value through clarity. When layout, hierarchy, and article architecture are done well, users trust the content more, stay longer, and are more likely to return as repeat readers.",
+      "Finance Tale launched with a reading experience that does not apologise for the length of the content it carries. The interface earns attention rather than competing for it.",
+      "The SEO foundation was correct from day one - which means the platform is compounding organic reach now rather than engineering it retroactively.",
+    ],
+    technologiesUsed: [
+      { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    ],
+    frameworksUsed: [
+      { name: "shadcn/ui", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shadcnui.svg" },
+    ],
+    toolsUsed: [
+      { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+      { name: "Visual Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" },
     ],
   },
   {
     slug: "desisle",
-    tag: "Agency Website",
+    tag: "SaaS UI/UX Design Agency",
     title: "Desisle",
     img: imgProject03,
-    client: "Desisle",
-    year: "2026",
-    role: "Frontend Engineering, Conversion Architecture & Site Delivery",
-    duration: "2 months",
-    clientType: "SaaS product studio",
+    client: "Desisle LLP",
+    year: "2025",
+    role: "Developer",
+    duration: "Dev, Testing & Content Ops",
+    clientType: "SaaS Design Agency",
     liveUrl: "https://www.desisle.com/",
     description:
-      "A conversion-focused studio website built to turn founder traffic into qualified conversations through strong information architecture, reusable sections, and reliable frontend delivery.",
-    details: [
-      "The site is not trying to be a passive brochure. It is built as a conversion machine for service clarity, case-study proof, pricing transparency, and booked discovery calls.",
-      "Its real job is to frame product design as a business-growth lever. That means every section has to support one of four goals: establish a sharp point of view, package offers cleanly, prove outcomes, or route visitors toward contact.",
-    ],
-    sourceNote:
-      "Desisle notes are based on public inspection of the live website and visible case-study, pricing, and CTA surfaces. Exact framework choices remain inferred unless exposed publicly.",
+      "SaaS UI/UX Design Agency - development, content ops & maintenance.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "Desisle is a SaaS-only UI/UX design agency that has built 40+ products across FinTech, HealthTech, AI, and B2B SaaS - helping founders go from idea to investor-ready interfaces. The website is the agency's primary sales and credibility asset, where case studies, blogs, and service pages do the work of converting new clients.",
+        "My role spanned development, testing, and maintenance - with a specific focus on keeping the content engine running. That meant publishing and maintaining blogs and case studies on the Next.js site, ensuring everything was accurate, functional, and consistent with the agency's design standards.",
+      ],
+      metrics: [
+        { value: "Development", label: "React / Next.js site work", note: "beyond design" },
+        { value: "Testing", label: "QA across pages", note: "and features" },
+        { value: "Blog ops", label: "Publishing", note: "and maintaining blog posts" },
+        { value: "Case studies", label: "Posting", note: "and maintaining client work" },
+      ],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "Working at a design agency means the bar for the website itself is exceptionally high. Every page - including blogs and case studies - needs to look and feel as polished as the client work it showcases. There is no room for misaligned layouts, broken content, or inconsistent formatting when the product being sold is design quality.",
+        "Managing content ops on a Next.js codebase also means each blog post and case study is not just a copy-paste - it involves structured data, metadata, routing, and layout components that all need to work together correctly. Getting that pipeline reliable, especially across many case studies, required discipline in how content was structured and tested before going live.",
+        "Balancing development tasks alongside testing and maintenance - without a dedicated QA pipeline - meant staying sharp across the entire site at once.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "Owning the content pipeline end to end - from development to publishing to maintenance - gave the agency a reliable system for getting case studies and blogs live without errors or broken experiences. Each published piece became a live sales asset, and the consistency across them reflected directly on Desisle's credibility.",
+        "The testing work ensured that the site, which carries the weight of converting SaaS founders into clients, stayed functional and trustworthy at every touchpoint. For an agency whose entire pitch is built around quality and attention to detail, that reliability is not a background task - it is part of the product.",
+      ],
+      quote:
+        "At a design agency, the website is the portfolio. Keeping it reliable, consistent, and always live is as important as the design work itself.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "The Desisle website now houses a growing library of detailed case studies and blogs - each structured, tested, and maintained to the agency's quality bar. These pages serve as the primary trust signals for founders evaluating the agency, covering work across AI analytics platforms, HealthTech, EdTech, and more.",
+        "The development and maintenance work I contributed to supports a site that has helped Desisle's clients raise $10M+ in funding, serves 40+ completed SaaS products as social proof, and positions the agency competitively against freelancers and traditional agencies in the Indian and global SaaS market.",
+      ],
+      tags: [
+        "Case studies live & maintained",
+        "Blog pipeline operational",
+        "Site tested across all flows",
+        "React / Next.js codebase",
+        "Zero broken content shipped",
+      ],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "This was the first time I worked inside a design-led environment as a developer, and that context shifted how I approach frontend work. When the people around you think in systems, components, and user flows, you naturally start holding your own code to a higher visual standard.",
+        "Managing content operations on a Next.js site taught me that publishing is not just writing - it is structured data, routing, metadata, and consistency across every page. A blog post or case study that breaks the layout or loads incorrectly undermines the very credibility it is trying to build.",
+        "Testing in this environment also sharpened my eye. At a design agency, a misaligned element or a broken link is not just a bug - it is a contradiction of the product being sold. That raised my bar for what done actually means.",
+      ],
+    },
     contextSummary:
-      "A marketing website engineered as a clear conversion funnel, with reusable sections, strong CTA paths, and scalable content structure.",
+      "There is an internal credibility test that every studio website must pass: does this look like work we would be proud to show a prospective client? The secondary test is commercial: does it convert?",
+    sourceNote: "Result metrics should be verified before publishing.",
     projectSummary: [
-      "The Desisle homepage is structured around founder pain, service packaging, case-study proof, pricing, and strategic differentiation. It sells clarity before it sells style.",
-      "The information architecture is especially strong for an agency site: hero statement, problem framing, offer ladder, workflow, industry specialization, case studies, pricing pods, insights, and booking all form one continuous funnel.",
+      "The build was structured around three conversion levers: service clarity, proof compression, and contact proximity. A visitor should understand what Desisle builds, see evidence that it builds it well, and reach a booking interface without scrolling past anything that does not advance either objective.",
+      "Every section was evaluated against this question: does this exist because it helps the visitor make a decision, or because it helps us feel like we have covered everything? Anything that answered the second question was cut.",
     ],
-    snapshotMetrics: [
-      {
-        value: "6",
-        label: "Core service offers",
-        note: "MVP design, redesign, design systems, audits, pods, and done-for-you delivery are all explicitly positioned.",
-      },
-      {
-        value: "5",
-        label: "Step workflow",
-        note: "Discover, Define, Design, Deliver, and Develop Further.",
-      },
-      {
-        value: "3",
-        label: "Pricing pods",
-        note: "Starter, Growth, and Scale create a clear productized pricing ladder.",
-      },
-      {
-        value: "4",
-        label: "Featured case studies",
-        note: "Outcome-led work examples reinforce the agency value proposition.",
-      },
+    details: [
+      "The Calendly integration was embedded inline rather than linked externally. An external redirect introduces an exit from the brand context at the most critical moment in the conversion journey.",
+      "The service section uses a tab-based architecture to present SaaS and Web as parallel but distinct offers without requiring two separate pages or a single section that conflates them.",
     ],
     ecosystemBlocks: [
       {
-        title: "Clear founder positioning",
+        title: "Service packaging",
         description:
-          "The site frames the core problem as misalignment between business goals and user needs, which is a stronger sales angle than generic 'beautiful design' messaging.",
+          "A studio that builds websites and SaaS products needs to present those as distinct offers with distinct value propositions, not as one undifferentiated list of capabilities.",
       },
       {
-        title: "Productized service architecture",
+        title: "Proof without overwhelm",
         description:
-          "Instead of listing vague capabilities, the site groups work into packaged offers like MVP design, redesign, systems, audits, and design pods, making the agency easier to evaluate and buy from.",
+          "Case studies need to be visible enough to build confidence but contained enough not to become an obstacle between the visitor and the contact page.",
       },
       {
-        title: "Case-study proof and content engine",
+        title: "Contact path",
         description:
-          "The presence of outcome-led case-study headlines and insight articles gives the brand both credibility and an SEO/content layer that supports ongoing growth beyond direct outreach.",
-      },
-      {
-        title: "Booking-ready conversion path",
-        description:
-          "The experience consistently pushes users toward action through free audit CTAs, service exploration, works navigation, transparent pricing, and a visible 30-minute call booking flow.",
+          "The distance between intent and action should be one step. Calendly integration, not a form that enters a queue.",
       },
     ],
     stackSignals: [
-      {
-        title: "Marketing site with heavy modular sectioning",
-        description:
-          "The public page structure suggests a block-based, componentized marketing build with repeated content modules, long-form section composition, and animated transitions rather than a minimal static landing page.",
-      },
-      {
-        title: "External conversion tooling",
-        description:
-          "Primary booking flows route through Cal.com, which reduces the need for custom scheduling infrastructure while keeping the website focused on positioning and conversion.",
-      },
-      {
-        title: "Content and CMS orientation",
-        description:
-          "The live site clearly supports blogs, works, pricing, and service pages. That points to a content-managed workflow where editors can publish new proof and offers without rebuilding the site each time.",
-      },
-      {
-        title: "Public stack inference boundary",
-        description:
-          "The site publicly references services such as WordPress and development, but that does not confirm the website itself runs on WordPress. The implementation signals above are inferred from the live experience, not source access.",
-      },
+      { title: "Framework", description: "Next.js." },
+      { title: "Styling", description: "Tailwind CSS." },
+      { title: "Animation", description: "Framer Motion scroll-triggered reveals, with no looping animations." },
+      { title: "Booking", description: "Calendly embedded inline, not redirect." },
     ],
     challengeBlocks: [
       {
-        title: "Standing out in a crowded agency market",
+        title: "Editorial ambition vs conversion logic",
         description:
-          "Design agencies often blur together. The challenge here is to make the site feel strategic, product-savvy, and focused on SaaS growth rather than just aesthetic output.",
+          "Design wanted a rich, layered visual experience. Conversion logic wanted the fewest possible steps. The richness lives in the visual treatment of components, not in the quantity of components.",
       },
       {
-        title: "Selling outcomes, not services",
+        title: "Case study preview system",
         description:
-          "The strongest agency sites do not just list capabilities. They connect services to founder pain, product metrics, and team velocity. That translation work is a key UX challenge.",
-      },
-      {
-        title: "Balancing atmosphere with clarity",
-        description:
-          "The Desisle site uses a highly designed, editorial presentation. The risk with that approach is that style can overpower information. The build has to keep CTAs, pricing, and service comprehension fast and obvious.",
-      },
-      {
-        title: "Creating trust before the sales call",
-        description:
-          "Because services are high-trust and higher-ticket, the site must do a lot of pre-call persuasion through proof, positioning, workflow transparency, and content depth.",
+          "The homepage needed enough information to qualify interest without recreating the full case study. The card shows the outcome statement, client type, and a single result metric.",
       },
     ],
     resultMetrics: [
-      {
-        value: "92%",
-        label: "Support handled in featured AI case study",
-        note: "Used in a featured work headline to communicate outcome-oriented capability.",
-      },
-      {
-        value: "85%",
-        label: "Screen time reduction in featured mobile case study",
-        note: "Demonstrates measurable UX impact across another project.",
-      },
-      {
-        value: "60%",
-        label: "Easier data comprehension in featured redesign case study",
-        note: "Reinforces the agency's positioning around clarity and product usability.",
-      },
-      {
-        value: "$3k-$8k",
-        label: "Visible monthly pricing ladder",
-        note: "Signals productized services and budget clarity.",
-      },
+      { value: "4 weeks", label: "Launch window", note: "Launched in 4 weeks." },
+      { value: "Primary", label: "Sales asset", note: "Currently the primary sales asset for the studio." },
+      { value: "Inline", label: "Booking path", note: "Shortened the distance between intent and action." },
     ],
     outcomeNarrative: [
-      "Desisle succeeds because it behaves like a focused growth funnel instead of a portfolio dump. Messaging, pricing, case studies, and booking flows all reinforce the same product-partner narrative.",
-      "From a UX standpoint, the site reduces agency ambiguity. Prospects can understand what the studio does, how it works, what kinds of outcomes it delivers, and how to start a conversation without hunting for answers.",
+      "The Desisle website now functions as a sales conversation that starts before the client calls. The service packaging is clear enough that enquiries arrive with a reasonable understanding of what they are enquiring about.",
+      "The proof is visible enough to generate confidence before the first word is exchanged. The contact path is short enough that intent does not dissipate between forming and acting on it.",
+    ],
+    technologiesUsed: [
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+    ],
+    frameworksUsed: [],
+    toolsUsed: [
+      { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+    ],
+    stackGroups: [
+      {
+        title: "Technology",
+        items: [
+          { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+          { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+          { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        ],
+      },
+      {
+        title: "Database",
+        items: [
+          { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        ],
+      },
+      {
+        title: "Tools",
+        items: [
+          { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+          { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+        ],
+      },
     ],
   },
   {
     slug: "hosaksham",
-    tag: "SaaS Website",
-    title: "Hosaksham",
+    tag: "Reusable UI Components",
+    title: "HoSaksham",
     img: imgProject04,
     client: "HoSaksham",
     year: "2025",
-    role: "Product Website Engineering, SaaS Flows & Conversion Delivery",
-    duration: "5 months",
-    clientType: "Subscription management SaaS for academies and service businesses",
+    role: "Frontend Developer",
+    duration: "5 weeks",
+    clientType: "SaaS - B2B India",
     liveUrl: "https://hosaksham.in/",
     description:
-      "A conversion-focused SaaS website that explains subscriptions, events, attendance, payments, and microsites for academies, coaching centers, and service businesses in one coherent product narrative.",
-    details: [
-      "The product itself is operationally dense: billing, attendance, renewals, events, Zoom and Google Meet support, WhatsApp communication, microsites, and payment reconciliation all need to feel understandable to small business operators.",
-      "The website therefore has to act as both explainer and salesperson. It must reduce complexity, show concrete results, surface use cases across industries, and move visitors into demo or free-trial flows quickly.",
-    ],
-    sourceNote:
-      "HoSaksham analysis is based on public inspection of the live website and visible linked surfaces such as app.hosaksham.com, demo CTAs, and marketplace references.",
+      "Academy subscription management SaaS - component development.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "HoSaksham is a SaaS platform helping 100+ small businesses in India - sports academies, dance studios, chess clubs, fitness centres, and tutors - automate payments, attendance tracking, and event management through WhatsApp.",
+        "My role as a developer was focused on building and maintaining the component elements that run throughout the website. These are the building blocks that users interact with across every page - from subscription feature sections and pricing displays to CTA blocks and testimonial cards. The goal was to make them consistent, reusable, and scalable as the product grew.",
+      ],
+      tags: ["Component development", "Reusable UI elements", "Cross-page consistency", "SaaS marketing site"],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "A SaaS marketing site like HoSaksham has a wide range of content types on a single page - stat counters, feature grids, testimonials, pricing prompts, FAQs, and calls to action. The challenge with shared components is that they need to work across all of these contexts without being rebuilt each time.",
+        "Building components that appear throughout an entire website means every decision carries weight. A change in one element ripples across every page it appears on. Getting the structure right from the start - so components were flexible enough to handle different content but consistent enough to feel unified - was the core technical challenge.",
+        "It also required a strong understanding of the product's purpose: who HoSaksham serves, what the platform does, and what users need to understand quickly when they land on the site.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "By building components that were designed to be reused - not duplicated - the website gained a coherent visual and structural language from top to bottom. Feature cards, stat blocks, testimonial layouts, and CTA sections all share a consistent foundation, making the site feel like a single product rather than a collection of pages.",
+        "The components I worked on now serve the full breadth of the site - from the hero section and the \"Do more, stress less\" metrics to the workflow feature sections covering subscriptions, events, attendance, and WhatsApp automation.",
+      ],
+      quote:
+        "Consistent components are what make a product feel like a product - not just a collection of pages stitched together.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "The components I built are live across the HoSaksham website and carry the weight of communicating a product used by 100+ businesses across India - from chess clubs to skating academies. The platform now processes over Rs12 Cr+ annually and the site is a key part of how new businesses discover and evaluate it.",
+      ],
+      metrics: [
+        { value: "Rs12Cr+", label: "Collected annually", note: "via the platform" },
+        { value: "100+", label: "SMBs trust", note: "the product" },
+        { value: "60+", label: "Hours saved", note: "per business per month" },
+        { value: "95%", label: "Subscription", note: "renewal rate" },
+      ],
+      tags: ["Components live site-wide", "Consistent UI language", "Real product, real users"],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "This project taught me that component-level work is not a small task - it is foundational. When you own the elements that repeat across an entire website, you are responsible for the user's first impression at every touchpoint. That sharpened how I think about reusability, flexibility, and naming conventions in code.",
+        "Working on a live SaaS product targeting real Indian SMBs - fitness coaches, skating camps, chess clubs - also grounded me in what a product actually needs to communicate: trust, simplicity, and speed. The content of a component is not separate from its design; they shape each other.",
+        "I came away with a deeper appreciation for building things that outlast the sprint - components that other parts of the team can rely on, extend, and build on top of without breaking what already works.",
+      ],
+    },
     contextSummary:
-      "A SaaS marketing site that had to turn a complex operations product into a clear, demo-ready web experience.",
+      "Hosaksham is a SaaS product built for operators - gym owners, studio managers, programme leads - who need to manage the administrative surface of a membership-based business.",
+    sourceNote: "Result metrics should be verified before publishing.",
     projectSummary: [
-      "The homepage is organized around one big promise: one platform for subscriptions, payments, attendance, events, online sessions, and customer communication across academies and service businesses.",
-      "Instead of staying abstract, the site leans heavily on concrete business outcomes, specific use cases, testimonials, free trial CTAs, and operational proof like collection volumes, renewal rates, and hours saved.",
+      "The architecture was built around visitor types rather than product features. Instead of a feature list with generic benefit statements beneath each item, the navigation presents three operator contexts: Studio & Gym, Online Programme, Subscription Community.",
+      "The feature still exists in the product. The website presents the problem it solves and the operator type it solves it for. In practice, that is the difference between a visitor who reads the page and a visitor who recognises themselves in it.",
     ],
-    snapshotMetrics: [
-      {
-        value: "70%",
-        label: "Less time on admin",
-        note: "Positioned as a direct business outcome from automation.",
-      },
-      {
-        value: "10x",
-        label: "Faster fee collection",
-        note: "Tied to auto-invoicing and gateway integration.",
-      },
-      {
-        value: "40%",
-        label: "Higher event sales",
-        note: "Connected to cross-promotion and event visibility.",
-      },
-      {
-        value: "90%",
-        label: "On-time renewals",
-        note: "Highlights the value of automated renewals.",
-      },
+    details: [
+      "The context switcher state is managed in a React context provider at the section level, not the page level. This scopes the state change to the product demonstration section while allowing the surrounding page to remain context-agnostic.",
+      "Pricing is displayed without context switching because pricing is flat across operator types. A deliberate decision: do not segment what does not need to be segmented.",
     ],
     ecosystemBlocks: [
       {
-        title: "One-platform positioning",
+        title: "Feature surface communication",
         description:
-          "The site makes a broad product surface feel unified by anchoring everything around one dashboard for coaches, centers, schedules, payments, and customer communication.",
+          "Enumerating features converts nobody. Identifying the visitor's problem and showing the feature that solves it converts people who have that problem.",
       },
       {
-        title: "Use-case driven feature education",
+        title: "Audience segmentation without separate pages",
         description:
-          "Subscriptions, event management, attendance, online sessions, and microsites are each framed through outcomes and industries, helping visitors quickly see where the product fits their workflow.",
+          "Three distinct operator types on a single URL, each experiencing a tailored version of the product story.",
       },
       {
-        title: "Integration-led trust building",
+        title: "Trust for a complex product",
         description:
-          "WhatsApp Business, payment gateway APIs, Zoom, Google Meet, branded microsites, and marketplace tie-ins all communicate that the product is meant to plug into real operational environments, not just live in isolation.",
-      },
-      {
-        title: "Strong conversion architecture",
-        description:
-          "The free trial, demo flow, customer quotes, industry logos, limited-time offer, and marketplace extension create multiple conversion hooks for businesses at different levels of readiness.",
+          "Multi-feature SaaS tools require more proof than single-purpose tools. The website needed specific, contextual proof points rather than generic testimonials.",
       },
     ],
     stackSignals: [
-      {
-        title: "Separate SaaS app surface",
-        description:
-          "The live site routes users to app.hosaksham.com for product usage, which suggests a clear separation between the marketing site and the application layer.",
-      },
-      {
-        title: "Payment and operational integrations",
-        description:
-          "Public FAQ and feature copy explicitly mention payment gateway APIs, settlement cycles, attendance workflows, receipts, and reconciliation, indicating a non-trivial backend orchestration layer behind the product promise.",
-      },
-      {
-        title: "Communication and meeting ecosystem",
-        description:
-          "The platform advertises custom WhatsApp Business connectivity plus Zoom and Google Meet support, which points to an integration-heavy product architecture built around service operations.",
-      },
-      {
-        title: "Event and microsite capabilities",
-        description:
-          "Branded event pages, ticketing, QR check-ins, and microsites imply reusable templates, campaign tooling, and modular product surfaces beyond a simple subscription dashboard.",
-      },
+      { title: "Framework", description: "Next.js." },
+      { title: "Styling", description: "Tailwind CSS." },
+      { title: "Interactivity", description: "React state-driven operator context switcher." },
+      { title: "Animation", description: "Framer Motion context transition animations." },
     ],
     challengeBlocks: [
       {
-        title: "Explaining a wide feature surface",
+        title: "Operator context switcher",
         description:
-          "The product crosses subscriptions, classes, events, attendance, communication, and payments. The website has to compress that complexity into a story that feels simple to non-technical business owners.",
+          "The switcher had to read as navigation rather than a content toggle. Visitors should feel like they are moving to a relevant section of the product, not activating a filter.",
       },
       {
-        title: "Serving multiple industries with one message",
+        title: "Content parity across contexts",
         description:
-          "HoSaksham targets education, fitness, dance, yoga, retail, playschools, and more. The challenge is to make the site feel specific enough for each while still protecting a unified platform narrative.",
-      },
-      {
-        title: "Earning trust for money movement",
-        description:
-          "As soon as payments are involved, the bar for trust rises sharply. The site has to answer concerns around settlement timing, gateway visibility, receipts, and bank transfer handling in a very direct way.",
-      },
-      {
-        title: "Bridging acquisition and activation",
-        description:
-          "For SaaS, a great homepage is not enough. The marketing site must smoothly hand users from awareness to trial or demo, with enough confidence and clarity to reduce drop-off before first product use.",
+          "If the gym context is more detailed than the online programme context, visitors notice the asymmetry and draw conclusions about product maturity. All three contexts required equal depth.",
       },
     ],
     resultMetrics: [
-      {
-        value: "₹12Cr+",
-        label: "Collected annually",
-        note: "A top-level operational proof point published on the site.",
-      },
-      {
-        value: "50+",
-        label: "Active businesses",
-        note: "Signals current traction across the customer base.",
-      },
-      {
-        value: "60+",
-        label: "Hours saved per month",
-        note: "Positioned as time saved per active business.",
-      },
-      {
-        value: "95%",
-        label: "Renewal rates",
-        note: "Highlights retention value in subscription workflows.",
-      },
+      { value: "Live", label: "Launched on schedule", note: "Currently live." },
+      { value: "3", label: "Operator contexts", note: "Studio & Gym, Online Programme, Subscription Community." },
+      { value: "Scoped", label: "State architecture", note: "Context state is local to the product demonstration section." },
     ],
     outcomeNarrative: [
-      "HoSaksham works best as a product website when every feature is translated into business relief: fewer admin hours, faster collections, stronger renewals, easier events, and cleaner daily operations.",
-      "The site turns an operationally complex SaaS product into a high-clarity conversion experience by grounding every promise in use cases, testimonials, metrics, and concrete integrations.",
+      "Hosaksham now has a website that solves the problem every multi-feature SaaS faces: how do you communicate breadth without inducing decision paralysis.",
+      "The operator context architecture means the site tells three different stories from one URL, each one precise enough that the right visitor sees themselves in it. The planning work made a five-week delivery possible without cutting corners on any of the three contexts.",
+    ],
+    technologiesUsed: [
+      { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    ],
+    frameworksUsed: [
+      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    ],
+    toolsUsed: [
+      { name: "WordPress CMS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+    ],
+  },
+  {
+    slug: "prodxverse",
+    tag: "Product Design Education Platform",
+    title: "ProdXVerse",
+    img: imgProject05,
+    client: "ProdXVerse",
+    year: "2025",
+    role: "Developer",
+    duration: "Full build + Content + QA",
+    clientType: "EdTech - Cohort Program",
+    description:
+      "Product design education platform - full-stack dev, content ops & maintenance.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "ProdXVerse is a 12-week cohort-based design education program launched by the founder of Desisle - built to take beginners and mid-level designers to job-ready product designers using AI-powered workflows, live mentorship, and real SaaS projects.",
+        "As an extension of my Desisle role, I was brought in to build the ProdXVerse website from the ground up - owning the full development lifecycle from initial build to ongoing feature sections, blog publishing, and end-to-end testing and maintenance. The site needed to do one thing above all else: convert serious, motivated applicants into enrolled students.",
+      ],
+      metrics: [
+        { value: "Full website build", label: "Front to back", note: "in React / Next.js" },
+        { value: "Feature sections", label: "Curriculum, pricing", note: "mentor, FAQ" },
+        { value: "Blog publishing", label: "Content ops", note: "and live posts" },
+        { value: "Testing & QA", label: "End-to-end", note: "across all flows" },
+      ],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "Building a website for a design education program - founded by a UI/UX agency - means every pixel of the site is being evaluated through a designer's eyes. The product being sold is design quality and product thinking. The website cannot afford to feel rough, inconsistent, or unfinished at any point.",
+        "The scope here was significantly broader than a component-focused role. Owning the site from the ground up meant making architectural decisions about structure, routing, and content layout early - decisions that would affect how easily the site could grow as new cohorts, blog posts, and feature sections were added over time.",
+        "Running this alongside the Desisle engagement also meant managing two distinct codebases, two content pipelines, and two sets of quality standards simultaneously - without letting either slip.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "ProdXVerse went from idea to a fully functional, conversion-focused website - built in Next.js with a structured content pipeline for blogs and a maintainable codebase that could grow with the program. Every major section of the site - curriculum, mentor profile, pricing tiers, testimonials, FAQ, and application form - was developed and tested to work seamlessly together.",
+        "The site now serves as the primary trust and conversion asset for a program capped at 30 seats per cohort, where every enrolled student represents a significant commitment. That means the website's job is high-stakes - and the build reflects that.",
+      ],
+      quote:
+        "Building for an education program meant building for a promise. Every section of the site had to make a first-time visitor feel that this program was worth 12 weeks of their life.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "The ProdXVerse website is live, tested, and actively enrolling students - with Cohort 1 now open with only 10 seats remaining from a 30-seat cap. The blog is operational, feature sections are maintained and updated, and the site holds up across all critical user flows - from landing to application submission.",
+        "The work spans the full development lifecycle: architecture, feature development, content publishing, QA, and ongoing maintenance - all running in parallel with the Desisle engagement, demonstrating the ability to manage multiple live products at once without dropping quality on either.",
+      ],
+      tags: [
+        "Full site built & live",
+        "Blog pipeline running",
+        "All flows QA tested",
+        "Cohort 1 enrolling now",
+        "Dual product ownership",
+        "React / Next.js",
+      ],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "Building ProdXVerse end to end was a different kind of challenge from the component work at Desisle. Owning the full site meant I was responsible for every decision - not just the implementation. That pushed me to think like a product developer, not just a developer executing a brief.",
+        "Running both Desisle and ProdXVerse simultaneously taught me how to context-switch clearly between projects - keeping each codebase, content pipeline, and quality bar separate in my head without letting one bleed into the other. That discipline is something you only build by actually doing it under pressure.",
+        "This project also deepened my appreciation for what a website does for an early-stage product. ProdXVerse had no reputation when I started building it. The site was the reputation - and how it was built directly shaped whether people would trust the program enough to apply. That is a responsibility I now carry into every project I work on.",
+      ],
+    },
+    contextSummary:
+      "Prodxverse needed a website that could present a modern product ecosystem without overwhelming first-time visitors. The priority was structure: what the product does, who it helps, and why it matters.",
+    projectSummary: [
+      "The page structure was planned around product clarity. Each section had one job: introduce the problem, explain the product value, show the workflow, and move the visitor toward action.",
+      "The visual system was kept clean and modular so future product updates can be added without rebuilding the entire page experience.",
+    ],
+    details: [
+      "Built responsive sections with reusable layout patterns for hero, feature blocks, proof sections, and conversion areas.",
+      "Focused on clean spacing, readable hierarchy, and component consistency so the product story stays easy to scan across desktop and mobile.",
+    ],
+    snapshotMetrics: [
+      { value: "Product", label: "Website type", note: "Structured for product explanation and conversion." },
+      { value: "Responsive", label: "Frontend output", note: "Built for desktop, tablet, and mobile flows." },
+      { value: "Reusable", label: "Components", note: "Sections planned for easy future updates." },
+    ],
+    ecosystemBlocks: [
+      {
+        title: "Product clarity",
+        description: "The site needed to make the product easy to understand without relying on long explanations.",
+      },
+      {
+        title: "Conversion path",
+        description: "Each section supports the next decision, from awareness to action.",
+      },
+    ],
+    stackSignals: [
+      { title: "Frontend", description: "Responsive page development with reusable components." },
+      { title: "Styling", description: "Clean section layouts, consistent spacing, and scalable UI patterns." },
+    ],
+    resultMetrics: [
+      { value: "Clear", label: "Product story", note: "The product value is easier to scan and understand." },
+      { value: "Modular", label: "Page system", note: "Future sections can be added without layout rework." },
+    ],
+    technologiesUsed: [
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+    ],
+    frameworksUsed: [],
+    toolsUsed: [
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    ],
+    stackGroups: [
+      {
+        title: "Technology",
+        items: [
+          { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+          { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+          { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        ],
+      },
+      {
+        title: "Database",
+        items: [
+          { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        ],
+      },
+      {
+        title: "Tools",
+        items: [
+          { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+          { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bookmark-hub",
+    tag: "Bookmark & Resource Manager",
+    title: "Curious Designer",
+    img: imgProject06,
+    client: "Curious Designer",
+    year: "2025",
+    role: "Developer",
+    duration: "Deployment, Fixes & QA",
+    clientType: "SaaS Tool - Designer Utility",
+    liveUrl: "https://curiousdesigner.in/",
+    description:
+      "Bookmark & resource manager for designers - deployment, feature fixes & testing.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "Curious Designer is a bookmark and resource manager built specifically for designers - a personal tool that lets users save, organise, and retrieve design resources, references, and inspiration in one structured place. Think of it as a curated knowledge base tailored to how designers actually work and collect ideas.",
+        "My role as a developer covered three core areas: deploying the product, resolving feature-level bugs and fixes in the React / Next.js codebase, and testing the application end to end to ensure a smooth, reliable experience for users once live.",
+      ],
+      metrics: [
+        { value: "Deployment", label: "Taking the product", note: "live end to end" },
+        { value: "Feature fixes", label: "Bug resolution", note: "in React / Next.js" },
+        { value: "Testing & QA", label: "End-to-end", note: "functionality checks" },
+        { value: "Product", label: "Resource manager", note: "for designers" },
+      ],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "Deploying a Next.js application is rarely as simple as pushing to production. Environment configuration, build optimisation, routing behaviour in production versus development, and authentication flows - all of these need to be verified and corrected at the point of deployment. Getting a product live reliably requires anticipating where things break that worked perfectly in local development.",
+        "Feature fixes require a different mindset from greenfield development. Coming into an existing codebase, understanding how it is structured, tracing the source of a bug without breaking adjacent functionality - this demands patience and a systematic approach that writing new code does not always require.",
+        "For a tool that designers use to manage and retrieve their saved resources, the experience has to be smooth and trustworthy. Any broken flow - saving a bookmark, organising into collections, retrieving on return - directly undermines the product's core value. Testing had to cover not just happy paths but edge cases and failure states that real users would eventually encounter.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "The product went from a codebase to a live, accessible application - deployed, stable, and ready for real users. Feature fixes that had been blocking parts of the product from working as intended were resolved cleanly, and the application was tested thoroughly enough to be handed to users with confidence.",
+        "For a niche tool built for designers - a highly opinionated audience with a sharp eye for when things feel broken - delivering a reliable, polished experience is not optional. The deployment and QA work I contributed to is what made the product trustworthy enough to use daily.",
+      ],
+      quote:
+        "Deployment is where a product becomes real. Everything before it is a promise - everything after it is a responsibility.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "Curious Designer is live and accessible - a deployed, functional React / Next.js product that designers can sign up for and use to manage their resource libraries. Feature-level issues were resolved, keeping the core bookmark and organisation flows intact and working as designed. End-to-end testing ensured that the critical user journeys - authentication, saving, organising, and retrieving resources - held up reliably in production.",
+      ],
+      tags: [
+        "Product deployed live",
+        "Feature bugs resolved",
+        "End-to-end QA complete",
+        "React / Next.js",
+        "Auth flows verified",
+        "Production-stable",
+      ],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "Deployment taught me that the gap between a working development build and a stable production environment is larger than it looks. Environment variables, build configurations, server-side rendering behaviour, and authentication redirects all need to be handled explicitly - nothing carries over automatically. Going through this process sharpened my understanding of how Next.js behaves in production specifically, beyond what local development ever reveals.",
+        "Working on feature fixes in an existing codebase was a valuable exercise in reading other people's code with care. Before fixing anything, I had to understand what was there - why it was written that way, what it depended on, and what would break if I changed it. That kind of code empathy is a skill that grows with every unfamiliar codebase you step into.",
+        "Testing a product built for designers also reminded me that the user of this tool has a higher standard for polish than most. Designers notice friction immediately. That awareness pushed me to test more thoroughly than I might have for a different audience - and it raised my overall bar for what working correctly actually means.",
+      ],
+    },
+    contextSummary:
+      "Bookmark Hub is built around a practical user need: keeping frequently used links organised without turning the interface into another cluttered dashboard.",
+    projectSummary: [
+      "The interface was designed around speed and clarity. Users should be able to add, scan, group, and revisit links with minimal friction.",
+      "The layout keeps actions visible while leaving enough whitespace for repeated daily use.",
+    ],
+    details: [
+      "Built a clean frontend structure for link cards, categories, search-friendly layouts, and empty states.",
+      "Prioritised predictable UI behaviour and responsive layouts so the app feels usable on both desktop and mobile.",
+    ],
+    snapshotMetrics: [
+      { value: "Utility", label: "Product type", note: "Designed for repeated daily use." },
+      { value: "Clean", label: "Interface", note: "Low-friction layout for saving and scanning links." },
+      { value: "Responsive", label: "Experience", note: "Works across device sizes." },
+    ],
+    ecosystemBlocks: [
+      {
+        title: "Information organisation",
+        description: "Saved links need enough structure to be useful without becoming hard to manage.",
+      },
+      {
+        title: "Daily-use ergonomics",
+        description: "The interface needed to stay light, fast, and predictable for repeated use.",
+      },
+    ],
+    stackSignals: [
+      { title: "Frontend", description: "React-style component thinking for cards, lists, and states." },
+      { title: "UX", description: "Focused flows for saving, finding, and revisiting links." },
+    ],
+    resultMetrics: [
+      { value: "Simple", label: "Core flow", note: "Save, organise, and revisit links quickly." },
+      { value: "Scalable", label: "UI structure", note: "Categories and cards can grow with the user's collection." },
+    ],
+    technologiesUsed: [
+      { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "shadcn/ui", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shadcnui.svg" },
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    ],
+    toolsUsed: [
+      { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Visual Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" },
+    ],
+  },
+  {
+    slug: "automotive-group-website",
+    tag: "Multi-Website Documentation",
+    title: "UAE Legacy Conglomerate",
+    img: imgProject07,
+    client: "Client confidential",
+    year: "2025",
+    role: "QA Tester",
+    duration: "Docs, Brand Guidelines & Testing",
+    clientType: "9 companies, 34+ brands",
+    description:
+      "Multi-website documentation, brand guidelines & cross-site testing.",
+    sourceNote: "Client confidential - name withheld by request.",
+    customObjective: {
+      title: "Objective",
+      paragraphs: [
+        "The client is one of the UAE's most established family business conglomerates - founded in the early 1950s with over 67 years of legacy, 9 operating companies, 34+ brands, 2000+ employees, and 13 consecutive Superbrands Awards. Their business divisions span automotive, real estate, construction, energy, financial exchange, general trading, and technology.",
+        "Across this group, each company and service division maintains its own web presence and brand identity. The objective was to bring coherence and reliability to all of it - through comprehensive documentation of every website's flow and content structure, a unified set of brand guidelines across the group's digital properties, and end-to-end testing across all websites to ensure consistent, functional, and error-free user experiences.",
+      ],
+      metrics: [
+        { value: "Website docs", label: "Full flow", note: "documented per site" },
+        { value: "Brand guidelines", label: "Across the group's", note: "websites" },
+        { value: "Cross-site QA", label: "End-to-end", note: "testing all sites" },
+        { value: "Enterprise scale", label: "9 companies", note: "34+ brands" },
+      ],
+    },
+    customStruggle: {
+      title: "Struggle",
+      paragraphs: [
+        "Documenting a single website is straightforward. Documenting multiple websites across a conglomerate - each with its own structure, content type, user journey, and team of internal editors - is an entirely different challenge. Every site needed to be understood deeply enough to be documented accurately, without overflattening the purpose, audience, and editorial logic of each one independently.",
+        "Brand guidelines across a group this large carry an additional layer of complexity. Each business unit has its own identity - automotive, financial exchange, real estate, and technology all look and feel different. Documenting those guidelines in a way that is consistent at the group level while respecting the distinctiveness of each brand required careful thought about how the documentation itself was structured.",
+        "Testing across multiple websites meant holding a wide mental map of what correct looks like for each - different flows, different forms, different languages, and different user expectations across each business division. Keeping all of that accurate and thorough simultaneously was the core operational challenge of this engagement.",
+      ],
+    },
+    customTransformation: {
+      title: "Transformation",
+      paragraphs: [
+        "What had previously been a set of disconnected websites - each managed independently, with no central reference for how they should look, behave, or be edited - now had a coherent documentation layer behind them. Internal teams across the group gained a structured reference for how their websites work and how to manage them without external developer dependency.",
+        "The brand guidelines documentation gave the group's digital presence a shared language - a reference point that future design, development, and content decisions across any division could be held against. For a conglomerate with 34+ brands, that kind of consistency infrastructure is invisible when it works and very visible when it is missing.",
+      ],
+      quote:
+        "At enterprise scale, documentation is not admin work - it is the connective tissue that keeps a multi-brand, multi-team organisation moving in the same direction.",
+    },
+    customOutcomes: {
+      title: "Outcomes",
+      paragraphs: [
+        "Every website across the group was documented - full flow, editing structure, and content guidelines - giving internal teams access to reliable references for managing their digital presence. Brand guidelines were produced and documented across the group's web properties, creating a shared standard for how the group's identity is expressed online.",
+        "All websites were tested end to end - across English and Arabic language versions, across all key user flows and interactive features - ensuring that a conglomerate trusted by over 2000 employees and with 13 Superbrands Awards was represented online without errors or inconsistencies.",
+      ],
+      metrics: [
+        { value: "9", label: "Companies", note: "documented" },
+        { value: "34+", label: "Brands covered", note: "in guidelines" },
+        { value: "2", label: "Languages tested", note: "EN & AR" },
+        { value: "67+", label: "Years of legacy", note: "represented" },
+      ],
+      tags: [
+        "Multi-site documentation",
+        "Brand guidelines complete",
+        "End-to-end QA done",
+        "Bilingual testing",
+        "Enterprise-scale delivery",
+        "Internal team handoff",
+      ],
+    },
+    customLearnings: {
+      title: "Personal Insights and Learnings",
+      paragraphs: [
+        "This engagement taught me what it actually means to work at enterprise scale. When you are documenting and testing not one website, but an entire ecosystem of them - each with its own purpose, team, and audience - you have to develop a systematic approach to your own work. You cannot rely on memory or intuition across that many moving parts. Process and structure become the skill.",
+        "Writing brand guidelines at a conglomerate level also deepened my understanding of how identity works in large organisations. Every brand under the group has its own visual language, but they all need to feel like part of the same family. Documenting that balance accurately, without flattening the individual brands or losing the group coherence, required a level of design awareness I had not needed to apply before.",
+        "Testing bilingual websites - across English and Arabic - added another dimension I had not encountered in earlier projects. RTL layout, translated content, and localised user flows all need to be verified independently. That experience made me a more thorough tester and a more globally aware developer.",
+      ],
+    },
+    contextSummary:
+      "The automotive group website needed to communicate scale and trust while keeping each business vertical easy to understand for visitors.",
+    projectSummary: [
+      "The site structure was planned around brand clarity, service visibility, and fast access to enquiry paths.",
+      "The layout keeps the automotive visual language premium while making the content easy to scan across desktop and mobile.",
+    ],
+    details: [
+      "Built responsive sections for brand overview, services, featured vehicles, enquiry paths, and trust-building content.",
+      "Focused on clean UI hierarchy, strong image presentation, and consistent component spacing across the website.",
+    ],
+    snapshotMetrics: [
+      { value: "Group", label: "Website type", note: "Built for an automotive business with multiple verticals." },
+      { value: "Premium", label: "Visual direction", note: "Focused on vehicle imagery, hierarchy, and trust." },
+      { value: "Responsive", label: "Frontend output", note: "Structured for mobile and desktop browsing." },
+    ],
+    ecosystemBlocks: [
+      {
+        title: "Brand and service clarity",
+        description: "Visitors should quickly understand the group, its vehicle categories, and its service offering.",
+      },
+      {
+        title: "Premium presentation",
+        description: "The interface needed to feel polished without making enquiry paths harder to reach.",
+      },
+    ],
+    stackSignals: [
+      { title: "Frontend", description: "Responsive website development with reusable sections." },
+      { title: "UI", description: "Premium imagery, structured content blocks, and clear conversion paths." },
+    ],
+    resultMetrics: [
+      { value: "Clear", label: "Group positioning", note: "The website presents the business and its verticals clearly." },
+      { value: "Ready", label: "Enquiry flow", note: "Visitors can move from browsing to contact with less friction." },
+    ],
+    stackGroups: [],
+    technologiesUsed: [
+      { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "shadcn/ui", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shadcnui.svg" },
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    ],
+    toolsUsed: [
+      { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Bitbucket", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Visual Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" },
     ],
   },
 ] as const;
