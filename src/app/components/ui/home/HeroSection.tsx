@@ -33,6 +33,16 @@ const TECHNOLOGIES = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     accent: "#777bb4",
   },
+  {
+    name: "Framer",
+    logo: "https://cdn.simpleicons.org/framer/000000",
+    accent: "#000000",
+  },
+  {
+    name: "WordPress",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
+    accent: "#21759b",
+  },
 ];
 
 export function HeroSection() {
@@ -106,7 +116,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative flex min-w-0 flex-col items-center gap-5 pt-1 md:items-start md:pt-2">
-          <div className="flex w-full max-w-md items-center gap-4">
+          <div className="flex w-full max-w-[572px] items-center gap-4">
             <span className="h-px flex-1 bg-[#1a1c1c]/14" aria-hidden="true" />
             <span
               className="text-[#1a1c1c] uppercase tracking-[0.28em]"
@@ -121,28 +131,28 @@ export function HeroSection() {
             <span className="h-px flex-1 bg-[#1a1c1c]/14" aria-hidden="true" />
           </div>
 
-          <div className="relative w-full max-w-md overflow-hidden rounded-[28px] border border-[#1a1c1c]/10 bg-white/55 px-4 py-4 shadow-[0_18px_50px_rgba(26,28,28,0.07)] backdrop-blur sm:w-fit sm:px-7 sm:py-5">
+          <div className="relative w-full max-w-[572px] overflow-hidden rounded-[28px] border border-[#1a1c1c]/10 bg-white/55 px-4 py-4 shadow-[0_18px_50px_rgba(26,28,28,0.07)] backdrop-blur sm:w-fit sm:px-7 sm:py-5">
             <span
               className="absolute left-5 right-5 top-1/2 h-px bg-gradient-to-r from-transparent via-[#1a1c1c]/16 to-transparent"
               aria-hidden="true"
             />
-            <div className="relative flex flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-5 md:gap-7">
+            <div className="relative flex flex-nowrap items-center justify-center gap-3 sm:gap-5 md:gap-7">
               {TECHNOLOGIES.map((technology) => (
                 <span
                   key={technology.name}
-                  className="group relative inline-flex h-[52px] w-[52px] items-center justify-center transition-transform duration-300 hover:-translate-y-2 sm:h-[62px] sm:w-[62px]"
+                  className="group relative inline-flex h-10 w-10 shrink-0 items-center justify-center transition-transform duration-300 hover:-translate-y-2"
                   title={technology.name}
                   aria-label={technology.name}
                 >
                   <span
-                    className="absolute h-11 w-11 rounded-full opacity-20 blur-xl transition-opacity duration-300 group-hover:opacity-45"
+                    className="absolute h-9 w-9 rounded-full opacity-20 blur-xl transition-opacity duration-300 group-hover:opacity-45"
                     style={{ backgroundColor: technology.accent }}
                     aria-hidden="true"
                   />
                   <img
                     src={technology.logo}
                     alt={`${technology.name} logo`}
-                    className="relative h-11 w-11 object-contain drop-shadow-[0_10px_16px_rgba(26,28,28,0.12)] transition-transform duration-300 group-hover:scale-110 sm:h-[50px] sm:w-[50px]"
+                    className="relative h-10 w-10 object-contain drop-shadow-[0_10px_16px_rgba(26,28,28,0.12)] transition-transform duration-300 group-hover:scale-110"
                     loading="lazy"
                   />
                 </span>
@@ -153,7 +163,7 @@ export function HeroSection() {
       </div>
 
       <div className="order-first h-[360px] overflow-hidden border border-black/10 sm:h-[460px] md:order-last md:h-[620px]">
-        <img src={HERO_IMAGE} alt="Hero" className="h-full w-full object-cover object-[center_36%] grayscale" />
+        <img src={HERO_IMAGE} alt="Hero" className="h-full w-full object-cover object-[center_36%]" />
       </div>
     </section>
   );

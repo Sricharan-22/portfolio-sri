@@ -170,14 +170,6 @@ function getLearningBlocks(study: CaseStudy): TopicBlock[] {
 }
 
 function CaseStudyBrief({ study }: { study: CaseStudy }) {
-  const facts = [
-    { label: "Product", value: getProductName(study) },
-    { label: "Industry", value: study.clientType },
-    { label: "Category", value: study.tag },
-    { label: "Year", value: study.year },
-    { label: "Role", value: study.role },
-  ];
-
   return (
     <section className="px-4 pb-5 sm:px-6 md:px-12">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-[#050608] text-white shadow-[0_24px_70px_rgba(8,10,12,0.16)]">
@@ -205,26 +197,7 @@ function CaseStudyBrief({ study }: { study: CaseStudy }) {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
-            {facts.map((fact) => (
-              <div key={fact.label} className="rounded-[22px] border border-white/10 bg-white/[0.045] p-4 backdrop-blur sm:p-5">
-                <span
-                  className="mb-3 block uppercase text-white/42"
-                  style={{ fontFamily: "Inter, sans-serif", fontSize: "10px", fontWeight: 900, letterSpacing: "0.16em" }}
-                >
-                  {fact.label}
-                </span>
-                <p
-                  className="text-[#f7efe4]"
-                  style={{ fontFamily: "Epilogue, sans-serif", fontSize: "clamp(17px, 1.8vw, 23px)", lineHeight: "1.22", fontWeight: 800 }}
-                >
-                  {fact.value}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-[0.85fr_1.65fr]">
+          <div className="grid grid-cols-1 gap-3 lg:grid-cols-[0.85fr_1.65fr]">
             <div className="rounded-[24px] border border-white/10 bg-white/[0.045] p-5 backdrop-blur md:p-7">
               <span
                 className="mb-4 block uppercase text-white/42"
@@ -498,7 +471,7 @@ function LogoStackSection({ study }: { study: CaseStudy }) {
               className="text-[#121416]"
               style={{ fontFamily: "Epilogue, sans-serif", fontSize: "clamp(36px, 5vw, 68px)", lineHeight: "0.95", fontWeight: 900 }}
             >
-              Built With
+              Built with
             </h2>
           </div>
           <p
@@ -556,7 +529,7 @@ export default function CaseStudyDetail() {
     return (
       <div className="pt-32 px-12 pb-24 min-h-screen">
         <h1 className="text-4xl" style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900 }}>
-          Case Study Not Found
+          Case study not found
         </h1>
         <Link to="/" className="text-blue-500 underline mt-4 block">
           Return Home
@@ -585,7 +558,7 @@ export default function CaseStudyDetail() {
               {study.tag}
             </span>
             <h1
-              className="mb-6 max-w-full break-words uppercase tracking-tight text-[#1a1c1c]"
+              className="mb-6 max-w-full break-words tracking-tight text-[#1a1c1c]"
               style={{
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 900,
@@ -683,7 +656,7 @@ export default function CaseStudyDetail() {
       <TopicPanel title="Struggle" blocks={getStruggleBlocks(study)} />
       <TopicPanel title="Transformation" blocks={getTransformationBlocks(study)} />
       <TopicPanel title="Outcomes" blocks={getOutcomeBlocks(study)} />
-      <TopicPanel title="Personal Insights and Learnings" blocks={getLearningBlocks(study)} />
+      <TopicPanel title="Personal insights and learnings" blocks={getLearningBlocks(study)} />
       <LogoStackSection study={study} />
 
       <ScrollReveal once>
@@ -699,7 +672,7 @@ export default function CaseStudyDetail() {
               className="uppercase"
               style={{ fontFamily: "Epilogue, sans-serif", fontWeight: 900, fontSize: "clamp(32px, 4vw, 48px)" }}
             >
-              View All Work
+              View all work
             </span>
           </Link>
         </div>

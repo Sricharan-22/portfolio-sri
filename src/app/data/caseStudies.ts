@@ -80,7 +80,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "barakat",
     tag: "Custom WordPress",
-    title: "Gulf Conglomerate Website",
+    title: "Gulf conglomerate website",
     img: imgProject01,
     client: "Client confidential",
     year: "2025",
@@ -136,7 +136,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "This was my deepest engagement with WordPress as a development platform - not just using it as a CMS, but customising it at the theme, template, and field level. ACF in particular changed how I think about content architecture. The way fields are structured in the backend directly shapes how editors experience the site, and getting that wrong creates friction that outlasts the build.",
         "Working through PHP bugs taught me to read code I did not write - tracing issues back through template files, hooks, and plugin logic to find the root cause rather than patching symptoms. That kind of diagnostic thinking is a skill that transfers across every stack I work in.",
@@ -246,13 +246,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "finance-tale",
     tag: "Content Platform",
-    title: "Finance Tale",
+    title: "Where financial literacy becomes a curriculum",
     img: imgProject02,
     client: "Finance Tale",
-    year: "2025",
+    year: "2026",
     role: "Frontend Developer",
     duration: "5 weeks",
-    clientType: "Finance Education / Media",
+    clientType: "Finance Education",
     liveUrl: "https://thefinancetale.com/",
     description:
       "Landing page and product UI built end to end from zero design direction to a product the team believed in.",
@@ -290,7 +290,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       tags: ["Landing page shipped", "Product UI complete", "All flows tested", "Stakeholder alignment"],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "This project reinforced that good UX is not just a visual layer, it is what turns an idea into something people trust. The moment the design clicked, the entire team's relationship with the product changed. That was a powerful thing to witness and be responsible for.",
         "Working across the full stack, React on the frontend, MongoDB and Visual Studio on the backend, made me a more rounded engineer. Understanding how data flows from the backend shaped how I structured the UI and how I approached testing.",
@@ -424,7 +424,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "This was the first time I worked inside a design-led environment as a developer, and that context shifted how I approach frontend work. When the people around you think in systems, components, and user flows, you naturally start holding your own code to a higher visual standard.",
         "Managing content operations on a Next.js site taught me that publishing is not just writing - it is structured data, routing, metadata, and consistency across every page. A blog post or case study that breaks the layout or loads incorrectly undermines the very credibility it is trying to build.",
@@ -523,8 +523,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "hosaksham",
-    tag: "Reusable UI Components",
-    title: "HoSaksham",
+    tag: "Academy Subscription",
+    title: "Where every academy becomes a scalable business",
     img: imgProject04,
     client: "HoSaksham",
     year: "2025",
@@ -573,7 +573,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       tags: ["Components live site-wide", "Consistent UI language", "Real product, real users"],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "This project taught me that component-level work is not a small task - it is foundational. When you own the elements that repeat across an entire website, you are responsible for the user's first impression at every touchpoint. That sharpened how I think about reusability, flexibility, and naming conventions in code.",
         "Working on a live SaaS product targeting real Indian SMBs - fitness coaches, skating camps, chess clubs - also grounded me in what a product actually needs to communicate: trust, simplicity, and speed. The content of a component is not separate from its design; they shape each other.",
@@ -707,7 +707,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "Building ProdXVerse end to end was a different kind of challenge from the component work at Desisle. Owning the full site meant I was responsible for every decision - not just the implementation. That pushed me to think like a product developer, not just a developer executing a brief.",
         "Running both Desisle and ProdXVerse simultaneously taught me how to context-switch clearly between projects - keeping each codebase, content pipeline, and quality bar separate in my head without letting one bleed into the other. That discipline is something you only build by actually doing it under pressure.",
@@ -784,7 +784,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "bookmark-hub",
     tag: "Bookmark & Resource Manager",
-    title: "Curious Designer",
+    title: "Curious designer",
     img: imgProject06,
     client: "Curious Designer",
     year: "2025",
@@ -839,7 +839,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "Deployment taught me that the gap between a working development build and a stable production environment is larger than it looks. Environment variables, build configurations, server-side rendering behaviour, and authentication redirects all need to be handled explicitly - nothing carries over automatically. Going through this process sharpened my understanding of how Next.js behaves in production specifically, beyond what local development ever reveals.",
         "Working on feature fixes in an existing codebase was a valuable exercise in reading other people's code with care. Before fixing anything, I had to understand what was there - why it was written that way, what it depended on, and what would break if I changed it. That kind of code empathy is a skill that grows with every unfamiliar codebase you step into.",
@@ -897,7 +897,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "automotive-group-website",
     tag: "Multi-Website Documentation",
-    title: "UAE Legacy Conglomerate",
+    title: "UAE legacy conglomerate",
     img: imgProject07,
     client: "Client confidential",
     year: "2025",
@@ -959,7 +959,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ],
     },
     customLearnings: {
-      title: "Personal Insights and Learnings",
+      title: "Personal insights and learnings",
       paragraphs: [
         "This engagement taught me what it actually means to work at enterprise scale. When you are documenting and testing not one website, but an entire ecosystem of them - each with its own purpose, team, and audience - you have to develop a systematic approach to your own work. You cannot rely on memory or intuition across that many moving parts. Process and structure become the skill.",
         "Writing brand guidelines at a conglomerate level also deepened my understanding of how identity works in large organisations. Every brand under the group has its own visual language, but they all need to feel like part of the same family. Documenting that balance accurately, without flattening the individual brands or losing the group coherence, required a level of design awareness I had not needed to apply before.",

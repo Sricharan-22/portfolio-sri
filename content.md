@@ -36,16 +36,16 @@ Expertise in
 
 ### Case Studies Section
 
-Case Studies
+No mockups. Just shipped.
 
-Proof, kept visual.
+The Work.
 
-The cards stay light on purpose. Open the case study when you want the architecture, constraints, and delivery notes.
+Each card represents a live product - designed, developed, and deployed. The case studies cover the architecture, the edge cases, and the decisions made under deadline.
 
 - Gulf Conglomerate Website - Custom WordPress: Custom WordPress - frontend development, ACF setup & documentation.
-- Finance Tale - Content Platform: Landing page and product UI built end to end from zero design direction to a product the team believed in.
+- Where Financial Literacy Becomes a Curriculum - Content Platform: Landing page and product UI built end to end from zero design direction to a product the team believed in.
 - Desisle - SaaS UI/UX Design Agency: SaaS UI/UX Design Agency - development, content ops & maintenance.
-- HoSaksham - Reusable UI Components: Academy subscription management SaaS - component development.
+- Where Every Academy Becomes a Scalable Business - Academy Subscription: Academy subscription management SaaS - component development.
 - ProdXVerse - Product Design Education Platform: Product design education platform - full-stack dev, content ops & maintenance.
 - Curious Designer - Bookmark & Resource Manager: Bookmark & resource manager for designers - deployment, feature fixes & testing.
 - UAE Legacy Conglomerate - Multi-Website Documentation: Multi-website documentation, brand guidelines & cross-site testing.
@@ -322,15 +322,15 @@ The multi-brand architecture solved a structural problem that the previous site 
 - Frameworks & CMS: Bootstrap, WordPress, Advanced Custom Fields (ACF)
 - Tools: VS Code, Bitbucket
 
-### Finance Tale
+### Where Financial Literacy Becomes a Curriculum
 
 - Slug: finance-tale
 - Tag: Content Platform
 - Client: Finance Tale
-- Year: 2025
+- Year: 2026
 - Role: Frontend Developer
 - Duration: 5 weeks
-- Client Type: Finance Education / Media
+- Client Type: Finance Education
 - Live URL: https://thefinancetale.com/
 
 Landing page and product UI built end to end from zero design direction to a product the team believed in.
@@ -559,10 +559,10 @@ The proof is visible enough to generate confidence before the first word is exch
 - Database: MySQL
 - Tools: VS Code, Bitbucket
 
-### HoSaksham
+### Where Every Academy Becomes a Scalable Business
 
 - Slug: hosaksham
-- Tag: Reusable UI Components
+- Tag: Academy Subscription
 - Client: HoSaksham
 - Year: 2025
 - Role: Frontend Developer

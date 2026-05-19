@@ -17,9 +17,9 @@ export const HOME_SECTION_IDS = {
 } as const;
 
 export const NAV_ITEMS = [
-  { label: "TOOL", side: "left", sectionId: HOME_SECTION_IDS.work },
-  { label: "EXPERIENCE", side: "left", sectionId: HOME_SECTION_IDS.experience },
-  { label: "WORK", side: "right", sectionId: HOME_SECTION_IDS.work },
+  { label: "Tool", side: "left", sectionId: HOME_SECTION_IDS.work },
+  { label: "Experience", side: "left", sectionId: HOME_SECTION_IDS.experience },
+  { label: "Work", side: "right", sectionId: HOME_SECTION_IDS.work },
 ] as const;
 
 export const HERO_IMAGE = imgScreen2;
@@ -86,17 +86,17 @@ export const INTERNSHIP_BUILDS = [
 
 export const EXPERIENCE_PILLARS = [
   {
-    title: "Planning as a Discipline",
+    title: "Planning as a discipline",
     description:
       "I do not open a code editor until I understand what I am building and why. That means reading the brief, mapping the component surface, identifying where complexity will concentrate, and deciding how to contain it before writing a single line. It adds an hour at the start. It saves a week in the middle.",
   },
   {
-    title: "React & Next.js Systems",
+    title: "React & Next.js systems",
     description:
       "Not just knowing the API - knowing when to reach for it and when not to. Server Components, App Router architecture, data fetching patterns, bundle strategy. I treat the framework as a set of decisions, not a set of conventions to follow by default.",
   },
   {
-    title: "Full-Stack Awareness",
+    title: "Full-stack awareness",
     description:
       "Frontend decisions do not exist in isolation. Having built end-to-end - including backend - means I understand what the API contract needs to look like before it exists, and I write frontend code that does not create avoidable problems for the layer beneath it.",
   },
@@ -124,7 +124,7 @@ export const EXPERIENCE_SOCIALS = [
 
 export const EXPERIENCE_RECOGNITION = [
   {
-    title: "Four Production Projects",
+    title: "Four production projects",
     description:
       "Four production projects shipped in twelve months, each on schedule and currently live. No project has required a post-launch architectural rework.",
   },

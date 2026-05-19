@@ -4,21 +4,21 @@ import { TextReveal } from "../TextReveal";
 
 const HELP_ITEMS = [
   {
-    title: "Landing Pages",
+    title: "Website\ndevelopment",
     description:
-      "Clean, responsive pages built to represent you or your business - portfolio sites, company pages, and product landing pages delivered with quality.",
+      "Pixel-perfect, responsive sites written in clean code - portfolio sites, company pages, and product launches built to perform, not just look good.",
     icon: MonitorSmartphone,
   },
   {
-    title: "SaaS Interfaces",
+    title: "Product\ndevelopment",
     description:
-      "Functional and user-friendly interfaces for web apps - product pages, dashboards, onboarding flows, and app screens built for real users.",
+      "Complex web apps built end-to-end - dashboards, onboarding flows, and product screens engineered for real users and real data.",
     icon: Layers3,
   },
   {
-    title: "Component Systems",
+    title: "Component\nlibrary",
     description:
-      "Reusable, well-structured React components built with clear documentation, consistent brand guidelines, and scalable code - so your product stays clean as it grows.",
+      "Scalable React component libraries built with clean architecture, consistent props, and documentation that makes your codebase easy to hand off and grow.",
     icon: Code2,
   },
 ] as const;
@@ -28,16 +28,16 @@ export function HelpSection() {
     <section className="relative overflow-hidden bg-[#f7efe4] px-4 py-14 text-[#1a1c1c] sm:px-6 md:px-12 md:py-[96px]">
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div className="reveal-item min-w-0" style={{ "--reveal-index": 0 } as CSSProperties}>
-          <TextReveal
-            as="span"
-            text="Services"
-            className="mb-4 block text-[#5d5f5f] uppercase tracking-[0.22em]"
+            <TextReveal
+              as="span"
+              text="Services"
+              className="mb-4 block text-[#5d5f5f] tracking-[0.22em]"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", fontWeight: 600 }}
           />
-          <TextReveal
-            as="h2"
-            text={"How can\nI help?"}
-            className="text-[#1a1c1c] uppercase tracking-tight"
+            <TextReveal
+              as="h2"
+              text={"How can\nI help?"}
+            className="text-[#1a1c1c] tracking-tight"
             style={{
               fontFamily: "Epilogue, sans-serif",
               fontWeight: 900,
@@ -83,11 +83,11 @@ export function HelpSection() {
                 <TextReveal
                   as="h3"
                   text={item.title}
-                  className="uppercase"
+                  className="service-card-title"
                   style={{
                     fontFamily: "Epilogue, sans-serif",
                     fontWeight: 900,
-                    fontSize: "clamp(21px, 7vw, 30px)",
+                    fontSize: "clamp(22px, 4vw, 30px)",
                     lineHeight: "1.05",
                   }}
                   wordDelay={42}

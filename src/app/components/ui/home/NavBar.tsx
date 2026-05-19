@@ -48,7 +48,7 @@ export function NavBar() {
           key={item.label}
           to={item.to}
           onClick={() => setOpen(false)}
-          className="rounded-full px-4 py-2 text-black uppercase transition-all duration-300 hover:bg-white/30 hover:opacity-100"
+          className="rounded-full px-4 py-2 text-black transition-all duration-300 hover:bg-white/30 hover:opacity-100"
           style={sharedStyle}
         >
           {item.label}
@@ -61,7 +61,7 @@ export function NavBar() {
         key={item.label}
         href={`/#${item.sectionId}`}
         onClick={handleSectionClick(item.sectionId)}
-        className="rounded-full px-4 py-2 text-black uppercase transition-all duration-300 hover:bg-white/30 hover:opacity-100"
+        className="rounded-full px-4 py-2 text-black transition-all duration-300 hover:bg-white/30 hover:opacity-100"
         style={sharedStyle}
       >
         {item.label}
@@ -91,7 +91,7 @@ export function NavBar() {
       fontWeight: 900,
       fontSize: "clamp(36px, 6vw, 72px)",
       color: "#fff",
-      textTransform: "uppercase" as const,
+      textTransform: "none" as const,
       letterSpacing: "-0.03em",
       lineHeight: 1,
       opacity: 0.9,

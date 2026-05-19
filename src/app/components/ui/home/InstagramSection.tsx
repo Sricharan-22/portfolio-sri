@@ -99,7 +99,7 @@ export function InstagramSection() {
         <div className="mb-12 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12">
           <div className="col-span-1 md:col-span-7">
             <h2
-              className="text-white uppercase tracking-tight"
+              className="text-white tracking-tight"
               style={{
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 900,
@@ -107,7 +107,7 @@ export function InstagramSection() {
                 lineHeight: "0.95",
               }}
             >
-              CURRENT.
+              Current.
               <br />
               <span
                 style={{
@@ -117,7 +117,7 @@ export function InstagramSection() {
                   fontSize: "clamp(44px, 4.5vw, 68px)",
                 }}
               >
-                Build Log.
+                Build log.
               </span>
             </h2>
           </div>
@@ -209,7 +209,7 @@ export function InstagramSection() {
                 </div>
 
                 <h3
-                  className="text-white uppercase tracking-tight"
+                  className="text-white tracking-tight"
                   style={{
                     fontFamily: "Epilogue, sans-serif",
                     fontWeight: 900,
@@ -290,7 +290,7 @@ export function InstagramSection() {
                   </div>
 
                   <h4
-                    className="text-white uppercase"
+                    className="text-white"
                     style={{
                       fontFamily: "Epilogue, sans-serif",
                       fontWeight: 700,

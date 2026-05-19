@@ -118,14 +118,14 @@ export function AboutSection() {
           <div>
             <TextReveal
               as="span"
-              text="EXPERIENCE"
+              text="Experience"
               className="mb-4 block text-[#5d5f5f] uppercase tracking-[0.22em]"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", fontWeight: 600 }}
             />
             <TextReveal
               as="h2"
-              text={"WHERE I'VE\nWORKED."}
-              className="max-w-[640px] text-[#1a1c1c] uppercase tracking-tight"
+              text={"Where I've\nworked."}
+              className="max-w-[640px] text-[#1a1c1c] tracking-tight"
               style={{
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 900,
@@ -178,24 +178,8 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div
-          className="relative overflow-visible rounded-[32px] border p-4 text-white md:p-5"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,12,15,0.96), rgba(20,24,26,0.9))",
-            borderColor: "rgba(255,255,255,0.16)",
-            boxShadow:
-              "0 30px 90px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
-          }}
-        >
-          <div className="experience-sweep pointer-events-none absolute left-0 top-0 hidden h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block" />
-
-          <div className="relative z-10 flex flex-col gap-4 pb-0 lg:min-h-[108vh] lg:gap-0 lg:pb-[5px]">
-            <div
-              aria-hidden="true"
-              className="absolute left-5 top-8 h-[calc(100%-64px)] w-px bg-gradient-to-b from-transparent via-white/24 to-transparent md:left-6"
-            />
-
+        <div className="relative overflow-visible">
+          <div className="relative flex flex-col gap-4 pb-0 lg:min-h-[108vh] lg:gap-0 lg:pb-[5px]">
             {experienceCards.map((card, index) => (
               <article
                 key={card.id}
@@ -296,7 +280,7 @@ export function AboutSection() {
                     <TextReveal
                       as="h3"
                       text={card.company}
-                      className="uppercase tracking-tight"
+                      className="tracking-tight"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 900,

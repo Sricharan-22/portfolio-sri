@@ -4,7 +4,7 @@ import { TextReveal } from "../TextReveal";
 
 const PROCESS_ITEMS = [
   {
-    title: "Framer Websites",
+    title: "Framer websites",
     points: [
       "End-to-end Framer website setup",
       "Template selection and customization",
@@ -14,7 +14,7 @@ const PROCESS_ITEMS = [
     icon: WandSparkles,
   },
   {
-    title: "WordPress Builds",
+    title: "WordPress builds",
     points: [
       "End-to-end WordPress website setup",
       "Page building with Elementor / Divi",
@@ -41,16 +41,16 @@ export function ProcessExpertiseSection() {
     <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 md:px-12 md:py-[96px]">
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div className="reveal-item min-w-0" style={{ "--reveal-index": 0 } as CSSProperties}>
-          <TextReveal
-            as="span"
-            text="TOOLS"
-            className="mb-4 block text-white/42 uppercase tracking-[0.22em]"
+            <TextReveal
+              as="span"
+              text="Tools"
+              className="mb-4 block text-white/42 uppercase tracking-[0.22em]"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", fontWeight: 600 }}
           />
-          <TextReveal
-            as="h2"
-            text={"MY\nTOOLKIT."}
-            className="text-white uppercase tracking-tight"
+            <TextReveal
+              as="h2"
+            text={"My\ntoolkit."}
+            className="text-white tracking-tight"
             style={{
               fontFamily: "Epilogue, sans-serif",
               fontWeight: 900,
@@ -130,7 +130,7 @@ export function ProcessExpertiseSection() {
                 <TextReveal
                   as="h3"
                   text={item.title}
-                  className="uppercase"
+                  className=""
                   style={{
                     fontFamily: "Epilogue, sans-serif",
                     fontWeight: 900,

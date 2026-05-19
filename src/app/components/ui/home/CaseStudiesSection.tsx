@@ -50,14 +50,14 @@ export function CaseStudiesSection() {
           <div className="min-w-0">
             <TextReveal
               as="span"
-              text="Case Studies"
-              className="mb-4 block text-[#5d5f5f] uppercase tracking-[0.22em]"
+              text="No mockups. Just shipped."
+              className="mb-4 block text-[#5d5f5f] tracking-[0.22em]"
               style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", fontWeight: 600 }}
             />
             <TextReveal
               as="h2"
-              text={"Proof, kept\nvisual."}
-              className="text-[#1a1c1c] uppercase tracking-tight"
+              text="The Work."
+              className="text-[#1a1c1c] tracking-tight"
               style={{
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 900,
@@ -70,7 +70,7 @@ export function CaseStudiesSection() {
           </div>
           <TextReveal
             as="p"
-            text="The cards stay light on purpose. Open the case study when you want the architecture, constraints, and delivery notes."
+            text="Each card represents a live product - designed, developed, and deployed. The case studies cover the architecture, the edge cases, and the decisions made under deadline."
             className="max-w-xl text-[#5d5f5f] lg:justify-self-end"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "16px", lineHeight: "1.75" }}
             delay={90}
@@ -126,7 +126,7 @@ export function CaseStudiesSection() {
 
                   <div className="min-w-0 max-w-3xl">
                     <span
-                      className="mb-4 block text-white/52 uppercase tracking-[0.22em]"
+                      className="mb-4 block text-white/80 uppercase tracking-[0.22em]"
                       style={{ fontFamily: "Inter, sans-serif", fontSize: "10px" }}
                     >
                       {caseStudy.tag}
@@ -134,12 +134,12 @@ export function CaseStudiesSection() {
                     <TextReveal
                       as="h3"
                       text={shortTitle(caseStudy.title)}
-                      className="text-white uppercase tracking-tight"
+                      className="text-white tracking-tight"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 900,
-                        fontSize: "clamp(32px, 11vw, 68px)",
-                        lineHeight: "0.92",
+                        fontSize: "clamp(24px, 7vw, 50px)",
+                        lineHeight: "0.98",
                       }}
                       wordDelay={42}
                     />
@@ -196,12 +196,12 @@ export function CaseStudiesSection() {
                     <TextReveal
                       as="h3"
                       text={shortTitle(caseStudy.title)}
-                      className="text-white uppercase tracking-tight"
+                      className="text-white tracking-tight"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 900,
-                        fontSize: "clamp(24px, 8vw, 34px)",
-                        lineHeight: "0.98",
+                        fontSize: "clamp(20px, 6vw, 28px)",
+                        lineHeight: "1.05",
                       }}
                       wordDelay={36}
                     />

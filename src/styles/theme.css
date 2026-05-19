@@ -207,6 +207,16 @@
     will-change: auto;
   }
 
+  .service-card-title .text-reveal-line {
+    overflow: visible;
+  }
+
+  .service-card-title .text-reveal-word {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .scroll-reveal,
     .scroll-reveal--cascade .reveal-item,
