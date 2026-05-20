@@ -213,8 +213,8 @@
 
   .service-card-title .text-reveal-word {
     max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   @media (prefers-reduced-motion: reduce) {

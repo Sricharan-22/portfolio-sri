@@ -131,28 +131,28 @@ export function HeroSection() {
             <span className="h-px flex-1 bg-[#1a1c1c]/14" aria-hidden="true" />
           </div>
 
-          <div className="relative w-full max-w-[572px] overflow-hidden rounded-[28px] border border-[#1a1c1c]/10 bg-white/55 px-4 py-4 shadow-[0_18px_50px_rgba(26,28,28,0.07)] backdrop-blur sm:w-fit sm:px-7 sm:py-5">
+          <div className="relative w-full max-w-[572px] overflow-hidden rounded-[28px] border border-[#1a1c1c]/10 bg-white/55 px-5 py-5 shadow-[0_18px_50px_rgba(26,28,28,0.07)] backdrop-blur sm:w-fit sm:px-7">
             <span
               className="absolute left-5 right-5 top-1/2 h-px bg-gradient-to-r from-transparent via-[#1a1c1c]/16 to-transparent"
               aria-hidden="true"
             />
-            <div className="relative flex flex-nowrap items-center justify-center gap-3 sm:gap-5 md:gap-7">
+            <div className="relative grid grid-cols-4 place-items-center gap-4 sm:flex sm:flex-nowrap sm:items-center sm:justify-center sm:gap-5 md:gap-7">
               {TECHNOLOGIES.map((technology) => (
                 <span
                   key={technology.name}
-                  className="group relative inline-flex h-10 w-10 shrink-0 items-center justify-center transition-transform duration-300 hover:-translate-y-2"
+                  className="group relative inline-flex h-9 w-9 shrink-0 items-center justify-center transition-transform duration-300 hover:-translate-y-2 sm:h-10 sm:w-10"
                   title={technology.name}
                   aria-label={technology.name}
                 >
                   <span
-                    className="absolute h-9 w-9 rounded-full opacity-20 blur-xl transition-opacity duration-300 group-hover:opacity-45"
+                    className="absolute h-8 w-8 rounded-full opacity-20 blur-xl transition-opacity duration-300 group-hover:opacity-45 sm:h-9 sm:w-9"
                     style={{ backgroundColor: technology.accent }}
                     aria-hidden="true"
                   />
                   <img
                     src={technology.logo}
                     alt={`${technology.name} logo`}
-                    className="relative h-10 w-10 object-contain drop-shadow-[0_10px_16px_rgba(26,28,28,0.12)] transition-transform duration-300 group-hover:scale-110"
+                    className="relative h-9 w-9 object-contain drop-shadow-[0_10px_16px_rgba(26,28,28,0.12)] transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10"
                     loading="lazy"
                   />
                 </span>

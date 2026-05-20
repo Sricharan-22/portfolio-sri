@@ -4,7 +4,7 @@ import { TextReveal } from "../TextReveal";
 
 const HELP_ITEMS = [
   {
-    title: "Website\ndevelopment",
+    title: "Web\ndevelopment",
     description:
       "Pixel-perfect, responsive sites written in clean code - portfolio sites, company pages, and product launches built to perform, not just look good.",
     icon: MonitorSmartphone,
@@ -87,20 +87,17 @@ export function HelpSection() {
                   style={{
                     fontFamily: "Epilogue, sans-serif",
                     fontWeight: 900,
-                    fontSize: "clamp(22px, 4vw, 30px)",
+                    fontSize: "clamp(22px, 3vw, 27px)",
                     lineHeight: "1.05",
                   }}
                   wordDelay={42}
                 />
-                <TextReveal
-                  as="p"
-                  text={item.description}
+                <p
                   className="mt-4 text-[#5d5f5f] transition-colors group-hover:text-black/62"
                   style={{ fontFamily: "Inter, sans-serif", fontSize: "14px", lineHeight: "1.65" }}
-                  delay={80}
-                  wordDelay={18}
-                  lineDelay={70}
-                />
+                >
+                  {item.description}
+                </p>
               </article>
             );
           })}

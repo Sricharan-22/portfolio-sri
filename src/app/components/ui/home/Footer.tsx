@@ -296,7 +296,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p
-            className="text-white/52"
+            className="w-full text-center text-white/52 md:w-auto md:text-left"
             style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", letterSpacing: "0.08em" }}
           >
             {`(c) ${currentYear} Sri Charan. Crafted with intent.`}
