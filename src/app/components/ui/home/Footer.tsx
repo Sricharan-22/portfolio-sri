@@ -314,8 +314,7 @@ export function Footer() {
 
           <div
             aria-hidden="true"
-            className="h-[6px] w-28 rounded-full md:w-40"
-              style={{ background: "rgba(255,255,255,0.42)" }}
+            className="h-[6px] w-28 rounded-full bg-gradient-to-r from-[#f7efe4]/35 via-[#f7efe4]/85 to-[#eee4d5]/45 shadow-[0_0_24px_rgba(247,239,228,0.18)] md:w-40"
           />
         </div>
       </div>

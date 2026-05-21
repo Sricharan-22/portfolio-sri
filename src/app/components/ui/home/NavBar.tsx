@@ -1,5 +1,5 @@
 import { useState, type MouseEvent } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { NAV_ITEMS } from "./homeSectionData";
 
 const FIXED_HEADER_OFFSET = 96;
@@ -21,17 +21,17 @@ function scrollToElement(sectionId: string) {
 export function NavBar() {
   const [open, setOpen] = useState(false);
   const [logoHovered, setLogoHovered] = useState(false);
+  const navigate = useNavigate();
 
   const handleSectionClick =
     (sectionId: string) => (event: MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault();
-      setOpen(false);
 
       if (scrollToElement(sectionId)) {
         return;
       }
 
-      window.location.assign(`/#${sectionId}`);
+      navigate({ pathname: "/", hash: `#${sectionId}` });
     };
 
   const renderDesktopItem = (item: (typeof NAV_ITEMS)[number]) => {
@@ -47,7 +47,6 @@ export function NavBar() {
         <Link
           key={item.label}
           to={item.to}
-          onClick={() => setOpen(false)}
           className="rounded-full px-4 py-2 text-black transition-all duration-300 hover:bg-white/30 hover:opacity-100"
           style={sharedStyle}
         >
@@ -105,7 +104,6 @@ export function NavBar() {
         <Link
           key={item.label}
           to={item.to}
-          onClick={() => setOpen(false)}
           style={sharedStyle}
           onMouseEnter={(event) => {
             event.currentTarget.style.opacity = "0.4";

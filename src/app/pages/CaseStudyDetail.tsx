@@ -320,7 +320,15 @@ function ObjectivePanel({ study }: { study: CaseStudy }) {
   );
 }
 
-function TopicPanel({ title, blocks }: { title: string; blocks: TopicBlock[] }) {
+function TopicPanel({
+  title,
+  subtitle,
+  blocks,
+}: {
+  title: string;
+  subtitle: string;
+  blocks: TopicBlock[];
+}) {
   return (
     <section className="px-4 pb-5 sm:px-6 md:px-12">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-[#050608] text-white">
@@ -331,7 +339,7 @@ function TopicPanel({ title, blocks }: { title: string; blocks: TopicBlock[] }) 
                 className="mb-5 block uppercase text-white/42"
                 style={{ fontFamily: "Inter, sans-serif", fontSize: "10px", fontWeight: 900, letterSpacing: "0.18em" }}
               >
-                Case Study Topic
+                {subtitle}
               </span>
               <h2
                 className="max-w-full break-words text-white"
@@ -653,10 +661,14 @@ export default function CaseStudyDetail() {
 
       <CaseStudyBrief study={study} />
       <ObjectivePanel study={study} />
-      <TopicPanel title="Struggle" blocks={getStruggleBlocks(study)} />
-      <TopicPanel title="Transformation" blocks={getTransformationBlocks(study)} />
-      <TopicPanel title="Outcomes" blocks={getOutcomeBlocks(study)} />
-      <TopicPanel title="Personal insights and learnings" blocks={getLearningBlocks(study)} />
+      <TopicPanel title="Struggle" subtitle="Case Study Topic" blocks={getStruggleBlocks(study)} />
+      <TopicPanel title="Transformation" subtitle="Case Study Process" blocks={getTransformationBlocks(study)} />
+      <TopicPanel title="Outcomes" subtitle="Case Study Results" blocks={getOutcomeBlocks(study)} />
+      <TopicPanel
+        title="Personal insights and learnings"
+        subtitle="Case Study Takeaway"
+        blocks={getLearningBlocks(study)}
+      />
       <LogoStackSection study={study} />
 
       <ScrollReveal once>

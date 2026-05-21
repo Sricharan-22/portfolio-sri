@@ -1,5 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
-import sriPortfolioCv from "../../../../assets/cv/sri-portfolio.pdf";
+import sriPortfolioCv from "../../../../assets/cv/frontend-developer-sricharan-cv.pdf";
 import { HERO_IMAGE } from "./homeSectionData";
 
 const TECHNOLOGIES = [

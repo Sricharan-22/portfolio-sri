@@ -13,13 +13,14 @@ const IMG_LAILA =
 export const HOME_SECTION_IDS = {
   work: "work",
   experience: "experience",
+  tools: "tools",
   contact: "contact",
 } as const;
 
 export const NAV_ITEMS = [
-  { label: "Tool", side: "left", sectionId: HOME_SECTION_IDS.work },
-  { label: "Experience", side: "left", sectionId: HOME_SECTION_IDS.experience },
-  { label: "Work", side: "right", sectionId: HOME_SECTION_IDS.work },
+  { label: "Work", side: "left", sectionId: HOME_SECTION_IDS.work },
+  { label: "Tool", side: "left", sectionId: HOME_SECTION_IDS.tools },
+  { label: "Experience", side: "right", sectionId: HOME_SECTION_IDS.experience },
 ] as const;
 
 export const HERO_IMAGE = imgScreen2;

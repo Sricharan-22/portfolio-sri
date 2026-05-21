@@ -1,6 +1,7 @@
 import { LayoutTemplate, WandSparkles } from "lucide-react";
 import type { CSSProperties } from "react";
 import { TextReveal } from "../TextReveal";
+import { HOME_SECTION_IDS } from "./homeSectionData";
 
 const PROCESS_ITEMS = [
   {
@@ -38,7 +39,11 @@ const TOOLS = [
 
 export function ProcessExpertiseSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 md:px-12 md:py-[96px]">
+    <section
+      id={HOME_SECTION_IDS.tools}
+      className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 md:px-12 md:py-[96px]"
+      style={{ scrollMarginTop: "96px" }}
+    >
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div className="reveal-item min-w-0" style={{ "--reveal-index": 0 } as CSSProperties}>
             <TextReveal

@@ -79,8 +79,8 @@ export type CaseStudy = {
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "barakat",
-    tag: "Custom WordPress",
-    title: "Gulf conglomerate website",
+    tag: "FMCG Website",
+    title: "Building a Web Presence for a UAE-Based FMCG Brand",
     img: imgProject01,
     client: "Client confidential",
     year: "2025",
@@ -369,7 +369,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "desisle",
     tag: "SaaS UI/UX Design Agency",
-    title: "Desisle",
+    title: "Turning a SaaS Agency's Vision Into a Live Website",
     img: imgProject03,
     client: "Desisle LLP",
     year: "2025",
@@ -652,7 +652,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "prodxverse",
     tag: "Product Design Education Platform",
-    title: "ProdXVerse",
+    title: "Where Product Design Education Gets a Digital Home",
     img: imgProject05,
     client: "ProdXVerse",
     year: "2025",
@@ -784,7 +784,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "bookmark-hub",
     tag: "Bookmark & Resource Manager",
-    title: "Curious designer",
+    title: "Where the Web Gets Collected, Sorted and Saved",
     img: imgProject06,
     client: "Curious Designer",
     year: "2025",
@@ -897,7 +897,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "automotive-group-website",
     tag: "Multi-Website Documentation",
-    title: "UAE legacy conglomerate",
+    title: "Where UAE Automotive Branding Meets Precision Testing",
     img: imgProject07,
     client: "Client confidential",
     year: "2025",
