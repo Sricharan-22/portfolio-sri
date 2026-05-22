@@ -5,10 +5,6 @@ import { CASE_STUDIES } from "../../../data/caseStudies";
 import { TextReveal } from "../TextReveal";
 import { HOME_SECTION_IDS } from "./homeSectionData";
 
-function shortTitle(title: string) {
-  return title.split(" - ")[0];
-}
-
 const LEFT_CASE_ORDER = ["finance-tale", "hosaksham"] as const;
 const RIGHT_CASE_ORDER = [
   "desisle",
@@ -17,6 +13,16 @@ const RIGHT_CASE_ORDER = [
   "automotive-group-website",
   "bookmark-hub",
 ] as const;
+
+const WORK_CARD_TITLES: Record<string, string> = {
+  "finance-tale": "Financial literacy platform for school students",
+  desisle: "50+ page website for a design agency",
+  prodxverse: "Education website with admin panel for aspiring designers",
+  hosaksham: "WordPress platform for a sports academy, built in a week",
+  barakat: "30+ page WordPress website for a UAE consumer brand",
+  "automotive-group-website": "UI testing across multiple websites for a conglomerate",
+  "bookmark-hub": "SaaS bookmark manager built from scratch",
+};
 
 export function CaseStudiesSection() {
   const leftCases = LEFT_CASE_ORDER.map((slug) =>
@@ -133,7 +139,7 @@ export function CaseStudiesSection() {
                     </span>
                     <TextReveal
                       as="h3"
-                      text={shortTitle(caseStudy.title)}
+                      text={WORK_CARD_TITLES[caseStudy.slug]}
                       className="text-white tracking-tight"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
@@ -195,7 +201,7 @@ export function CaseStudiesSection() {
                     </div>
                     <TextReveal
                       as="h3"
-                      text={shortTitle(caseStudy.title)}
+                      text={WORK_CARD_TITLES[caseStudy.slug]}
                       className="text-white tracking-tight"
                       style={{
                         fontFamily: "Epilogue, sans-serif",

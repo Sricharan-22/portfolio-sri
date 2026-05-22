@@ -50,18 +50,19 @@ export function HeroSection() {
     <section className="grid min-h-screen grid-cols-1 items-center gap-9 bg-[#f7efe4] px-4 pb-14 pt-24 sm:px-6 sm:pt-28 md:grid-cols-2 md:gap-16 md:px-12 md:pb-0 md:pt-32">
       <div className="order-last flex min-w-0 flex-col gap-8 text-center md:order-first md:gap-12 md:text-left">
         <div className="flex min-w-0 flex-col gap-5 md:gap-6">
-          <div
-            className="break-words text-black uppercase tracking-tighter"
+          <h1
+            className="break-words text-black tracking-tighter"
             style={{
               fontFamily: "Epilogue, sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(42px, 13vw, 90px)",
-              lineHeight: "0.88",
+              fontSize: "clamp(36px, 10vw, 76px)",
+              lineHeight: "0.94",
             }}
           >
-            <p>FRONTEND</p>
-            <p>DEVELOPER.</p>
-          </div>
+            <span className="block">8+ Projects Built</span>
+            <span className="block">and Shipped</span>
+            <span className="block">Within a Year.</span>
+          </h1>
           <p
             className="text-[#5d5f5f] max-w-md mx-auto md:mx-0"
             style={{

@@ -13,13 +13,13 @@ const IMG_LAILA =
 export const HOME_SECTION_IDS = {
   work: "work",
   experience: "experience",
-  tools: "tools",
+  projects: "projects",
   contact: "contact",
 } as const;
 
 export const NAV_ITEMS = [
   { label: "Work", side: "left", sectionId: HOME_SECTION_IDS.work },
-  { label: "Tool", side: "left", sectionId: HOME_SECTION_IDS.tools },
+  { label: "Projects", side: "left", sectionId: HOME_SECTION_IDS.projects },
   { label: "Experience", side: "right", sectionId: HOME_SECTION_IDS.experience },
 ] as const;
 

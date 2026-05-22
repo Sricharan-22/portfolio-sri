@@ -227,7 +227,7 @@ function CaseStudyBrief({ study }: { study: CaseStudy }) {
               </span>
               <p
                 className="max-w-4xl text-white/74"
-                style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(17px, 1.8vw, 21px)", lineHeight: "1.65" }}
+                style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(17px, 1.8vw, 21px)", lineHeight: "1.65" }}
               >
                 {getCollaborationApproach(study)}
               </p>
@@ -264,7 +264,7 @@ function ObjectivePanel({ study }: { study: CaseStudy }) {
           <div className="min-w-0">
             <div
               className="flex flex-col gap-6 text-[#303235]"
-              style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(18px, 5vw, 30px)", lineHeight: "1.55" }}
+              style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(18px, 5vw, 30px)", lineHeight: "1.55" }}
             >
               {paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -377,7 +377,7 @@ function TopicPanel({
 
                     <div
                       className="flex max-w-3xl flex-col gap-5 text-white/70"
-                      style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(17px, 2vw, 21px)", lineHeight: "1.7" }}
+                      style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(17px, 2vw, 21px)", lineHeight: "1.7" }}
                     >
                       {block.description.split("\n\n").map((paragraph) => (
                         <p key={paragraph} className="flex min-w-0 gap-3 sm:gap-4">
@@ -484,7 +484,7 @@ function LogoStackSection({ study }: { study: CaseStudy }) {
           </div>
           <p
             className="max-w-md text-[#303235]/72"
-            style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", lineHeight: "1.65" }}
+            style={{ fontFamily: "Inter, sans-serif", fontSize: "18px", lineHeight: "1.65" }}
           >
             The core technologies and tools used to design, build, test, and ship this project.
           </p>
@@ -580,7 +580,7 @@ export default function CaseStudyDetail() {
             <p
               className="max-w-3xl text-[#5d5f5f]"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "Inter, sans-serif",
                 fontSize: "clamp(18px, 2.5vw, 24px)",
                 fontStyle: "normal",
                 lineHeight: "1.7",
