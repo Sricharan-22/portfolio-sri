@@ -9,7 +9,7 @@ const CONNECT_LINKS = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/sricharan-anbalagan/",
+    href: "https://www.linkedin.com/in/sricharananbalagan/",
     content: <Linkedin aria-hidden="true" size={18} strokeWidth={2.35} />,
   },
   {

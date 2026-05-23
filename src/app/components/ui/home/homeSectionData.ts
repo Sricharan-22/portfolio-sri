@@ -175,7 +175,7 @@ export const VISIONARY_PEOPLE = [
 
 export const FOOTER_LINKS = [
   { label: "Instagram", href: "https://instagram.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sricharananbalagan/" },
   { label: "Email", href: "mailto:sricharananbalagan6@gmail.com" },
 ] as const;
 

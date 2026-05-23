@@ -101,7 +101,7 @@ export function Footer() {
             >
               <span
                 aria-hidden="true"
-                className="pointer-events-none hidden select-none opacity-0 md:inline"
+                className="pointer-events-none hidden select-none opacity-0 lg:inline"
                 style={{
                   fontFamily: "Epilogue, sans-serif",
                   fontWeight: 900,
@@ -173,7 +173,59 @@ export function Footer() {
                 </span>
               </span>
 
-              <span className="absolute inset-0 hidden items-end justify-center md:flex">
+              <span
+                className="pointer-events-none hidden select-none flex-col items-center text-[#f7efe4] md:flex lg:hidden"
+                style={{
+                  fontFamily: "Epilogue, sans-serif",
+                  fontWeight: 900,
+                  fontSize: "clamp(86px, 16vw, 132px)",
+                  lineHeight: "0.82",
+                }}
+              >
+                <span className="whitespace-nowrap">
+                  <span>{FOOTER_WORDMARK.prefix}</span>
+                  <span>{FOOTER_WORDMARK.middle}</span>
+                  <span
+                    className="inline-block overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{
+                      width: wordmarkHovered ? "0.42ch" : "0px",
+                      opacity: wordmarkHovered ? 1 : 0,
+                    }}
+                  >
+                    <span
+                      className="inline-block"
+                      style={{
+                        transform: wordmarkHovered ? "translateX(0)" : "translateX(0.4em)",
+                        transition: "transform 0.5s cubic-bezier(0.22,1,0.36,1)",
+                      }}
+                    >
+                      {FOOTER_WORDMARK.comma}
+                    </span>
+                  </span>
+                </span>
+                <span className="whitespace-nowrap">
+                  <span>{FOOTER_WORDMARK.suffix}</span>
+                  <span
+                    className="inline-block overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{
+                      width: wordmarkHovered ? "1.04ch" : "0px",
+                      opacity: wordmarkHovered ? 1 : 0,
+                    }}
+                  >
+                    <span
+                      className="inline-block"
+                      style={{
+                        transform: wordmarkHovered ? "translateX(0)" : "translateX(-0.72em)",
+                        transition: "transform 0.5s cubic-bezier(0.22,1,0.36,1)",
+                      }}
+                    >
+                      {FOOTER_WORDMARK.exclamations}
+                    </span>
+                  </span>
+                </span>
+              </span>
+
+              <span className="absolute inset-0 hidden items-end justify-center lg:flex">
                 <span
                   className="relative inline-flex items-end whitespace-nowrap text-[#f7efe4]"
                   style={{

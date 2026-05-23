@@ -3,6 +3,8 @@ const IMG_PROFESSIONAL =
 const IMG_WRITING_DESK =
   "https://images.unsplash.com/photo-1772408195534-8a080196dd51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800";
 
+const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/sricharananbalagan/";
+
 const linkedInPosts = [
   {
     id: "lp1",
@@ -49,7 +51,7 @@ export function LinkedInSection() {
             LinkedIn
           </span>
         </div>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 group">
+        <a href={LINKEDIN_PROFILE_URL} target="_blank" rel="noreferrer" className="flex items-center gap-2 group">
           <span
             className="text-white/58 transition-colors group-hover:text-white"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "12px", letterSpacing: "1.5px" }}
@@ -179,7 +181,7 @@ export function LinkedInSection() {
               <div className="border-t border-white/10" />
 
               <a
-                href="https://linkedin.com"
+                href={LINKEDIN_PROFILE_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-between group"
@@ -278,7 +280,7 @@ export function LinkedInSection() {
               <img src={IMG_WRITING_DESK} alt="" className="w-full h-full object-cover grayscale opacity-40" />
             </div>
             <a
-                href="https://linkedin.com"
+                href={LINKEDIN_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-4 border border-white/16 bg-white/[0.055] hover:border-white/42 transition-all px-6 py-3 group"

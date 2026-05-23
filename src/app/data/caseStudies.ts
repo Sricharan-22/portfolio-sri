@@ -1,11 +1,11 @@
 import financeTaleCover from "../../assets/finance-tale-cover.png";
+import fmcgCover from "../../assets/fmcg-cover.png";
 import bookmarkHubCover from "../../assets/bookmark-hub.png";
 import desisleCover from "../../assets/desisle.png";
 import hosakshamCover from "../../assets/hosaksham.png";
 import prodxverseCover from "../../assets/prodxverse.png";
 
-const imgProject01 =
-  "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1200&q=80";
+const imgProject01 = fmcgCover;
 const imgProject02 = financeTaleCover;
 const imgProject03 = desisleCover;
 const imgProject04 = hosakshamCover;
@@ -79,7 +79,7 @@ export type CaseStudy = {
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: "barakat",
-    tag: "FMCG Website",
+    tag: "FMCG",
     title: "Building a Web Presence for a UAE-Based FMCG Brand",
     img: imgProject01,
     client: "Client confidential",
@@ -245,7 +245,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "finance-tale",
-    tag: "Content Platform",
+    tag: "EdTech",
     title: "Where financial literacy becomes a curriculum",
     img: imgProject02,
     client: "Finance Tale",
@@ -368,7 +368,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "desisle",
-    tag: "SaaS UI/UX Design Agency",
+    tag: "SaaS",
     title: "Turning a SaaS Agency's Vision Into a Live Website",
     img: imgProject03,
     client: "Desisle LLP",
@@ -523,7 +523,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "hosaksham",
-    tag: "Academy Subscription",
+    tag: "Sports & Fitness",
     title: "Where every academy becomes a scalable business",
     img: imgProject04,
     client: "HoSaksham",
@@ -651,7 +651,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "prodxverse",
-    tag: "Product Design Education Platform",
+    tag: "EdTech",
     title: "Where Product Design Education Gets a Digital Home",
     img: imgProject05,
     client: "ProdXVerse",
@@ -783,7 +783,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "bookmark-hub",
-    tag: "Bookmark & Resource Manager",
+    tag: "Productivity",
     title: "Where the Web Gets Collected, Sorted and Saved",
     img: imgProject06,
     client: "Curious Designer",
@@ -896,7 +896,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     slug: "automotive-group-website",
-    tag: "Multi-Website Documentation",
+    tag: "Automotive",
     title: "Where UAE Automotive Branding Meets Precision Testing",
     img: imgProject07,
     client: "Client confidential",
